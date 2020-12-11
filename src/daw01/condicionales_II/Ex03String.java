@@ -4,53 +4,55 @@ import java.util.Scanner;
 
 public class Ex03String {
     public static void main(String[] args) {
-        String[] pisos = {"S1", "S2", "S3", "S4", "PB", "P1", "P2", "P3", "P4", "P5", "P6", "P7", "P8", "P9"};
+        Scanner entrada = new Scanner(System.in);
+        String[] pisos = {"S4", "S3", "S2", "S1", "PB", "P1", "P2", "P3", "P4", "P5", "P6", "P7", "P8", "P9"};
 
         int aleatorio = (int) (Math.random() * 12);
-        Scanner entrada = new Scanner(System.in);
 
-        String ubiPiso = "";
+        String ubiAscensor;
         do {
-            ubiPiso = pisos[aleatorio];
-        } while (ubiPiso.equals("P8") || ubiPiso.equals("P9"));
+            ubiAscensor = pisos[aleatorio];
+        } while (ubiAscensor.equals("P8") || ubiAscensor.equals("P9"));
 
-        System.out.println("El ascensor esta en la planta: " + ubiPiso);
+        System.out.println("El ascensor esta en la planta: " + ubiAscensor);
 
-        System.out.println("A que planta quiere ir?");
-        String plantaNueva = entrada.next();
-
+        String plantaNueva;
         boolean busca = false;
-        for (int i = 0; i < pisos.length && !busca; i++) {
-            if (pisos[i].equals(plantaNueva)) {
-                busca = true;
-            }
-
-        }
-
-        if (busca) {
-            if (plantaNueva.equals(ubiPiso)) {
-                System.out.println("Ya esta ahi");
-            } else if (plantaNueva.equals("P8") || plantaNueva.equals("P9")) {
-                System.out.println("Planta restringida");
-            } else {
-                int numPlantaNueva = 0;
-                int numUbi = 0;
-                for (int i = 0; i < pisos.length; i++) {
-                    if (plantaNueva.equals(pisos[i])) {
-                        numPlantaNueva = i;
-                    }
-                    if (ubiPiso.equals(pisos[i])) {
-                        numUbi = i;
-                    }
-                }
-                if (numPlantaNueva < numUbi) {
-                    System.out.println("Ascensor bajando a la planta " + plantaNueva);
-                } else {
-                    System.out.println("Ascensor subiendo a la planta " + plantaNueva);
+        do {
+            System.out.println("A que planta quiere ir?");
+            plantaNueva = entrada.next();
+            for (int i = 0; i < pisos.length && !busca; i++) {
+                if (pisos[i].equals(plantaNueva)) {
+                    busca = true;
                 }
             }
+            if (!busca){
+                System.out.println("no existe");
+            }
+        } while (!busca);
+
+
+        if (plantaNueva.equals(ubiAscensor)) {
+            System.out.println("Ya esta ahi");
+        } else if (plantaNueva.equals("P8") || plantaNueva.equals("P9")) {
+            System.out.println("Planta restringida");
         } else {
-            System.out.println("Su planta no existe");
+            int ascensor = 0;
+            int user = 0;
+
+            for (int i = 0; i < pisos.length; i++) {
+                if (plantaNueva.equals(pisos[i])) {
+                    user = i;
+                }
+                if (ubiAscensor.equals(pisos[i])) {
+                    ascensor = i;
+                }
+            }
+            if (user < ascensor) {
+                System.out.println("Ascensor bajando a la planta " + plantaNueva);
+            } else {
+                System.out.println("Ascensor subiendo a la planta " + plantaNueva);
+            }
         }
 
 
