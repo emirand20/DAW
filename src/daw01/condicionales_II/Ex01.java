@@ -2,7 +2,7 @@ package daw01.condicionales_II;
 
 import java.util.Scanner;
 
-public class Ex01 {
+public class    Ex01 {
 
     public static void main(String[] args) {
         //Haber tonto, recuerda, se declara uma variable y luego se utiliza

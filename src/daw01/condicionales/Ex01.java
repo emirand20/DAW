@@ -5,7 +5,6 @@ import java.util.Scanner;
 /**
  * Resolució exercici 1
  * 1) Demanar a l'usuari la seva edat i segons aquesta mostrar-li un misstge que digui:
- * <p>
  * Si té menys de 10 anys - "Ets molt petit"
  * Si té més de 65 anys - "Ets molt gran"
  * Si està entre 10 i 65 anys - "Tens una edat ideal"
