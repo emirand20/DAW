@@ -6,9 +6,7 @@ public class    Ex01 {
 
     public static void main(String[] args) {
         //Haber tonto, recuerda, se declara uma variable y luego se utiliza
-        int descuento = 0;
-        int total = 500;
-        int valorFinal;
+        int descuento = 0, total = 500, valorFinal;
 
         Scanner entrada = new Scanner(System.in);
         System.out.println("Que edad tiene el niño?");
