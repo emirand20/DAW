@@ -1,8 +1,8 @@
-package daw01.condicionales_II;
+package daw01.exClase;
 
 import java.util.Scanner;
 
-public class Ex03String {
+public class Ascensor {
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
         String[] pisos = {"S4", "S3", "S2", "S1", "PB", "P1", "P2", "P3", "P4", "P5", "P6", "P7", "P8", "P9"};

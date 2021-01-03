@@ -1,4 +1,4 @@
-package daw01.condicionales;
+package daw01.exClase;
 
 import java.util.Scanner;
 
@@ -7,7 +7,7 @@ import java.util.Scanner;
  * Demanarà als dos usuaris el que trien i mostrarà qui ha guanyat.
  * Se suposa que un usuari no veu el que tria l'altre.
  */
-public class Ex03 {
+public class Piedra_papel_tijera {
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
         System.out.println("Escoge piedra papel o tijera!");

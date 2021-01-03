@@ -1,4 +1,4 @@
-package daw01.condicionales;
+package daw01.exClase;
 
 public class CaixerAuto {
     public static void main(String[] args) {

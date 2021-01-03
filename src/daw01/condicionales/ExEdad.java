@@ -19,7 +19,7 @@ public class ExEdad {
 
 
         if (edad1 >= 18 && edad2 >= 18 || edad3 >= 18 || edad1 >= 18 || edad2 >= 18){
-            System.out.println("Si compra");;
+            System.out.println("Eres mayor de edad ");;
         } else{
             System.out.println("no compra");
         }

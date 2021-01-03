@@ -1,4 +1,4 @@
-package daw01.condicionales;
+package daw01.exClase;
 
 import java.util.Scanner;
 
