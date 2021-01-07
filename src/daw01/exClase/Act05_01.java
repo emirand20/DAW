@@ -9,7 +9,7 @@ public class Act05_01 {
         int edad = entrada.nextInt();
 
         if (edad >= 18){
-            System.out.println("Eres mayor de edad puedes pasar");
+            System.out.println("Puedes pasar");
         } else if (edad<18){
             System.out.println("No puedes entrar");
         }
