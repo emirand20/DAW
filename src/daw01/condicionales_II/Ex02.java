@@ -37,8 +37,5 @@ public class Ex02 {
             default:
                 System.out.println("No m'agrada la lletra que has triat");
         }
-
-
-
     }
 }
