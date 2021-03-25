@@ -2,6 +2,7 @@ package daw01.funcionesClas;
 
 public class Ex_03 {
     static int dau() {
+
         return (int) (Math.random() * 6) + 1;
     }
 
