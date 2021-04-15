@@ -5,17 +5,19 @@ import java.util.Scanner;
 
 public class Palabras {
     public static void main(String[] args) {
+        String palabra = "murcelago";
+        for (int i = 0; i < palabra.length(); i++) {
+            System.out.print(palabra.charAt(i));
+        }
+        System.out.println();
     }
 
     public void recorrerPalabra() {
         // todo lo que sea recorrer implica un for, length nos devuelve un int con valor igual al tamaño de la variable
-        String palabra = "murcelago";
-        for (int i = 0; i < palabra.length(); i++) {
-            System.out.println(palabra.charAt(i));
-        }
+
     }
 
-    public void recorrerPorductos() {
+    static void recorrerPorductos() {
         // Un array es un conjunto de elementos
 
         Scanner entrada = new Scanner(System.in);
