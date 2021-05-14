@@ -1,4 +1,4 @@
-package daw01.examen02;
+package daw01.exameneUF1b;
 
 import java.util.Locale;
 import java.util.Scanner;

@@ -1,4 +1,4 @@
-package daw01.examen02;
+package daw01.exameneUF1b;
 
 public class Ej2 {
     public static void main(String[] args) {

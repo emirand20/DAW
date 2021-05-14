@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class PruebaArray {
     public static void main(String[] args) {
-        String frutas[] = {"manzana", "manzana", "pera", "manzana", "platano", "melon", "sandia", "sandia", "melon"};
+        String frutas[] = {"manzana", "manzana", "pera", "manzana", "platano", "melon", "sandia", "sandia", "melon", "platano"};
 
         ArrayList<String> items = new ArrayList<String>();
 
@@ -26,20 +26,21 @@ public class PruebaArray {
 
 
     }
-
-
-    public void mal() {
-        String frutas[] = {"manzana", "manzana", "pera", "manzana", "platano", "melon"};
-
-        int contadorManzana = 0, contadorPera = 0, contadorPlatano = 0;
-
-        for (int i = 0; i < frutas.length; i++) {
-            if (frutas[i].equals("manzana")) contadorManzana++;
-            if (frutas[i].equals("pera")) contadorPera++;
-            if (frutas[i].equals("platano")) contadorPlatano++;
-        }
-
-        System.out.println(contadorManzana + " " + contadorPera + " " + contadorPlatano);
-    }
 }
+//
+//
+//    public void mal() {
+//        String frutas[] = {"manzana", "manzana", "pera", "manzana", "platano", "melon"};
+//
+//        int contadorManzana = 0, contadorPera = 0, contadorPlatano = 0;
+//
+//        for (int i = 0; i < frutas.length; i++) {
+//            if (frutas[i].equals("manzana")) contadorManzana++;
+//            if (frutas[i].equals("pera")) contadorPera++;
+//            if (frutas[i].equals("platano")) contadorPlatano++;
+//        }
+//
+//        System.out.println(contadorManzana + " " + contadorPera + " " + contadorPlatano);
+//    }
+//}
 

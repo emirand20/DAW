@@ -9,7 +9,7 @@ public class Ex03 {
         System.out.println("¿A que planta desea ir?");
         int planta = entrada.nextInt();
 
-        if (planta == aleatorio) {
+        if (planta ==    aleatorio) {
             System.out.println("Esta en la " + aleatorio + "planta");
         } else if (planta > 14) {
             System.out.println("Planta desconocida");

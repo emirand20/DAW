@@ -1,6 +1,5 @@
-package daw01.examen02;
+package daw01.exameneUF1b;
 
-import javax.swing.*;
 import java.util.Scanner;
 
 public class Ej3 {
