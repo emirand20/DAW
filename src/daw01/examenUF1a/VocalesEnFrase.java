@@ -8,14 +8,26 @@ public class VocalesEnFrase {
         Scanner sc = new Scanner(System.in);
         System.out.println("Escribe una frase y te dire cuantas vocales contiene");
         String vocfrase = sc.next();
-
-        String voc[] = {"a", "e", "i", "o", "u"};
-
-        ArrayList<String> items = new ArrayList<String>();
+        ArrayList vocales = new ArrayList();
 
         for (int i = 0; i < vocfrase.length(); i++) {
+            System.out.print(vocfrase.charAt(i));
 
         }
+
+
+
+
+//        int contA = 0, contE = 0, contI = 0, contO = 0, contU = 0;
+//
+//        for (int i = 0; i < voc.length; i++) {
+//            if (voc.equals("a")) contA++;
+//            if (voc.equals("e")) contE++;
+//            if (voc.equals("i")) contI++;
+//            if (voc.equals("o")) contO++;
+//            if (voc.equals("u")) contU++;
+//        }
+
 
     }
 }

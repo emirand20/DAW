@@ -15,10 +15,9 @@ public class PruebaArrayList {
             if (frase.charAt(i) == 'a' || frase.charAt(i) == 'e' || frase.charAt(i) == 'i' || frase.charAt(i) == 'o' || frase.charAt(i) == 'u') {
                 vocales.add(frase.charAt(i));
             } else {
-                if (frase.charAt(i)!=' '){
+                if (frase.charAt(i) != ' ') {
                     consonantes.add(frase.charAt(i));
                 }
-
             }
         }
 
@@ -29,7 +28,5 @@ public class PruebaArrayList {
         for (int i = 0; i < consonantes.size(); i++) {
             System.out.println(consonantes.get(i));
         }
-
-
     }
 }
