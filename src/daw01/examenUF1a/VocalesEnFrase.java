@@ -11,8 +11,14 @@ public class VocalesEnFrase {
         ArrayList vocales = new ArrayList();
 
         for (int i = 0; i < vocfrase.length(); i++) {
-            System.out.print(vocfrase.charAt(i));
-
+            if (vocfrase.charAt(i)=='a'|| vocfrase.charAt(i) == 'e' || vocfrase.charAt(i) == 'i' || vocfrase.charAt(i) == 'o' || vocfrase.charAt(i) == 'u'){
+            vocales.add(vocfrase.charAt(i));
+            }else
+                if (vocfrase.charAt(i) == ' '){
+                }
+        }
+        for (int i = 0; i < vocales.size(); i++) {
+            System.out.println();
         }
 
 
