@@ -1,20 +1,19 @@
 package daw01.examenes.examenUf2a;
 
+import java.util.Enumeration;
+
 public class Ex1 {
-//    static int sumaCifras (int x){
-//
-//        for (int i = 0; i < x; i++) {
-//
-//        }
-//        return 'a';
-//    }
+    static int sumaCifras (int x){
+        x = ' ';
+        String numCadena = Integer.toString(x);
+
+        for (int i = 0; i < numCadena.length(); i++) {
+            numCadena.charAt(i++);
+        }
+    }
 
     public static void main(String[] args) {
-        //System.out.println(sumaCifras(6546852));
-        String numCadena = "1";
-        int numEntero = Integer.parseInt(numCadena);
+        System.out.println(sumaCifras(6546852));
 
-        if (numCadena.equals("uno"))
-        System.out.println(numEntero);
     }
 }
