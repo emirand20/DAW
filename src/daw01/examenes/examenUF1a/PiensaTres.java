@@ -1,4 +1,4 @@
-package daw01.examenUF1a;
+package daw01.examenes.examenUF1a;
 
 public class PiensaTres {
     public static void main(String[] args) {

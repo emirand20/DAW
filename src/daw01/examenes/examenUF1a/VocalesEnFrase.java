@@ -1,4 +1,4 @@
-package daw01.examenUF1a;
+package daw01.examenes.examenUF1a;
 
 import java.util.ArrayList;
 import java.util.Scanner;
