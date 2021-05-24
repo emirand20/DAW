@@ -11,9 +11,25 @@ public class I {
         String carct = sc.next();
 
         int cont = 0;
-        while(vert < 5){
-            System.out.println("Valor demasiado bajo, el valor minimo es 5");
-            System.out.println("Carácter a utilizar en el dubujo para representa la letra I:" );
+        while (vert < 5) {
+            System.out.print("Valor demasiado bajo, el valor minimo es 5");
+            vert = sc.nextInt();
+            System.out.print("Carácter a utilizar en el dubujo para representa la letra I:");
+            carct = sc.next();
         }
+        for (int i = 0; i < 3; i++) {
+            System.out.print(carct);
+        }
+        System.out.println();
+
+        for (int i = 0; i < vert - 2; i++) {
+            System.out.println(" " + carct);
+            cont++;
+        }
+
+        for (int i = 0; i < 3; i++) {
+            System.out.print(carct);
+        }
+        System.out.println();
     }
 }
