@@ -41,7 +41,7 @@ public class Ex1 {
     }
 
     public static void main(String[] args) {
-        // System.out.println(sumaCifras(12345));
+        //System.out.println(sumaCifras(12));
         int[] array = { 9, 10, -64, 245, 1054, 73, -10225, 54, 322, 19, 475, -23, -37 };
         System.out.println(sumanIgualCifras(array, 10));
 
