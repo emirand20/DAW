@@ -9,6 +9,8 @@ public class Escribir_Fichero {
 
     Escribiendo accede_es = new Escribiendo();
 
+
+
     accede_es.escribir();
     }
     static class Escribiendo {

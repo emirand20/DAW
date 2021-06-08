@@ -5,6 +5,7 @@ public class Lectura_Escritura {
     public static void main(String[] args) {
 
         try {
+
             FileInputStream archivo_lectura = new FileInputStream("/home/emirand/Escritorio/cap/imagen.jpg");
             boolean final_ar = false;
             while (!final_ar){

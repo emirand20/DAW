@@ -10,10 +10,10 @@ public class Acceso_Fichero {
         Leer_Fichero accediendo = new Leer_Fichero();
         accediendo.lee();
     }
+
     static class Leer_Fichero{
         public void lee(){
             try {
-
                 FileReader entrada = new FileReader("/home/emirand/Escritorio/ejemplo.txt");
 
                 BufferedReader mibuffer = new BufferedReader(entrada);
