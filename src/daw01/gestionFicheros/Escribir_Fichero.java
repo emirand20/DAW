@@ -15,7 +15,7 @@ public class Escribir_Fichero {
     }
     static class Escribiendo {
         public void escribir(){
-            String frase = "Esto es una prueba de escritura";
+            String frase = "1651651";
 
             try {
                 FileWriter escritura = new FileWriter("/home/emirand/Escritorio/texto_nuevo.txt");
