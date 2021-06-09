@@ -9,8 +9,6 @@ public class Escribir_Fichero {
 
     Escribiendo accede_es = new Escribiendo();
 
-
-
     accede_es.escribir();
     }
     static class Escribiendo {
@@ -18,7 +16,7 @@ public class Escribir_Fichero {
             String frase = "1651651";
 
             try {
-                FileWriter escritura = new FileWriter("/home/emirand/Escritorio/texto_nuevo.txt");
+                FileWriter escritura = new FileWriter("/home/emirand/Escritorio/numeros.txt");
 
                 for (int i = 0; i < frase.length(); i++) {
                     escritura.write(frase.charAt(i));

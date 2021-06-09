@@ -9,6 +9,7 @@ public class Adivina_numero {
         int aleatorio = (int) (Math.random() * 100);
         Scanner entrada = new Scanner(System.in);
 
+        System.out.println(aleatorio);
         int numero = 0;
         int intentos = 0;
 
