@@ -2,6 +2,8 @@ package daw01.condicionales;
 
 import java.util.Scanner;
 
+//import jdk.javadoc.internal.doclets.formats.html.resources.standard;
+
 public class Practica02 {
     public static void main(String[] args) {
         //1.- Realizar el ejercicio en el que se ingrese 4 notas del alumno,
@@ -20,7 +22,9 @@ public class Practica02 {
 
         int media = (nota1+nota2+nota3+nota4)/4;
         if (media>=6){
-
+            System.out.println("Tienes una media de "+ media);
+        }else {
+            System.out.println("Tienes una media de "+ media);
         }
     }
 }
