@@ -15,7 +15,7 @@ public class Piedra_papel_tijera {
         System.out.println("Escoge piedra papel o tijera!");
         String usuario2 = entrada.next();
 
-        if (!usuario1.equals("tijera") || !usuario1.equals("papel") || !usuario1.equals("piedra") || !usuario2.equals("tijera") || !usuario2.equals("papel") || !usuario2.equals("piedra")) {
+        if (!usuario1.equals("tijera") || !usuario1.equals("papel") || !usuario1.equals("piedra") || !usuario2.equals("tijera") || !usuario2.equals("papel") || usuario2.equals("piedra")) {
             System.out.println("error");
         } else {
             if (usuario1.equals("piedra") && usuario2.equals("tijera")) {

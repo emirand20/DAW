@@ -1,6 +1,6 @@
 package daw01.funcionesClas;
 
-import javax.swing.border.StrokeBorder;
+//import javax.swing.border.StrokeBorder;
 import java.util.Locale;
 
 public class Ex_06 {
