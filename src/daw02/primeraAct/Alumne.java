@@ -1,4 +1,4 @@
-package daw02;
+package daw02.primeraAct;
 
 public class Alumne {
     private int edat;

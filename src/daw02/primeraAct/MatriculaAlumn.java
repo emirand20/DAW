@@ -1,6 +1,6 @@
-package daw02;
+package daw02.primeraAct;
 
-import javax.swing.plaf.synth.SynthOptionPaneUI;
+//import javax.swing.plaf.synth.SynthOptionPaneUI;
 
 public class MatriculaAlumn {
     public static void main(String[] args) {
