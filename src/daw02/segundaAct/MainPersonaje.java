@@ -1,4 +1,4 @@
-package daw02.POO;
+package daw02.segundaAct;
 
 import java.util.Scanner;
 

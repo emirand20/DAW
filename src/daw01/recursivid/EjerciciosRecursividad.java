@@ -18,7 +18,6 @@ public class EjerciciosRecursividad {
     }
 
     public static int posicionElementoRecursivo(int[] array, int buscar, int indice) {
-
         if (indice == array.length) {
             return -1;
         } else if (array[indice] == buscar)

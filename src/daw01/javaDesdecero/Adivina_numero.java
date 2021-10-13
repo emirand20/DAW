@@ -6,7 +6,7 @@ public class Adivina_numero {
     public static void main(String[] args) {
         //El programa a generar un numero de 0 a 100 y yo he de adivinar cual serà.
         //El metodo random da un numero aleatorio de 0 a 1.
-        int aleatorio = (int) (Math.random() * 12);
+        int aleatorio = (int) (Math.random() * 100);
         Scanner entrada = new Scanner(System.in);
 
         System.out.println(aleatorio);
@@ -25,7 +25,6 @@ public class Adivina_numero {
             }
         }
         System.out.println("Perfecto maquina lo has conseguido en " + intentos + " intentos");
-
-
+        entrada.close();
     }
 }

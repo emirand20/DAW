@@ -1,4 +1,4 @@
-package daw02.POO;
+package daw02.segundaAct;
 
 public class Escenario {
     int posicion[][] = new int[5][5];

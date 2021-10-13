@@ -1,30 +1,20 @@
 package daw01.gestionFicheros;
-
-import java.io.FileReader;
+import java.util.logging.Level;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.logging.Logger;
+
 
 public class Escribir_Fichero {
     public static void main(String[] args) {
 
-    Escribiendo accede_es = new Escribiendo();
+    try{
+        FileWriter s= new FileWriter("/home/oem/Documentos/holamundo.txt");  
+        s.write("hola mundo");
+        s.close();
+    }catch (IOException ex){
+        Logger.getLogger(Escribir_Fichero.class.getName()).log(Level.SEVERE,null,ex);
 
-    accede_es.escribir();
     }
-    static class Escribiendo {
-        public void escribir(){
-            String frase = "1651651";
-
-            try {
-                FileWriter escritura = new FileWriter("/home/emirand/Escritorio/numeros.txt");
-
-                for (int i = 0; i < frase.length(); i++) {
-                    escritura.write(frase.charAt(i));
-                }
-                escritura.close();
-            }catch (IOException e){
-                e.printStackTrace();
-            }
-        }
     }
 }

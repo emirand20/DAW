@@ -15,5 +15,6 @@ public class Act05_05 {
         } else if (x < y){
             System.out.println("El numero absoluto de " + y + " es mayor que " + x);
         }
+        entrada.close();
     }
 }

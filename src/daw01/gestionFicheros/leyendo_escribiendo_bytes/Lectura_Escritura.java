@@ -9,7 +9,7 @@ public class Lectura_Escritura {
         int datos_entrada[] = new int[67949];
         try {
 
-            FileInputStream archivo_lectura = new FileInputStream("/home/emirand/Escritorio/cap/imagen.jpg");
+            FileInputStream archivo_lectura = new FileInputStream("/Desktop/holaMundo.txt");
             boolean final_ar = false;
 
             while (!final_ar) {
@@ -35,7 +35,7 @@ public class Lectura_Escritura {
     static void crea_fichero(int datos_nuevo_fichero[]) {
 
         try {
-            FileOutputStream fichero_nuevo = new FileOutputStream("/home/emirand/Escritorio/cap/imagen_copia.jpg");
+            FileOutputStream fichero_nuevo = new FileOutputStream("/home/emirand/Escritorio/cap/holap");
 
             for (int i = 0; i < datos_nuevo_fichero.length; i++) {
                 fichero_nuevo.write(datos_nuevo_fichero[i]);
