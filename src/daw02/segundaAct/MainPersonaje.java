@@ -1,4 +1,3 @@
-package daw02.segundaAct;
 
 import java.util.Scanner;
 

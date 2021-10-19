@@ -1,4 +1,4 @@
-package daw02.terceraAct.color;
+package trercerAc;
 
 import java.awt.color.*;
 

@@ -1,4 +1,5 @@
-package daw02.POO.Ejercicio1;
+package poo.Ejercicio1;
+
 
 import java.util.Scanner;
 

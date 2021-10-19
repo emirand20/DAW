@@ -1,4 +1,3 @@
-package daw02.segundaAct;
 
 public class BombetaMain {
     public static void main(String[] args) {

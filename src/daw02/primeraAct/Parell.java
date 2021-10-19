@@ -1,4 +1,4 @@
-package daw02.primeraAct;
+package primeraAct;
 
 import java.util.Scanner;
 

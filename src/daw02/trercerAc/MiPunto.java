@@ -1,4 +1,4 @@
-package daw02.tercerAc;
+package trercerAc;
 
 import java.awt.Point;
 

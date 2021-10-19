@@ -1,13 +1,8 @@
-package daw02.primeraAct;
+package primeraAct;
 
-import java.util.Random;
-//import java.sql.ClientInfoStatus;
-//import java.net.BindException;
+
 import java.util.Scanner;
 
-import javax.swing.plaf.synth.SynthOptionPaneUI;
-
-import daw01.examenes.examenUF1a.I;
 
 public class Act0 {
     

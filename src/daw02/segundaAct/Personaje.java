@@ -1,4 +1,3 @@
-package daw02.segundaAct;
 
 public class Personaje{
     String persona;

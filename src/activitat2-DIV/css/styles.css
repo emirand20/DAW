@@ -1,0 +1,106 @@
+.header{
+    border-style: solid;
+    border: 2px solid green;
+}
+.container{
+    border-style: solid;
+    border: 2px solid cadetblue;   
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.main{
+    border-style: solid;
+    border: 2px solid purple;   
+    margin-top: 2%;
+    margin-left: 12%;
+    margin-right: 2%;
+}
+.section1{
+    border-style: solid;
+    border: 2px solid blue;
+    margin-top: 1%;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+.section2{
+    border-style: solid;
+    border: 2px solid blue;
+    margin-top: 2%;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+.containerlcones{
+    border-style: solid;
+    border: 2px solid cadetblue;
+    margin-top: 2%;
+    margin-right: 2%;
+    margin-left: 2%;
+    margin-bottom: 2%;
+    display: flex;
+}
+.aside{
+    border-style: solid;
+    border: 2px solid rgb(6, 117, 21);
+    display: block;
+    
+    margin-right: 90%;
+    margin-bottom: 2px;
+}
+h1{
+    border-style: solid;
+    border: 2px solid green;
+    text-align: center;
+}
+.p{
+    border-style: solid;
+    border: 2px solid green;
+    text-align: center;
+}
+h2{
+    border-style: solid;
+    border: 2px solid cadetblue;
+    text-align: center;
+    color: cadetblue;
+}
+.p2{
+    border-style: solid;
+    border: 2px solid cadetblue;
+    text-align:justify;
+}
+.article{
+    border-style: solid;
+    border: 2px solid purple;
+    margin-top: 2%;
+    margin-right: 2%;
+    margin-left: 2%;
+    margin-bottom: 2%;
+}
+.article img{
+    border-style: solid;
+    border: 2px solid rgb(16, 216, 223);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-block: 13px;
+}
+.article h3{
+    border-style: solid;
+    border: 2px solid rgb(16, 216, 223);
+    text-align: center;
+}
+.article a{
+    border-style: solid;
+    border: 2px solid rgb(16, 216, 223);
+    text-align: center;
+    display: block;
+    margin-block: 14px;
+    margin-left: 127px;
+    margin-right: 108px;
+    
+}
+.article p{
+    border-style: solid;
+    border: 2px solid rgb(16, 216, 223);
+    text-align: center;
+}
+

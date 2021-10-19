@@ -1,4 +1,5 @@
-package daw02.primeraAct;
+package primeraAct;
+
 
 //import javax.swing.plaf.synth.SynthOptionPaneUI;
 
