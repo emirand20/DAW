@@ -4,9 +4,9 @@ public class Producte {
     String nom;
     int preu;
     String marca;
-    int fechaCaducidad;
+    String fechaCaducidad;
 
-    public Producte(String nom, int preu, String marca, int fechaCaducidad) {
+    public Producte(String nom, int preu, String marca, String fechaCaducidad) {
         this.nom = nom;
         this.preu = preu;
         this.marca = marca;

@@ -7,12 +7,26 @@
     border: 2px solid cadetblue;   
     margin-left: 10%;
     margin-right: 10%;
+    display: flex;
+}
+.aside{
+    border-style: solid;
+    border: 2px solid green;   
+    margin-left:2%;
+    margin-top: 2%;
+}
+.aside p {
+    border-style:solid;
+    border: 2px solid rgb(28, 109, 41);
+    width: 110px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .main{
     border-style: solid;
     border: 2px solid purple;   
     margin-top: 2%;
-    margin-left: 12%;
     margin-right: 2%;
 }
 .section1{
@@ -38,34 +52,30 @@
     margin-bottom: 2%;
     display: flex;
 }
-.aside{
-    border-style: solid;
-    border: 2px solid rgb(6, 117, 21);
-    display: block;
-    
-    margin-right: 90%;
-    margin-bottom: 2px;
-}
 h1{
     border-style: solid;
     border: 2px solid green;
     text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .p{
     border-style: solid;
     border: 2px solid green;
     text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 h2{
     border-style: solid;
     border: 2px solid cadetblue;
     text-align: center;
     color: cadetblue;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .p2{
     border-style: solid;
     border: 2px solid cadetblue;
     text-align:justify;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .article{
     border-style: solid;
@@ -86,6 +96,7 @@ h2{
 .article h3{
     border-style: solid;
     border: 2px solid rgb(16, 216, 223);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-align: center;
 }
 .article a{
@@ -96,11 +107,22 @@ h2{
     margin-block: 14px;
     margin-left: 127px;
     margin-right: 108px;
-    
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .article p{
     border-style: solid;
     border: 2px solid rgb(16, 216, 223);
     text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+.footer p{
+    width: 100%;
+    padding: 10px;
+    background-color: grey;
+    text-align: right;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+span{
+    font-weight: bold;
+}

@@ -12,7 +12,6 @@ public class Clase01 {
         for (int i = 0; i < 5; i++) {
             System.out.println("Introduce la nota del alumno del alumno:");
             sumaNotas += entrada.nextInt();
-
         }
     }
 }

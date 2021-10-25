@@ -4,7 +4,7 @@ public class Agua extends Producte{
     double volumen;
     double residu;
 
-    public Agua(String nom, int preu, String marca, int fechaCaducidad, double volumen, double residu) {
+    public Agua(String nom, int preu, String marca, String fechaCaducidad, double volumen, double residu) {
         super(nom, preu, marca, fechaCaducidad);
         this.volumen = volumen;
         this.residu = residu;

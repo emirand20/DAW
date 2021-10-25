@@ -6,7 +6,7 @@ public class Cafe extends Producte{
     double peso;
     int intensidad;
 
-    public Cafe(String nom, int preu, String marca, int fechaCaducidad, String origen, double peso, int intensidad) {
+    public Cafe(String nom, int preu, String marca, String fechaCaducidad, String origen, double peso, int intensidad) {
         super(nom, preu, marca, fechaCaducidad);
         this.origen = origen;
         this.peso = peso;
