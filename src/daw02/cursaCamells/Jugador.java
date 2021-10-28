@@ -1,26 +1,37 @@
 package cursaCamells;
 
-import java.util.ArrayList;
-import java.util.Scanner;
-
 public class Jugador {
+    /**
+     * Crearemos tres atrivutos que tienen cada jugador, dos dados y un camello
+     */
+    private Dau dau2;
+    private Dau dau1;
+    public Camell camell;
 
-    private int tirarDados;
-
-    public void dados(){
-        
+    /**
+     * Creamos un contructor, que no le pasaremos nada por parametros, pero si crearemos los tres objetos 
+     * que le pertenecen a jugador
+     */
+    public Jugador() {
+        camell = new Camell();
+        dau1 = new Dau();
+        dau2 = new Dau();
     }
 
-    // public int jugadores(){
-    //     ArrayList<Jugador> jugadores = new ArrayList<Jugador>();
+    public boolean ronda(){
 
-    //     Scanner s = new Scanner(System.in);
-    //     System.out.println("¿Cuantos jugadores sois?");
-    //     numJugador = s.nextInt();
+        int resultado;
 
-    //     numJugador = jugadores();
-    //     return jugadores();
+        int d1 = dau1.lanza();
+        int d2 = dau2.lanza();
 
+        if (d1 == d2){
+            resultado = -(d1 + d2);                
+        }else resultado = d1 + d2;
+
+        camell.mouCamell(resultado);
+
+        return camell.isGanador();
 
     }
-
+    }
