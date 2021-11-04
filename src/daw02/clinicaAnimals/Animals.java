@@ -17,6 +17,4 @@ public class Animals {
         this.esperanzaVida = esperanzaVida;
         this.salvajeCompañia = salvajeCompañia;
     }
-
-    
 }

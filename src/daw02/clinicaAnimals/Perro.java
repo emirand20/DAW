@@ -15,6 +15,13 @@ public class Perro extends Animals{
 
     @Override
     public String toString() {
-        return "El perro es de raza " + raza + ", es " + pedigree + " pedigree y " + compañia + " compañia.";
+        if(pedigree == true  && compañia == true){
+            return "El perro de raza " + raza + " es de pedigree y es de compañia";
+        }else if(pedigree == false  && compañia == false){
+            return "El perro de raza " + raza + " no es de pedigree y no es de compañia";
+        }else if(pedigree == false  && compañia == true){
+            return "El perro de raza " + raza + " no es de pedigree pero es de compañia";            
+        }
+        return "El perro de raza " + raza + " es de pedigree pero no es de compañia";            
     }
 }
