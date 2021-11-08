@@ -5,4 +5,10 @@ public class Clientes {
     private String apellidos;
     private int tel;
     private String direccion;
+    public Mascotas mascota;
+    
+    public Clientes(){
+        //mascota = new Mascotas();
+    }
+    
 }

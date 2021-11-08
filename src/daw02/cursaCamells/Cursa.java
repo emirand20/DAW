@@ -30,7 +30,6 @@ public class Cursa {
                 if (jugadores.get(i).ronda()){
                     hayGanador = true;
                     numGanadores++;
-
                 }
                 //System.out.println("Els jugadors avançen " + jugadores.get(i).camell.getPosicion());
             }

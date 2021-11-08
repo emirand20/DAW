@@ -1,10 +1,9 @@
 package clinicaAnimals;
 
-import javax.swing.CellEditor;
-
 public class Pez extends Animals{
     private String tipoAgua;
     private boolean venenoso;
+
 
     public Pez(int nPatas, String especie, int fechaIngreso, boolean malo, int esperanzaVida, String salvajeCompañia,
             String tipoAgua, boolean venenoso) {

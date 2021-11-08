@@ -5,6 +5,7 @@ public class Gato extends Animals{
     private boolean pedigree;
     private boolean compañia;
 
+
     public Gato(int nPatas, String especie, int fechaIngreso, boolean malo, int esperanzaVida, String salvajeCompañia,
             String raza, boolean pedigree, boolean compañia) {
         super(nPatas, especie, fechaIngreso, malo, esperanzaVida, salvajeCompañia);
