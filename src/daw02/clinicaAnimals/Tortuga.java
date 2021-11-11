@@ -1,6 +1,6 @@
 package clinicaAnimals;
 
-public class Tortuga extends Animals{
+public class Tortuga extends Animal{
     private String marinaTerrestre;
     private boolean compañia;
 
@@ -9,6 +9,11 @@ public class Tortuga extends Animals{
         super(nPatas, especie, fechaIngreso, malo, esperanzaVida, salvajeCompañia);
         this.marinaTerrestre = marinaTerrestre;
         this.compañia = compañia;
+    }
+
+    public Tortuga(int nPatas, String especie, int fechaIngreso, boolean malo, int esperanzaVida,
+            String salvajeCompañia) {
+        super(nPatas, especie, fechaIngreso, malo, esperanzaVida, salvajeCompañia);
     }
 
     @Override

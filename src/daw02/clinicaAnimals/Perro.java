@@ -1,6 +1,6 @@
 package clinicaAnimals;
 
-public class Perro extends Animals{
+public class Perro extends Animal{
     private String raza;
     private boolean pedigree;
     private boolean compañia;
@@ -11,6 +11,11 @@ public class Perro extends Animals{
         this.raza = raza;
         this.pedigree = pedigree;
         this.compañia = compañia;
+    }
+
+    public Perro(int nPatas, String especie, int fechaIngreso, boolean malo, int esperanzaVida,
+            String salvajeCompañia) {
+        super(nPatas, especie, fechaIngreso, malo, esperanzaVida, salvajeCompañia);
     }
 
     @Override

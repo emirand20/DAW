@@ -1,10 +1,9 @@
 package clinicaAnimals;
 
-public class Gato extends Animals{
+public class Gato extends Animal{
     private String raza;
     private boolean pedigree;
     private boolean compañia;
-
 
     public Gato(int nPatas, String especie, int fechaIngreso, boolean malo, int esperanzaVida, String salvajeCompañia,
             String raza, boolean pedigree, boolean compañia) {
@@ -14,6 +13,9 @@ public class Gato extends Animals{
         this.compañia = compañia;
     }
 
+    public Gato(int nPatas, String especie, int fechaIngreso, boolean malo, int esperanzaVida, String salvajeCompañia) {
+        super(nPatas, especie, fechaIngreso, malo, esperanzaVida, salvajeCompañia);
+    }
     @Override
     public String toString() {
         if(pedigree == true  && compañia == true){

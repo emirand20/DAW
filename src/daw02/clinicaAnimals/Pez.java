@@ -1,6 +1,6 @@
 package clinicaAnimals;
 
-public class Pez extends Animals{
+public class Pez extends Animal{
     private String tipoAgua;
     private boolean venenoso;
 
@@ -12,6 +12,10 @@ public class Pez extends Animals{
         this.venenoso = venenoso;
     }
 
+    public Pez(int nPatas, String especie, int fechaIngreso, boolean malo, int esperanzaVida, String salvajeCompañia) {
+        super(nPatas, especie, fechaIngreso, malo, esperanzaVida, salvajeCompañia);
+    }
+    
     @Override
     public String toString() {
         if(tipoAgua == "dulce" && venenoso == true){

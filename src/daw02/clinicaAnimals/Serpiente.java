@@ -1,6 +1,6 @@
 package clinicaAnimals;
 
-public class Serpiente extends Animals{
+public class Serpiente extends Animal{
     private boolean venenosa;
     private boolean tropical;
 
@@ -10,6 +10,12 @@ public class Serpiente extends Animals{
         this.venenosa = venenosa;
         this.tropical = tropical;
     }
+
+    public Serpiente(int nPatas, String especie, int fechaIngreso, boolean malo, int esperanzaVida,
+            String salvajeCompañia) {
+        super(nPatas, especie, fechaIngreso, malo, esperanzaVida, salvajeCompañia);
+    }
+
 
     @Override
     public String toString() {
