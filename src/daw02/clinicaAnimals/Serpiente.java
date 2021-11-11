@@ -19,14 +19,17 @@ public class Serpiente extends Animal{
 
     @Override
     public String toString() {
+        String respuesta = null;
         if(venenosa == true && tropical == true){
-            return "La serpiente es venenosa y es tropical.";
+            respuesta = "La serpiente es venenosa y es tropical.";
             }else if(venenosa == false && tropical == false){
-                return "La serpiente no es venenosa y no es tropical.";
+            respuesta = "La serpiente no es venenosa y no es tropical.";
             }else if(venenosa == true && tropical == false){
-                return "La serpiente es venenosa y no es tropical.";
+                respuesta = "La serpiente es venenosa y no es tropical.";
             }
-                return "La serpiente no es venenosa y es tropical.";
+                respuesta = "La serpiente no es venenosa y es tropical.";
+
+            return respuesta;    
         }
     }
 

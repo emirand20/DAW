@@ -18,13 +18,16 @@ public class Pez extends Animal{
     
     @Override
     public String toString() {
+        String respuesta = null;
         if(tipoAgua == "dulce" && venenoso == true){
-            return "El pez es de agua dulce y es venenoso.";
+            respuesta = "El pez es de agua dulce y es venenoso.";
         }else if(tipoAgua == "salada" && venenoso == false){
-            return "El pez es de agua salada y no es venenoso.";
+            respuesta = "El pez es de agua salada y no es venenoso.";
         }else if(tipoAgua == "dulce" && venenoso == false){
-            return "El pez es de agua dulce y no es venenoso.";
+            respuesta = "El pez es de agua dulce y no es venenoso.";
         } 
-        return "El pez es de agua salada y es venenoso";
+        respuesta = "El pez es de agua salada y es venenoso";
+
+        return respuesta;
     }    
 }

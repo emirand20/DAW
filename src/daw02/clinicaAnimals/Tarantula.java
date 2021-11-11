@@ -1,10 +1,9 @@
 package clinicaAnimals;
 
-
-public class Tarantula extends Animal{
+public class Tarantula extends Animal {
     private boolean venenosa;
     private boolean tropical;
-    
+
     public Tarantula(int nPatas, String especie, int fechaIngreso, boolean malo, int esperanzaVida,
             String salvajeCompañia, boolean venenosa, boolean tropical) {
         super(nPatas, especie, fechaIngreso, malo, esperanzaVida, salvajeCompañia);
@@ -19,13 +18,17 @@ public class Tarantula extends Animal{
 
     @Override
     public String toString() {
-        if(venenosa == true && tropical == true){
-        return "Una tarantula venenosa y tropical.";
-        }else if(venenosa == false && tropical == false){
-            return "Una tarantula no venenosa y no tropical.";
-        }else if(venenosa == true && tropical == false){
-            return "Una tarantula venenosa y no tropical.";
+        String respuesta = null;
+
+        if (venenosa == true && tropical == true) {
+            respuesta = "Una tarantula venenosa y tropical.";
+        } else if (venenosa == false && tropical == false) {
+            respuesta = "Una tarantula no venenosa y no tropical.";
+        } else if (venenosa == true && tropical == false) {
+            respuesta = "Una tarantula venenosa y no tropical.";
         }
-            return "Una tarantula no venenosa y tropical.";
+        respuesta = "Una tarantula no venenosa y tropical.";
+
+        return respuesta;
     }
 }
