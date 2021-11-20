@@ -1,10 +1,25 @@
-.container{
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&display=swap');
+.containerMenu{
     background-color: black;
-    opacity: 0.1;
-    padding-left: 35px;
-    padding-right: 35px;
+    opacity: 10;
+    padding-left: 25%;
+    padding-right: 30%;
 }
 th{
-    font-family: 'Trebuchet MS', sans-serif;
+    font-family: 'Noto Sans JP', sans-serif;;
     color: white;
+}
+h1{
+    font-family: "Monospace", sans-serif;
+    color: white;
+    padding-top: 9%;
+    padding-left: 69%;
+    font-size: 68px;
+}
+p{
+    font-family: "Monospace", sans-serif;
+    color: white;
+    padding-top: 0%;
+    padding-left: 69%;
+    font-size: 20px;
 }
