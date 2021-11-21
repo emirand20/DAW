@@ -1,25 +1,164 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&display=swap');
-.containerMenu{
-    background-color: black;
-    opacity: 10;
-    padding-left: 25%;
-    padding-right: 30%;
+body {
+    background-color: #646161;
+    /*opacity: 0.5;*/
+    margin: auto;
+    padding: auto;
 }
-th{
-    font-family: 'Noto Sans JP', sans-serif;;
-    color: white;
+h2 {
+    font-size: 35px;
+} 
+p {
+    font-size: 25px;
 }
-h1{
-    font-family: "Monospace", sans-serif;
-    color: white;
-    padding-top: 9%;
-    padding-left: 69%;
+@keyframes text {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+ }
+@media screen and (min-width: 80px) {
+    #table {
+        top: 0;
+        background-color: #ffffff;
+        font-size: 20px;
+        color: black;
+        text-align: center;
+        border: 1.5px solid #F0EDEE;
+        border-radius: 5px;
+        position: fixed;
+        z-index: 1;
+    }
+}
+#table tr th a {
+    text-decoration: none;
+    color: #000000;
+}
+#head h1{
+    font-family: 'Monospace', sans-serif;
+    color: #FFFFFF;
+    position: absolute;
+    top: 9%;
+    left: 69%;
     font-size: 68px;
+    animation: 1s ease 0s 1 text;
 }
-p{
-    font-family: "Monospace", sans-serif;
+#head p{
+    font-family: 'Monospace', sans-serif;
     color: white;
-    padding-top: 0%;
-    padding-left: 69%;
+    position: absolute;
+    padding-top: 10%;
+    padding-left: 70%;
     font-size: 20px;
+    animation: 1s ease 0s 1 text;
 }
+@media screen and (min-width: 480px) {
+    #aboutUs{
+        background-color: #ffd902;
+        padding: 10%;
+    }
+}
+#aboutUs h2 {
+    font-family: 'Monospace', sans-serif;
+    text-align: center;
+    margin: 10px;
+    color: #000000;
+}
+#aboutUs p {
+    font-family:  'Monospace', sans-serif;
+    font-weight: 300;
+    text-align: justify;
+    font-size: 20px;
+    color: #000000;
+}
+
+@media screen and (min-width: 480px) {
+    #carta{
+        background-color: #4153fa;
+        display: grid;
+        grid-template-columns: auto auto auto;
+        width: 80%;
+        padding: 10%;
+    }
+ }
+ #carta h2 {
+    font-family:  'Monospace', sans-serif;
+    color: #000000;
+    text-align: center;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+#primerPlato {
+    font-family:  'Monospace';
+    grid-row-start: 2;
+    grid-row-end: 3;
+    align-self: center;
+}
+#primeraDescripcion {
+    font-family:'Monospace', sans-serif;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    align-self: center;
+}
+#imagen1{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    justify-self: center;
+}
+#segundoPlato {
+    font-family:'Monospace', sans-serif;
+    grid-column-start: 2;
+    grid-row-end: 6;
+    align-self: center;
+}
+#segundaDescripcion {
+    font-family:'Monospace', sans-serif;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    align-self: center;
+}
+#imagen2 {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    justify-self: center;
+}
+@media screen and (min-width: 480px) {
+    #galeriaFotos {
+        background-color: #f1000ce5;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 10%;
+        overflow: hidden;
+        margin: auto;
+    }
+}
+#galeriaFotos h2 {
+    font-family: 'Montserrat', sans-serif;
+    color: #000000;
+    text-align: center;
+}
+#galeriaFotos img {
+    transition: transform .5s ease;
+    width: 300px;
+    height: 200px;
+}
+#galeriaFotos img:hover {
+    transform: scale(1.2);
+}
+#footer {
+    font-family:'Monospace', sans-serif;
+    font-weight: 300;
+    color: #fdfdfd;
+ }
+#footer p {
+    font-size: 20px;
+    margin: 0;
+    padding: 10px 0;
+    text-align: center;
+}
+#footer img {
+    margin-right: 10px;
+}
+ 

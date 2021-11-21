@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,300&family=Open+Sans:ital,wght@1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,300&family=Open+Sans:ital,wght@1,300&family=Raleway:wght@200&family=Source+Sans+Pro:ital,wght@1,300&display=swap');
+body {
+   background-color: #262626;
+   margin: auto;
+   padding: auto;
+}
+ 
+h2 {
+   font-size: 35px;
+}
+ 
+p {
+   font-size: 30px;
+}
+ 
+@keyframes apareixerText {
+   0% {
+       transform: translateX(100%);
+   }
+   100% {
+       transform: translateX(0);
+   }
+}
+ 
+@media screen and (min-width: 480px) {
+   #table {
+       top: 0;
+       background-color: #202124;
+       font-size: 30px;
+       color: white;
+       text-align: center;
+       border: 1.5px solid #F0EDEE;
+       border-radius: 5px;
+       position: fixed;
+       z-index: 1;
+   }
+}
+#table tr th a {
+   text-decoration: none;
+   color: #F0EDEE;
+}
+ 
+#table tr th a:hover {
+   color: #FFFFFF;
+   background-color: #242F40;
+}
+ 
+@media screen and (min-width: 480px) {
+   #head {
+       background-image: url("img/food-with-ingredients.jpg");
+       background-size: cover;
+       background-repeat: no-repeat;
+       background-position: center center;
+       height: 800px;
+       margin: 0 auto;
+       position: relative;
+   }
+}
+ 
+#head h2 {
+   font-family: 'Montserrat', sans-serif;
+   color: #FFFFFF;
+   position: absolute;
+   top: 40%;
+   left: 50%;
+   animation: 1s ease 0s 1 apareixerText;
+}
+ 
+#head p {
+   font-family: 'Montserrat', sans-serif;
+   color: #FFFFFF;
+   font-size: 20px;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   animation: 1s ease 0s 1 apareixerText;
+}
+ 
+@media screen and (min-width: 480px) {
+   #nosaltres {
+       background-color: #F0EDEE;
+       padding: 10%;
+   }
+}
+ 
+#nosaltres h2 {
+   font-family: 'Montserrat', sans-serif;
+   text-align: center;
+   margin: 10px;
+   color: #4d4d4d;
+}
+ 
+#nosaltres p {
+   font-family: 'Source Sans Pro', sans-serif;
+   font-weight: 300;
+   text-align: center;
+   color: #4d4d4d;
+}
+ 
+#nosaltres img {
+   float: left;
+   width: 400px;
+   height: 300px;
+}
+ 
+@media screen and (min-width: 480px) {
+   #carta {
+       background-color: #ddd5d8;
+       display: grid;
+       grid-template-columns: auto auto auto;
+       width: 80%;
+       padding: 10%;
+   }
+}
+ 
+#carta h2 {
+   font-family: 'Source Sans Pro', sans-serif;
+   color: #4d4d4d;
+   text-align: center;
+   grid-column-start: 1;
+   grid-column-end: 4;
+}
+ 
+#plat1 {
+   grid-row-start: 2;
+   grid-row-end: 4;
+   align-self: center;
+}
+ 
+#descripcio1 {
+   grid-column-start: 2;
+   grid-column-end: 4;
+}
+ 
+#image1 {
+   grid-column-start: 2;
+   grid-column-end: 3;
+   justify-self: center;
+}
+ 
+#image2 {
+   grid-column-start: 3;
+   grid-column-end: 3;
+   justify-self: center;
+}
+ 
+#plat2 {
+   grid-row-start: 4;
+   grid-row-end: 6;
+   align-self: center;
+}
+ 
+#descripcio2 {
+   grid-column-start: 2;
+   grid-column-end: 4;
+   align-self: center;
+}
+ 
+#image3 {
+   grid-column-start: 2;
+   grid-column-end: 3;
+   justify-self: center;
+}
+ 
+#image4 {
+   grid-column-start: 3;
+   grid-column-end: 3;
+   justify-self: center;
+}
+ 
+#carta p {
+   font-family: 'Open Sans', sans-serif;
+}
+ 
+#carta img {
+   width: 300px;
+   height: 200px;
+}
+ 
+@media screen and (min-width: 480px) {
+   #galeriaFotos {
+       background-color: #F0EDEE;
+       display: flex / 2;
+       flex-wrap: wrap;
+       padding: 10%;
+       overflow: hidden;
+       margin: auto;
+   }
+}
+ 
+#galeriaFotos h2 {
+   font-family: 'Montserrat', sans-serif;
+   color: #4d4d4d;
+   text-align: center;
+}
+ 
+#galeriaFotos img {
+   transition: transform .5s ease;
+   width: 300px;
+   height: 200px;
+}
+ 
+#galeriaFotos img:hover {
+   transform: scale(1.2);
+}
+ 
+#footer {
+   font-family: 'Raleway', sans-serif;
+   font-weight: 300;
+   color: #F9F7F3;
+}
+ 
+#footer p {
+   font-size: 20px;
+   margin: 0;
+   padding: 10px 0;
+   text-align: center;
+}
+ 
+#footer img {
+   margin-right: 10px;
+}

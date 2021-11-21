@@ -8,31 +8,76 @@
     <link rel="stylesheet" href="css/styles.css">
     <title>El Glotón</title>
     <style>
-         .imagenBody {
-            background-image: url('img/Gastronomía-ecuatoriana.jpg');
-            background-repeat: no-repeat;
-            background-attachment: fixed; 
-            background-size: 100% 100%;
-            margin-top: 0%;
-        }
+        #head {
+        background-image: url("img/Gastronomía-ecuatoriana.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 100%;
+        height: 900px;
+        margin: 0 auto;
+        position: relative;
+    }
     </style>
-</head> 
+</head>
 
 <body>
-    <div class="imagenBody">
-    <div class="containerMenu">
-        <table style="width:100%">
-            <tr>
-                <th>About us</th>
-                <th>Cart</th>
-                <th>Galery</th>
-            </tr>
-        </table>
-    </div>
-    <div div="containerTitulo">
-        <h1>El Glotón</h1>
+    <table style="width:100%" id="table">
+        <tr>
+            <th><a href="#head">El Glotón</a></th>
+            <th><a href="#aboutUs">Nuestra Historia</a></th>
+            <th><a href="#carta">Carta</a></th>
+            <th><a href="#galeria">Galeria</a></th>
+        </tr>
+    </table>
+    <div id="head">
+        <h1>El Glotón</h1>  
         <p>Restaurante Ecuatoriano</p>
     </div>
+    <div id="aboutUs">
+        <h2>Nuestra Historia</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem a, molestias quia animi quos nihil! Cupiditate doloremque hic atque temporibus possimus eaque sunt nobis suscipit cumque quidem? Natus, velit animi. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi aut quibusdam vitae id inventore animi dicta repudiandae quis beatae accusamus, earum sequi, atque, quidem vel. Omnis autem nam a vel!</p>
+    </div>
+    <div id="carta">
+        <h2>Carta</h2>
+        <p id="primerPlato">Primer Plato: Chaulafan</p>
+        <p id="primeraDescripcion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique asperiores pariatur error! Ab sed hic libero, ipsa temporibus magnam natus, earum inventore necessitatibus vitae saepe. Quis fugiat nesciunt officia possimus?</p>
+        <img src="img/chaulafan1.jpg" alt="Foto chaulafan" id="imagen1">
+        <p id="segundoPlato">Segundo Plato: Seco de Chivo</p> 
+        <p id="segundaDescripcion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur nisi rem magni doloremque quia nemo quam maiores eos natus earum necessitatibus, culpa aliquid omnis soluta at, odit, nesciunt libero totam.</p>
+        <img src="img/Seco-de-chivo1.jpg" alt="Foto seco de chivo" id="imagen2">
+    </div>
+    <div id="galeriaFotos">
+        <h2>Galeria</h2>
+        <div id="imageFotos1">
+        <img src="img/chaulafan1.jpg" alt="Foto" id="imageFotos">
+        </div>
+        <div id="imageFotos2">
+        <img src="img/chaulafan1.jpg" alt="Foto" id="imageFotos">
+        </div>
+        <div id="imageFotos3">
+        <img src="img/chaulafan1.jpg" alt="Foto" id="imageFotos">
+        </div>
+        <div id="imageFotos4">
+        <img src="img/chaulafan1.jpg" alt="Foto" id="imageFotos">
+        </div>
+        <div id="imageFotos5">
+        <img src="img/chaulafan1.jpg" alt="Foto" id="imageFotos">
+        </div>
+        <div id="imageFotos6">
+        <img src="img/chaulafan1.jpg" alt="Foto" id="imageFotos">
+        </div>
+        <div id="imageFotos7">
+        <img src="img/chaulafan1.jpg" alt="Foto" id="imageFotos">
+        </div>
+        <div id="imageFotos8">
+        <img src="img/chaulafan1.jpg" alt="Foto" id="imageFotos">
+        </div>
+    </div>
+    <div id="footer">
+        <p>Javier Miranda Balladares</p>
+        <p><img src="img/email.png" alt="email" width="30" height="20">emirand20@jaumebalmes.net </p>
+        <p><img src="img/telefono.png" alt="telefono" width="30" height="20">(+34) 984 527 724</p>
     </div>
 </body>
+
 </html>
