@@ -1,6 +1,7 @@
 {
     "java.project.sourcePaths": [
         "src/daw02/segundaAct",
-        "src/daw02"
+        "src/daw02",
+        "src/snake"
     ]
 }
