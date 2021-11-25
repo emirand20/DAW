@@ -29,7 +29,7 @@ public class Snake extends JFrame {
     ImagenSnake imagenSnake;
 
     int direccion = KeyEvent.VK_LEFT;
-    long frecuencia = 25 ; // actualizaremos el juego cada 20 milisegundos
+    long frecuencia = 10 ; // actualizaremos el juego cada 20 milisegundos
 
     public Snake() {
         setTitle("Snake");// titulo en la parte superior
