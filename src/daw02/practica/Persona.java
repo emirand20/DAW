@@ -3,12 +3,30 @@ package practica;
 public class Persona {
     private String nombre;
     private String apellido;
+    public String trabajo;
 
-    public String nom(){
+    public String getTrabajo() {
+        return trabajo;
+    }
+
+    public void setTrabajo(String trabajo) {
+        this.trabajo = trabajo;
+    }
+
+    public String getNombre() {
         return nombre;
-    }    
-    public String ap(){
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellido() {
         return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
     
     public void saluda(){
@@ -18,6 +36,7 @@ public class Persona {
     public void saluda(String texto){
         System.out.println(texto);
     }
+    
 
 }
 
