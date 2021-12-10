@@ -1,46 +1,46 @@
-import java.awt.Color;
-import java.awt.Point;
-import processing.core.PApplet;
+// import java.awt.Color;
+// import java.awt.Point;
+// import processing.core.PApplet;
 
-/**
- * @author Juanma Sanchez
- */
-public class Pilota extends Cercle {
+// /**
+//  * @author Juanma Sanchez
+//  */
+// public class Pilota extends Cercle {
 
-    public final static float VX_PER_DEFECTE = 1;
-    public final static float VY_PER_DEFECTE = 1;
+//     public final static float VX_PER_DEFECTE = 1;
+//     public final static float VY_PER_DEFECTE = 1;
 
-    protected double vX;
-    protected double vY;
+//     protected double vX;
+//     protected double vY;
 
-    public Pilota(float vX, float vY, float radi, Color color, Point point) {
-        super(radi, color, point);
-        this.vX = vX;
-        this.vY = vY;
-    }
+//     public Pilota(float vX, float vY, float radi, Color color, Point point) {
+//         super(radi, color, point);
+//         this.vX = vX;
+//         this.vY = vY;
+//     }
 
-    public Pilota() {
-        this(VX_PER_DEFECTE, VY_PER_DEFECTE, RADI_PER_DEFECTE, COLOR_PER_DEFECTE, POINT_PER_DEFECTE);
-    }
+//     public Pilota() {
+//         this(VX_PER_DEFECTE, VY_PER_DEFECTE, RADI_PER_DEFECTE, COLOR_PER_DEFECTE, POINT_PER_DEFECTE);
+//     }
 
-    public void mou(PApplet finestra) {
-    }
+//     public void mou(PApplet finestra) {
+//     }
 
-//<editor-fold defaultstate="collapsed" desc="GETTERS/SETTERS">
-    public double getvX() {
-        return vX;
-    }
+// //<editor-fold defaultstate="collapsed" desc="GETTERS/SETTERS">
+//     public double getvX() {
+//         return vX;
+//     }
     
-    public void setvX(double vX) {
-        this.vX = vX;
-    }
+//     public void setvX(double vX) {
+//         this.vX = vX;
+//     }
     
-    public double getvY() {
-        return vY;
-    }
+//     public double getvY() {
+//         return vY;
+//     }
     
-    public void setvY(double vY) {
-        this.vY = vY;
-    }
-//</editor-fold>
-}
+//     public void setvY(double vY) {
+//         this.vY = vY;
+//     }
+// //</editor-fold>
+// }

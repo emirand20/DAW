@@ -1,4 +1,4 @@
-import java.awt.Color;
+/*import java.awt.Color;
 import java.awt.Point;
 import net.balmes.m03.jocgrafic.Jocs.JocProcessing;
 import net.balmes.m03.jocgrafic.figures.Pilota;
@@ -65,4 +65,4 @@ public class Mosaic extends JocProcessing{
         Mosaic.runSketch(new String[]{"Quina passada"},
                 new Mosaic());
     }
-}
+}*/

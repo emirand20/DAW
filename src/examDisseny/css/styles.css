@@ -1,0 +1,76 @@
+h1{
+    font-size: 35px;
+    color: white;
+    font-family:'Monospace', sans-serif;
+    padding-top: 14%;
+    padding-left: 4%;
+}
+h3{
+    font-family:'Monospace', sans-serif;
+    text-align: center;
+}
+@media screen and (min-width: 80px) {
+    #table {
+        top: 0;
+        background-color: #000000;
+        font-size: 20px;
+        color: white;
+        text-align: center;
+        border: 1.5px solid #020202;
+        border-radius: 5px;
+        position: fixed;
+        z-index: 1;
+    }
+}
+    #table tr th a {
+        text-decoration: none;
+        color: #ffffff;
+        font-family:'Monospace', sans-serif;
+
+}
+@media screen and (min-width: 480px) {
+    .containerImg{
+        display: flex;
+        margin-bottom: 5%;
+        margin-left: 31%;
+    }
+}
+.containerImg a{
+    font-family:'Monospace', sans-serif;
+    margin-left: 37%;
+}
+#menu h2{
+        color: black;
+        text-align: center;
+        font-size: 30px;
+        font-family:'Monospace', sans-serif;
+}
+#imagen{
+    border-style: solid;
+    border: 1px solid black;
+    margin-left: 35%;
+    margin-right: 34%;
+}
+#imagen1{
+    border-style: solid;
+    border: 2px solid black;
+    margin-right: 2%;
+}
+#imagen2 {
+    border-style: solid;
+    border: 2px solid black;
+}
+
+#footer{
+    font-family:'Monospace', sans-serif;
+    justify-self: center;
+    font-weight: 300;
+    color: #ffffff;
+}
+#footer p {
+    font-size: 20px;
+    margin: 0;
+    padding: 10px 0;
+    text-align: center;
+    background-color: black;
+}
