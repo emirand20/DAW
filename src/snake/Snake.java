@@ -22,6 +22,8 @@ public class Snake extends JFrame {
     Point snake;
     Point comida;
 
+    boolean gameOver = false;
+
     ArrayList<Point> lista = new ArrayList<Point>();
 
     int widthPoint = 10;
@@ -29,7 +31,7 @@ public class Snake extends JFrame {
     ImagenSnake imagenSnake;
 
     int direccion = KeyEvent.VK_LEFT;
-    long frecuencia = 10 ; // actualizaremos el juego cada 20 milisegundos
+    long frecuencia = 20; // actualizaremos el juego cada 20 milisegundos
 
     public Snake() {
         setTitle("Snake");// titulo en la parte superior
@@ -55,34 +57,44 @@ public class Snake extends JFrame {
         trid.start();
     }
 
-    public void stardGame(){
-        comida = new Point(200,200); //comida es un nuevo punto
+    public void stardGame() {
+        comida = new Point(200, 200); // comida es un nuevo punto
         snake = new Point(widht / 2, height / 2);
-        
 
         lista = new ArrayList<Point>();
-        //lista.add(snake); 
+        lista.add(snake);
         crearComida();
     }
 
-    public void crearComida(){
-        Random rnd = new Random();
+    /** 
+     * 
+     */
+    public void crearComida() { 
+        Random rnd = new Random(); //crearemos cada 
 
-        comida.x = rnd.nextInt(widht);
-        if((comida.x % 5) > 0){
-            comida.x = comida.x - (comida.x % 5); 
+        comida.x = (rnd.nextInt(widht)) + 5;
+        if ((comida.x % 5) > 0) {
+            comida.x = comida.x - (comida.x % 5);
         }
 
-        if(comida.x < 5){
+        if (comida.x < 5) {
             comida.x = comida.x + 10;
         }
 
-        comida.y = rnd.nextInt(height);
-        if((comida.y % 5) > 0){
-            comida.y = comida.y - (comida.y % 5); 
+        if(comida.x > widht) {
+			comida.x = comida.x - 10;
+		}
+
+        comida.y = (rnd.nextInt(height)) + 5;
+        if ((comida.y % 5) > 0) {
+            comida.y = comida.y - (comida.y % 5);
         }
 
-        if(comida.y < 5){
+        if(comida.y > height) {
+			comida.y = comida.y - 10;
+		}
+
+        if (comida.y < 0) {
             comida.y = comida.y + 10;
         }
     }
@@ -99,9 +111,18 @@ public class Snake extends JFrame {
 
             g.setColor(Color.black); // establecemos el color del panel snake
             g.fillRect(snake.x, snake.y, widthPoint, heightPoint);
+            for (int i = 0; i < lista.size(); i++) {
+                Point point = (Point)lista.get(i);
+                g.fillRect(point.x, point.y, widthPoint, heightPoint);
 
-            g.setColor(Color.RED);  // establecemos el color del panel comida
+            }
+
+            g.setColor(Color.RED); // establecemos el color del panel comida
             g.fillRect(comida.x, comida.y, widthPoint, heightPoint);
+            
+            // if(gameOver){
+            //     g.drawString("GAME OVER", 200, 320);
+            // }
         }
 
     }
@@ -110,9 +131,17 @@ public class Snake extends JFrame {
         imagenSnake.repaint();
 
         lista.add(0, new Point(snake.x, snake.y));
-        lista.remove((lista.size()- 1));
+        lista.remove((lista.size() - 1));
 
-        if((snake.x > (comida.x - 10) && (snake.x < ((comida.x + 10)) && snake.y > (comida.y - 10)) && snake.y < (comida.y + 10))){
+        for (int i = 0; i < lista.size(); i++) {
+            Point punto = lista.get(i);     //
+            if(snake.x == punto.x && snake.y == punto.y){
+                gameOver = true;
+            }
+        }
+
+        if ((snake.x > (comida.x - 10) && (snake.x < ((comida.x + 10)) && snake.y > (comida.y - 10))
+                && snake.y < (comida.y + 10))) {
             lista.add(0, new Point(snake.x, snake.y));
             crearComida();
         }
@@ -167,7 +196,7 @@ public class Snake extends JFrame {
 
         public void run() {
             while (true) {
-                if ((java.lang.System.currentTimeMillis() - last) > frecuencia) {
+                if ((java.lang.System.currentTimeMillis() - last) > frecuencia) {   //determirar para donde se va moviendo
 
                     if (direccion == KeyEvent.VK_UP) {
                         snake.y = snake.y - heightPoint; // si subes restas la cantidad de mm que tienes arriba

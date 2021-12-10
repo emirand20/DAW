@@ -3,5 +3,6 @@
         "src/daw02/segundaAct",
         "src/daw02",
         "src/snake"
-    ]
+    ],
+    "liveServer.settings.port": 5501
 }
