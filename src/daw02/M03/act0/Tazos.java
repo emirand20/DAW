@@ -4,36 +4,40 @@ import java.time.LocalDate;
 import java.util.Scanner;
 
 public class Tazos {
-    private static Scanner s = new Scanner(System.in);
+    Scanner entrada = new Scanner(System.in);
+    //Tazos[] tazos = new Tazos[50];
 
-    private static int id(){
+    public int id() {
         int id = 0;
-        while (id == 0){
-            System.out.println("Pon otro numero");
-            id = s.nextInt();
+
+        while (id == 0) {
+            id = entrada.nextInt();
         }
         return id;
     }
-    // public int valor(){
+    public void valor() {
+        int valor;
 
-    //     return 0;
-    // }
-    public static void main(String[] args) {
-
-        Tazos[] tazos = new Tazos[20];
         
-        int id = 0;
-        int valorSentimental;
-
-        for (int i = 0; i < tazos.length; i++) {
-            
-        }
-
-        // public String alfabetico(){
-        //     return " ";
-        // }
     }
-    
-    public LocalDate fecha;
-    
+    public void alfabetic() {
+        int id = id();
+        String tLosSimpons = tazos;
+
+        for (int i = 0; i < tazos; i++) {
+            System.out.println(tazos[i]);
+        }
+    }
+
+    private static LocalDate entrarData() {
+		final DateTimeFormatter DATA_FORMAT = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		String dataString;
+		LocalDate data = null;
+
+		System.out.println("Entra la data (dd/mm/aaaa)");
+		dataString = entrada.next();
+		data = LocalDate.parse(dataString, DATA_FORMAT);
+
+		return data;
+	}
 }
