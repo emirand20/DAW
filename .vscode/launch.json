@@ -5,6 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "Launch foo",
+            "request": "launch",
+            "mainClass": "uf5.foo",
+            "projectName": "DAW01-PrimerosPasos_6202e806"
+        },
+        {
             "type": "pwa-chrome",
             "request": "launch",
             "name": "Launch Chrome against localhost",
