@@ -1,4 +1,4 @@
-package uf2;
+package programacionDAW1.uf2;
 
 import java.util.Scanner;
 import java.util.Arrays;
