@@ -1,5 +1,3 @@
-package daw01.bucles;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -20,8 +18,8 @@ public class PruebaArray {
 
         for (int i = 0; i < items.size(); i++) {
             int cont = 0;
-            for (int j = 0; j < frutas.length; j++) {
-                if (frutas[j].equals(items.get(i))) {
+            for (int j = 0; j < frutas.length; j++){
+                if (frutas[j].equals(items.get(i))){
                     cont++;
                 }
             }

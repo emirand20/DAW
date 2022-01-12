@@ -1,5 +1,3 @@
-package daw01.bucles;
-
 public class Explicación {
     public static void main(String[] args) {
         // Un bucle es un sentencia que hace algo mientras se cumpla una condición

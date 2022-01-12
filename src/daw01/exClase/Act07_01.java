@@ -1,4 +1,3 @@
-package daw01.exClase;
 
 public class Act07_01 {
     public static void main(String[] args) {

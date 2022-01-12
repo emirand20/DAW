@@ -1,7 +1,4 @@
-package daw01.exClase;
-
 import java.util.Scanner;
-
 public class Act06_03 {
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);

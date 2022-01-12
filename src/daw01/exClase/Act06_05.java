@@ -1,5 +1,3 @@
-        package daw01.exClase;
-
 import java.util.Random;
 
 public class Act06_05 {

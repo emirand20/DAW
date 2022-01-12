@@ -1,5 +1,3 @@
-package daw01.javaDesdecero;
-
 import java.util.Scanner;
 
 public class Adivina_numero {

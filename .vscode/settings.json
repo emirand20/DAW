@@ -1,8 +1,11 @@
 {
     "java.project.sourcePaths": [
-        "src/daw02/segundaAct",
+        "src/snake",
         "src/daw02",
-        "src/snake"
+        "src/daw01/javaDesdecero",
+        "src/daw01/exClase",
+        "src/daw01/condicionales_II",
+        "src/daw01/bucles"
     ],
     "liveServer.settings.port": 5501
 }

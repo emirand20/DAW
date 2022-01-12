@@ -1,5 +1,3 @@
-package daw01.bucles;
-
 public class Bucles {
     public static void main(String[] args) {
         /* Un bucle se utiliza para recorrer.

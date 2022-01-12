@@ -1,5 +1,3 @@
-package daw01.javaDesdecero;
-
 public class Clase {
     public static void main(String[] args) {
         /* Muestre todas las combinaciones posibles de 4 cibras que contengan solo 2 y 9.

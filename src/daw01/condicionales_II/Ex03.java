@@ -1,5 +1,3 @@
-package daw01.condicionales_II;
-
 import java.util.Scanner;
 
 public class Ex03 {

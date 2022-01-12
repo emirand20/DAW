@@ -6,6 +6,48 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch PruebaArray",
+            "request": "launch",
+            "mainClass": "PruebaArray",
+            "projectName": "DAW01-PrimerosPasos_6202e806"
+        },
+        {
+            "type": "java",
+            "name": "Launch PruebaArrayList",
+            "request": "launch",
+            "mainClass": "PruebaArrayList",
+            "projectName": "DAW01-PrimerosPasos_6202e806"
+        },
+        {
+            "type": "java",
+            "name": "Launch Piedra_papel_tijera",
+            "request": "launch",
+            "mainClass": "Piedra_papel_tijera",
+            "projectName": "DAW01-PrimerosPasos_6202e806"
+        },
+        {
+            "type": "java",
+            "name": "Launch Act9_funciones",
+            "request": "launch",
+            "mainClass": "uf2.Act9_funciones",
+            "projectName": "DAW01-PrimerosPasos_6202e806"
+        },
+        {
+            "type": "java",
+            "name": "Launch Adivina_numero",
+            "request": "launch",
+            "mainClass": "Adivina_numero",
+            "projectName": "DAW01-PrimerosPasos_6202e806"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ex01",
+            "request": "launch",
+            "mainClass": "Ex01",
+            "projectName": "DAW01-PrimerosPasos_6202e806"
+        },
+        {
+            "type": "java",
             "name": "Launch foo",
             "request": "launch",
             "mainClass": "uf5.foo",

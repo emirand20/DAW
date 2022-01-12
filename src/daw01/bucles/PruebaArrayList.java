@@ -1,5 +1,3 @@
-package daw01.bucles;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 

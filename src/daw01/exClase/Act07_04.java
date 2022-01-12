@@ -1,5 +1,3 @@
-package daw01.exClase;
-
 public class Act07_04 {
     public static void main(String[] args) {
         for (int i = 99; i > 10; i--) {

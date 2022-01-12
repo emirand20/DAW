@@ -1,5 +1,3 @@
-package daw01.bucles;
-
 public class Teoria {
 
     public static void main(String[] args) {
