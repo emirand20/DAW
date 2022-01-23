@@ -6,6 +6,48 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch NombresPrimers",
+            "request": "launch",
+            "mainClass": "programacionDAW1.uf2.NombresPrimers",
+            "projectName": "DAW01-PrimerosPasos_6202e806"
+        },
+        {
+            "type": "java",
+            "name": "Launch EXM32104WA",
+            "request": "launch",
+            "mainClass": "programacionDAW1.uf2.EXM32104WA",
+            "projectName": "DAW01-PrimerosPasos_6202e806"
+        },
+        {
+            "type": "java",
+            "name": "Launch ExamenDaw",
+            "request": "launch",
+            "mainClass": "programacionDAW1.uf2.examenesHecho.ExamenDaw",
+            "projectName": "DAW01-PrimerosPasos_6202e806"
+        },
+        {
+            "type": "java",
+            "name": "Launch SopaDeLetras",
+            "request": "launch",
+            "mainClass": "programacionDAW1.uf2.SopaDeLetras",
+            "projectName": "DAW01-PrimerosPasos_6202e806"
+        },
+        {
+            "type": "java",
+            "name": "Launch ZeroFactoriales",
+            "request": "launch",
+            "mainClass": "programacionDAW1.uf2.ZeroFactoriales",
+            "projectName": "DAW01-PrimerosPasos_6202e806"
+        },
+        {
+            "type": "java",
+            "name": "Launch Act9_funciones",
+            "request": "launch",
+            "mainClass": "programacionDAW1.uf2.Act9_funciones",
+            "projectName": "DAW01-PrimerosPasos_6202e806"
+        },
+        {
+            "type": "java",
             "name": "Launch PruebaArray",
             "request": "launch",
             "mainClass": "PruebaArray",

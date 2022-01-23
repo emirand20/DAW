@@ -125,14 +125,14 @@ public class Act9_funciones{
         for (int i = 0; i < 100; i++) {
             num[i] = dau();
             System.out.print(" " + num[i]);
-            
+        
             //if(i == 100){
-                for (int j = 0; j < num.length; j++) {
-                    switch(num[j]){
-                        case 1:
-                        System.out.println("Apariciones del valor 1: " + j++);
-                    }
-                }
+                // for (int j = 0; j < num.length; j++) {
+                //     switch(num[j]){
+                //         case 1:
+                //         System.out.println("Apariciones del valor 1: " + j++);
+                //     }
+                // }
             //}
         }        
         System.out.println();
@@ -178,6 +178,6 @@ public class Act9_funciones{
         //Act 13
         //pedraPaperTisora();
         //Act 14
-        //aleatoriCent();
+        aleatoriCent();
    }
 }
