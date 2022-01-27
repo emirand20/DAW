@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Factorial",
+            "request": "launch",
+            "mainClass": "m05.uf2.Factorial",
+            "projectName": "DAW01-PrimerosPasos_6202e806"
+        },
+        {
+            "type": "java",
+            "name": "Launch Act05_01",
+            "request": "launch",
+            "mainClass": "Act05_01",
+            "projectName": "DAW01-PrimerosPasos_6202e806"
+        },
+        {
+            "type": "java",
+            "name": "Launch Act12",
+            "request": "launch",
+            "mainClass": "programacionDAW1.uf2.Act12",
+            "projectName": "DAW01-PrimerosPasos_6202e806"
+        },
+        {
+            "type": "java",
             "name": "Launch NombresPrimers",
             "request": "launch",
             "mainClass": "programacionDAW1.uf2.NombresPrimers",

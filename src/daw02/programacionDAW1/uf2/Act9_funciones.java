@@ -52,7 +52,7 @@ public class Act9_funciones{
         return (int) ((Math.random() * 12 - 1) + z);
         //no seria equivalente porque repetimos el random de nuevo y generamos un nuevo numero
     }
-    static int lenNum(int num){
+    static int lenNum(int num) {
         String s = Integer.toString(num);
         System.out.println(s.length()); 
         int n = Integer.parseInt(s);
