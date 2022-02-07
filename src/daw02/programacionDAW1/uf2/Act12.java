@@ -8,9 +8,11 @@ public class Act12 {
     return b;
 }       
     //2
-    static int mayor3(int a, int b, int c) {return mayor2(a, mayor2(b, c));}       
+    static int mayor3(int a, int b, int c) {
+        return mayor2(a, mayor2(b, c));}       
     //3
-    static int mayor4(int a, int b, int c, int d) {return mayor2(mayor2(a, b), mayor2(c, d));}
+    static int mayor4(int a, int b, int c, int d) {
+        return mayor2(mayor2(a, b), mayor2(c, d));}
     //4
     static int cuantasVeces(String cad, char c) {
         int suma = 0;
