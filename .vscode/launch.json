@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch FileIO",
+            "request": "launch",
+            "mainClass": "programacionDAW1.UF3.FileIO",
+            "projectName": "DAW01-PrimerosPasos_418dde3f"
+        },
+        {
+            "type": "java",
             "name": "Launch Factorial",
             "request": "launch",
             "mainClass": "m05.uf2.Factorial",
