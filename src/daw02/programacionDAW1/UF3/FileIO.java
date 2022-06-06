@@ -1,10 +1,14 @@
 package programacionDAW1.UF3;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.IOException;
 
 public class FileIO {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         String[] names = {"Jon", "Javi", "Ester", "Luis"};
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter("C:\\Users\\Ester\\Documents\\AAAPROGRAMACION\\output.txt"));
@@ -15,7 +19,17 @@ public class FileIO {
                 writer.write("\n" + name);
             }
             writer.close();
-        } catch (Exception e) {
+        } catch (IOException e) {
+        }
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader("output.txt"));
+            String line;
+            while((line = reader.readLine()) != null){
+                System.out.println(line);
+            }
+            reader.close();
+        } catch (IOException  e) {
+            e.printStackTrace();
         }
     }
 }
