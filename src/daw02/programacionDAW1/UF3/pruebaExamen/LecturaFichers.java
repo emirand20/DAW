@@ -10,11 +10,12 @@ public class LecturaFichers {
         try {
             BufferedReader reader = new BufferedReader(new FileReader("EscripturaDeFitxers.txt"));
             String line;
+            int num;
             while ((line = reader.readLine()) != null) {
                 System.out.println(line);
             }
-
-            
+            //num = Integer.parseInt(reader.readLine());
+            //System.out.println(num);
             reader.close();
         } catch (IOException e) {
             e.printStackTrace();

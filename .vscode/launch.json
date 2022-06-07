@@ -6,6 +6,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch CuantasVeces",
+            "request": "launch",
+            "mainClass": "programacionDAW1.UF3.examen2022.CuantasVeces",
+            "projectName": "DAW01-PrimerosPasos_418dde3f"
+        },
+        {
+            "type": "java",
+            "name": "Launch Genera100",
+            "request": "launch",
+            "mainClass": "programacionDAW1.UF3.examen2022.Genera100",
+            "projectName": "DAW01-PrimerosPasos_418dde3f"
+        },
+        {
+            "type": "java",
+            "name": "Launch CuantosPositivos",
+            "request": "launch",
+            "mainClass": "programacionDAW1.UF3.examen2022.CuantosPositivos",
+            "projectName": "DAW01-PrimerosPasos_418dde3f"
+        },
+        {
+            "type": "java",
+            "name": "Launch LecturaFichers",
+            "request": "launch",
+            "mainClass": "programacionDAW1.UF3.pruebaExamen.LecturaFichers",
+            "projectName": "DAW01-PrimerosPasos_418dde3f"
+        },
+        {
+            "type": "java",
             "name": "Launch LecturaFichers",
             "request": "launch",
             "mainClass": "programacionDAW1.UF3.pruebaExamen.LecturaFichers",

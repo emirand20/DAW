@@ -11,9 +11,9 @@ public class FileIO {
     public static void main(String[] args) throws IOException {
         String[] names = {"Jon", "Javi", "Ester", "Luis"};
         try {
-            BufferedWriter writer = new BufferedWriter(new FileWriter(" output.txt"));
+            BufferedWriter writer = new BufferedWriter(new FileWriter("C:\\Users\\Ester\\Documents\\AAAPROGRAMACION\\output.txt"));
             
-            writer.write("Esto es una prueba");
+            writer.write("Esto es una prueba, hola");
             writer.write("\nEsto es una nueva linea");
 
             for(String name : names){
@@ -24,7 +24,7 @@ public class FileIO {
             e.printStackTrace();
         }
         try {
-            BufferedReader reader = new BufferedReader(new FileReader("output.txt"));
+            BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\Ester\\Documents\\AAAPROGRAMACION\\output.txt"));
             String line;
             while((line = reader.readLine()) != null){
                 System.out.println(line);
