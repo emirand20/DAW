@@ -6,6 +6,41 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch LecturaFichers",
+            "request": "launch",
+            "mainClass": "programacionDAW1.UF3.pruebaExamen.LecturaFichers",
+            "projectName": "DAW01-PrimerosPasos_e0407dfe"
+        },
+        {
+            "type": "java",
+            "name": "Launch SaberParesArray",
+            "request": "launch",
+            "mainClass": "programacionDAW1.UF3.pruebaExamen.SaberParesArray",
+            "projectName": "DAW01-PrimerosPasos_e0407dfe"
+        },
+        {
+            "type": "java",
+            "name": "Launch EscripturaDeFitxers",
+            "request": "launch",
+            "mainClass": "programacionDAW1.UF3.pruebaExamen.EscripturaDeFitxers",
+            "projectName": "DAW01-PrimerosPasos_e0407dfe"
+        },
+        {
+            "type": "java",
+            "name": "Launch Act9_funciones",
+            "request": "launch",
+            "mainClass": "programacionDAW1.uf2.Act9_funciones",
+            "projectName": "DAW01-PrimerosPasos_e0407dfe"
+        },
+        {
+            "type": "java",
+            "name": "Launch ArgumentsMain",
+            "request": "launch",
+            "mainClass": "programacionDAW1.UF3.pruebaExamen.ArgumentsMain",
+            "projectName": "DAW01-PrimerosPasos_e0407dfe"
+        },
+        {
+            "type": "java",
             "name": "Launch ArgumentsMain",
             "request": "launch",
             "mainClass": "programacionDAW1.UF3.pruebaExamen.ArgumentsMain",
