@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch ArgumentsMain",
+            "request": "launch",
+            "mainClass": "programacionDAW1.UF3.pruebaExamen.ArgumentsMain",
+            "projectName": "DAW01-PrimerosPasos_418dde3f"
+        },
+        {
+            "type": "java",
             "name": "Launch FileIO",
             "request": "launch",
             "mainClass": "programacionDAW1.UF3.FileIO",
