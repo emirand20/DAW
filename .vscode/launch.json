@@ -6,6 +6,41 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch CuantosUsiarios",
+            "request": "launch",
+            "mainClass": "m03.uf05.colecciones.CuantosUsiarios",
+            "projectName": "DAW01-PrimerosPasos_fb515729"
+        },
+        {
+            "type": "java",
+            "name": "Launch ShakeSpeare",
+            "request": "launch",
+            "mainClass": "m03.uf05.examenPrueba.ShakeSpeare",
+            "projectName": "DAW01-PrimerosPasos_fb515729"
+        },
+        {
+            "type": "java",
+            "name": "Launch Anagrama",
+            "request": "launch",
+            "mainClass": "m03.uf05.examenPrueba.Anagrama",
+            "projectName": "DAW01-PrimerosPasos_fb515729"
+        },
+        {
+            "type": "java",
+            "name": "Launch Processadors",
+            "request": "launch",
+            "mainClass": "m03.uf05.examenRecuperacio.Processadors",
+            "projectName": "DAW01-PrimerosPasos_fb515729"
+        },
+        {
+            "type": "java",
+            "name": "Launch QuantesVegades",
+            "request": "launch",
+            "mainClass": "m03.uf05.examenPrueba.QuantesVegades",
+            "projectName": "DAW01-PrimerosPasos_fb515729"
+        },
+        {
+            "type": "java",
             "name": "Launch UsoLibro",
             "request": "launch",
             "mainClass": "m03.uf05.colecciones.UsoLibro",
