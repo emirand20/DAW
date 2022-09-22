@@ -1,0 +1,55 @@
+getElementById
+--------------
+Recordeu que es pot accedir a un element
+<!--<div id=”elnostreid”> HOLA </div>-->
+fent servir:
+document.getElementById(“elnostreid”);
+getElementById és una funció que com a paràmetre l'hi passes l'identificador de l'element (un string) i et retorna un element.
+
+innerHTML
+---------
+Es pot accedir i modificar el text d'un div fent servir la propietat .innerHTML de l'element:
+document.getElementById(“elnostreid”).innerHTML = "Hola";
+
+innerText
+---------
+Es pot accedir i modificar el text d'un <p> fent servir la propietat .innerText de l'element:
+document.getElementById(“elnostreid”).innerText = "Hola";
+
+value
+-----
+Es pot accedir i modificar el valor d'un <input> fent servir la propietat .value de l'element:
+document.getElementById(“elnostreid”).value = 2;
+
+valueAsNumber
+-------------
+Quan l’<input> és de tipus “number” es pot accedir al seu valor com un enter fent servir valueAsNumber
+document.getElementById(“elnostreid”).valueAsNumber;
+
+onClick
+-------
+Recordeu que podeu afegir funcionalitat a un botó fent servir l'event onClick
+<!--<button type=”button” onClick=”alert(‘hola’)”> El meu botó </div>-->
+
+És útil enllaçar una funció amb l'event onClick del botó:
+<!--<button type=”button” onClick=”elMeuBoto()”> El meu botó </div>--> haz mejor esta es mas limpia
+d'aquesta manera podeu tenir una funció elMeuBoto():
+<!--<script>
+function elMeuBoto() {
+    // El codi que voleu que faci el botó
+    // exemple
+    alert(‘hola’);
+}
+</script>-->
+
+style
+-----
+Es pot accedir i modificar els estils CSS d'un element de la següent manera. Per exemple si volem canviar el color de la lletra d'un element faríem:
+element.style.color = "red";
+https://www.w3schools.com/jsref/prop_style_color.asp
+
+children
+--------
+Podem accedir als fills d'un element amb la propietat children.
+https://www.w3schools.com/jsref/prop_element_children.asp
+Es poden accedir a tots els fills de la mateixa manera que amb un array
