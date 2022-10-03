@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suma Parells</title>
+</head>
+
+<body>
+    <html>
+    <script>
+        function sumaParells(llista) {
+            let suma = 0;
+            for (let i = 0; i < llista.length; i++) {
+                if (i % 2 != 0) {
+                    suma += llista[i]+1;
+                }
+            }
+            return suma;
+        }
+        console.log(sumaParells([0, 1, 2, 3, 4]));
+        console.log(sumaParells([6, 1, 5, 7, 4]));
+    </script>
+
+    </html>z
+</body>
+
+</html>
