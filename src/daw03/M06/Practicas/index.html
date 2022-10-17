@@ -1,16 +1,25 @@
 <script>
     const notasAlumn1 = "P1:7.5;P2:7;P3:8.5;F:9";
+    const notasAlumn2 = "P1:4;P3:4.5;F:6";
 
     let resultado = notasAlumn1.split(';');
-    let final = [];
-    
-    resultado.forEach(r => {
-        let split = r.split(':');
-        console.log(split);
-        if(split[1]){
-            final.push(parseFloat(split[1]));
+    let notasParciales = [];
+    let notaFinal = 0;
+    let media = 0;
+
+    resultado.forEach(i => {
+        let split = i.split(':');
+        if (split[0] != "F") {
+            notasParciales.push(parseFloat(split[1]));
+        }
+        else {
+            notaFinal = parseFloat(split[1]);
         }
     });
-    console.log(final);
 
+    for (let i = 0; i < notasParciales.length; i++) {
+        media += notasParciales[i];
+    }
+    
+    console.log(media);
 </script>
