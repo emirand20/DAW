@@ -1,0 +1,25 @@
+<script>
+    const notasAlumn1 = "P1:7;P2:7.5;F:9";
+    const notasAlumn2 = "P1:4;P3:4.5;F:6";
+    const aprobado = "El alumno ha aprobado la evaluacin con un: ";
+    const suspendido = "El alumno ha suspendido la evaluacion con un: ";
+    const parciales = 3;
+    const notas = notasAlumn1;
+
+    function parciales() {
+        let notasParciales = [];
+        let mediaFinal;
+        notas.forEach(i => {
+            let split = i.split(':');
+            if (split[0] != "F") {
+                notasParciales.push(parseFloat(split[1]));
+            } else {
+                mediaFinal = parseFloat(split[1]);
+            }
+        });
+    }
+    
+    let foo = parciales(notas);
+    console.log(foo)
+
+</script>
