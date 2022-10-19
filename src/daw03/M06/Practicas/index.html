@@ -4,16 +4,15 @@
     const aprobado = "El alumno ha aprobado la evaluacin con un: ";
     const suspendido = "El alumno ha suspendido la evaluacion con un: ";
     const parciales = 3;
+    const notas = notasAlumn1.split(';');
 
-    let segmentosArray = notasAlumn1.split(';');
-    let segmentosArray2 = notasAlumn2.split(';');
     let notasParciales = [];
     let mediaFinal;
     let sumParciales = 0;
     let evaluacion = 0;
     let noAsistido = 0;
 
-    segmentosArray.forEach(i => {
+    notas.forEach(i => {
         let split = i.split(':');
         if (split[0] != "F") {
             notasParciales.push(parseFloat(split[1]));
