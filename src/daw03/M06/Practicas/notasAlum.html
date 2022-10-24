@@ -5,7 +5,7 @@
     const notasAlumn4 = "F:6"
     const notasAlumn5 = "P1:4,6;P2:3,4;F:9,2"
     
-    let replace = notasAlumn4.replaceAll(',', '.')
+    let replace = notasAlumn2.replaceAll(',', '.')
     console.log(replace)
     let segmentos = replace.split(';')
     
@@ -34,6 +34,7 @@
         suma *= 0.4;
         return suma;
     }
+    console.log(parciales, final)
     
     function penalizacionAsistenciaParciales(notaFinalOParcial, numeroExamenesRealizados) {
         //0 es decir que el array esta vacio

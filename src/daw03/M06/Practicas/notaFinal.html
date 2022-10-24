@@ -1,0 +1,36 @@
+<script>
+    class notaFinal {
+        constructor(notasAlumno) {
+            this.notasAlumno = notasAlumno;
+            this.parciales = [];
+            this.final = final;
+        }
+        get notas() {
+            return this.notasAlumno;
+        }
+        set notas(nuevasNotas) {
+            this.notasAlumno = nuevasNotas;
+        }
+
+        segmetos(notasAlumno) {
+
+            let replace = notasAlumno.replaceAll(',', '.')
+            let segmentos = replace.split(';')
+
+            segmentos.forEach(i => {
+                let split = i.split(':');
+                if (split[0] != 'F') {
+                    parciales.push(parseFloat(split[1]));
+                }
+                if (split[0] === 'F') {
+                    final = parseFloat(split[1]);
+                }
+            });
+            console.log(parciales, final)
+        }
+    }
+
+    const notasAlumn1 = new notaFinal('P1:4,4;P2:7;P3:6.4;F:2')
+    notasAlumn1.segmetos();
+
+</script>
