@@ -1,36 +1,66 @@
 <script>
-    class notaFinal {
+    class NotaFinal {
         constructor(notasAlumno) {
-            this.notasAlumno = notasAlumno;
-            this.parciales = [];
-            this.final = final;
+            this._notasAlumno = notasAlumno;
+            this._parciales = [];
+            this._final = 0;
         }
-        get notas() {
-            return this.notasAlumno;
+        get devulveNotas() {
+            return this._notasAlumno
         }
-        set notas(nuevasNotas) {
-            this.notasAlumno = nuevasNotas;
+        set estableceNotas(notas) {
+            this._notasAlumno = notas
         }
 
-        segmetos(notasAlumno) {
-
-            let replace = notasAlumno.replaceAll(',', '.')
+        evaluacionAlumno() {
+            let replace = this._notasAlumno.replaceAll(',', '.')
             let segmentos = replace.split(';')
 
             segmentos.forEach(i => {
                 let split = i.split(':');
                 if (split[0] != 'F') {
-                    parciales.push(parseFloat(split[1]));
+                    this._parciales.push(parseFloat(split[1]));
                 }
                 if (split[0] === 'F') {
-                    final = parseFloat(split[1]);
+                    this._final = parseFloat(split[1]);
                 }
             });
-            console.log(parciales, final)
+            
+            console.log("Parciales " + this._parciales, "Final " + this._final)
+
+            let suma = 0;
+            for (let i = 0; i < this._parciales.length; i++) {
+                suma = this._parciales[i] + suma;
+            }
+            if (this._parciales.length == !0) {
+                suma /= this._parciales.length;
+            }
+            suma *= 0.4;
+            let notaParciales = suma
+            let mediaNotaFinal = this._final * 0.6
+            console.log('media parciales: ' + notaParciales)
+            console.log('media final: ' + mediaNotaFinal)
+            const notaTotalEvaluacion = notaParciales + mediaNotaFinal
+
+            if (this._parciales.length == 0) {
+                notaTotalEvaluacion - 1.5
+            }
+            if (this._parciales.length == 1) {
+                notaTotalEvaluacion - 1
+            }
+            if (this._parciales.length == 2) {
+                notaTotalEvaluacion - 0.5
+            }
+            if (this._parciales.length == 3) {
+                notaTotalEvaluacion
+            }
+
+            console.log(notaTotalEvaluacion)
+
+
         }
     }
+    let notasAlumn1 = new NotaFinal('P1:4,6;P2:3,4;F:9,2')
 
-    const notasAlumn1 = new notaFinal('P1:4,4;P2:7;P3:6.4;F:2')
-    notasAlumn1.segmetos();
-
+    notasAlumn1.evaluacionAlumno();
 </script>
