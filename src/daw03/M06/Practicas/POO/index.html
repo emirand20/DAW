@@ -1,0 +1,20 @@
+<script>
+class Curso {
+    //puedes crear atibutos a lo largo del codigo pero no es lo ideal
+    constructor(titulo, dificultad) {
+        this.titulo = titulo
+        this.dificultad = dificultad
+        this.lecciones = [];
+    }
+    agregarLeccion(leccion) {
+        this.lecciones.push(leccion)
+    }
+    eliminaUltimaLeccion() {
+        this.lecciones.pop()
+    }
+}
+
+const cuersoJS = new Curso("Javascript", 1)
+const cuersoTS = new Curso("Typescript", 2)
+console.log(cuersoJS, cuersoTS)
+</script>

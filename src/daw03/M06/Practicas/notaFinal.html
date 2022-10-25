@@ -1,0 +1,66 @@
+<script>
+    class NotaFinal {
+        constructor(notasAlumno) {
+            this._notasAlumno = notasAlumno;
+            this._parciales = [];
+            this._final = 0;
+        }
+        get devulveNotas() {
+            return this._notasAlumno
+        }
+        set estableceNotas(notas) {
+            this._notasAlumno = notas
+        }
+
+        evaluacionAlumno() {
+            let replace = this._notasAlumno.replaceAll(',', '.')
+            let segmentos = replace.split(';')
+
+            segmentos.forEach(i => {
+                let split = i.split(':');
+                if (split[0] != 'F') {
+                    this._parciales.push(parseFloat(split[1]));
+                }
+                if (split[0] === 'F') {
+                    this._final = parseFloat(split[1]);
+                }
+            });
+            
+            console.log("Parciales " + this._parciales, "Final " + this._final)
+
+            let suma = 0;
+            for (let i = 0; i < this._parciales.length; i++) {
+                suma = this._parciales[i] + suma;
+            }
+            if (this._parciales.length == !0) {
+                suma /= this._parciales.length;
+            }
+            suma *= 0.4;
+            let notaParciales = suma
+            let mediaNotaFinal = this._final * 0.6
+            console.log('media parciales: ' + notaParciales)
+            console.log('media final: ' + mediaNotaFinal)
+            const notaTotalEvaluacion = notaParciales + mediaNotaFinal
+
+            if (this._parciales.length == 0) {
+                notaTotalEvaluacion - 1.5
+            }
+            if (this._parciales.length == 1) {
+                notaTotalEvaluacion - 1
+            }
+            if (this._parciales.length == 2) {
+                notaTotalEvaluacion - 0.5
+            }
+            if (this._parciales.length == 3) {
+                notaTotalEvaluacion
+            }
+
+            console.log(notaTotalEvaluacion)
+
+
+        }
+    }
+    let notasAlumn1 = new NotaFinal('P1:4,6;P2:3,4;F:9,2')
+
+    notasAlumn1.evaluacionAlumno();
+</script>

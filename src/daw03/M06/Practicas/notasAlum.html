@@ -1,6 +1,7 @@
 <script>
     const notasAlumn1 = "P1:10;P2:10;P3:10;F:10"
     const notasAlumn2 = "P1:10;P3:10;F:10"
+    const notasAlumn3 = "P1:0;F:6"
     const notasAlumn4 = "P1:0;F:6"
     let segmentos = notasAlumn3.split(';')
     let parciales = []
@@ -15,18 +16,21 @@
         if (split[0] === 'F') {
             final = parseFloat(split[1]);
         }
-    })
-
+    });
+    
     function mediaParciales(pararciales) {
         let suma = 0;
         for (let i = 0; i < parciales.length; i++) {
             suma += pararciales[i];
-        };
-        suma /= parciales.length;
+        }
+        if(pararciales.length ==! 0){
+            suma /= parciales.length;
+        }
         suma *= 0.4;
         return suma;
     }
-
+    console.log(parciales, final)
+    
     function penalizacionAsistenciaParciales(notaFinalOParcial, numeroExamenesRealizados) {
         //0 es decir que el array esta vacio
         if (numeroExamenesRealizados == 0) {
@@ -42,7 +46,7 @@
             return notaFinalOParcial
         }
     }
-
+    
     function mensaje(notaFinal) {
         let aprobado = "El alumno ha aprobado la evaluacion con un: "
         let suspendido = "El alumno ha suspendido la evaluacion con un: "
@@ -53,19 +57,18 @@
             return suspendido;
         }
     }
-
+    
     const notaParciales = mediaParciales(parciales);
     console.log("media parciales:", notaParciales)
-
+    
     const mediaNotaFinal = final * 0.6
     console.log("media examen final:", mediaNotaFinal)
-
+    
     const notaTotalEvaluacion = notaParciales + mediaNotaFinal
-
+    
     const notaFinalTrasPenalizacion = penalizacionAsistenciaParciales(notaTotalEvaluacion, parciales.length)
-    console.log(parciales.length)
-
-    /*
+    console.log(notaFinalTrasPenalizacion)
+    
     const comentario = mensaje(notaFinalTrasPenalizacion);
-    console.log(comentario, notaFinalTrasPenalizacion)*/
-</script>
+    console.log(comentario, notaFinalTrasPenalizacion)
+    </script>
