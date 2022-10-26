@@ -2,17 +2,12 @@
     const notasAlumn1 = "P1:10;P2:10;P3:10;F:10"
     const notasAlumn2 = "P1:10;P3:10;F:10"
     const notasAlumn3 = "P1:0;F:6"
-    const notasAlumn4 = "F:6"
-    const notasAlumn5 = "P1:4,6;P2:3,4;F:9,2"
-    
-    let replace = notasAlumn2.replaceAll(',', '.')
-    console.log(replace)
-    let segmentos = replace.split(';')
-    
-    let parciales = [];
-    let final;
-    let evalacion = 0;
-    
+    const notasAlumn4 = "P1:0;F:6"
+    let segmentos = notasAlumn3.split(';')
+    let parciales = []
+    let final
+    let evalacion = 0
+
     segmentos.forEach(i => {
         let split = i.split(':');
         if (split[0] != 'F') {
