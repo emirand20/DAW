@@ -1,0 +1,104 @@
+<script>
+    class NotaFinal {
+        constructor(notasString) {
+            this.porcentajeParciales = 0.2
+            this.porcentajeFinal = 0.8
+            this.notasString = notasString
+            this.parcial1 = null
+            this.parcial2 = null
+            this.parcial3 = null
+            this.mediaParciales = null
+            this.parcialesRealizados = 0
+            this.final = null
+            this.notaEvaluacion = null
+            this.penalizacon = 0
+            this.tranformaNotasStringEnNotas()
+            this.calcularMediaParciales()
+            this.calcularPenalizacion()
+            console.log(this.mediaParciales, this.final, this.parcialesRealizados, this.penalizacon)
+        }
+        tranformaNotasStringEnNotas() {
+            const examenes = this.notasString.split(";")
+            for (let i = 0; i < examenes.length; i++) {
+                const examen = examenes[i]
+                this.sacarNotaDeExamen(examen)
+            }
+            console.log(examenes);
+        }
+        sacarNotaDeExamen(string) {
+            const aNota = string.split(":")
+            const nota = aNota[1];
+            if (aNota[0].toLowerCase() == "p1") {
+                this.parcial1 = parseFloat(nota.replace(',', '.'))
+            }
+            if (aNota[0].toLowerCase() == "p2") {
+                this.parcial2 = parseFloat(nota.replace(',', '.'))
+            }
+            if (aNota[0].toLowerCase() == "p3") {
+                this.parcial3 = parseFloat(nota.replace(',', '.'))
+            }
+            if (aNota[0].toLowerCase() == "f") {
+                this.final = parseFloat(nota.replace(',', '.'))
+            }
+            // console.log(parseFloat(nota.replace(',', '.')))
+        }
+
+        calcularMediaParciales() {
+            let parcialesRealizados = 0
+            let p1 = 0
+            let p2 = 0
+            let p3 = 0
+            if (this.parcial1 !== null) {
+                parcialesRealizados = parcialesRealizados + 1
+                p1 = this.parcial1
+            }
+            if (this.parcial2 !== null) {
+                parcialesRealizados = parcialesRealizados + 1
+                p2 = this.parcial2
+
+            }
+            if (this.parcial3 !== null) {
+                parcialesRealizados = parcialesRealizados + 1
+                p3 = this.parcial3
+
+            }
+            // console.log('ps',[p1,p2,p3])
+            this.mediaParciales = 0
+
+            if ((p1 + p2 + p3) !== 0) {
+                this.mediaParciales = p1 + p2 + p3
+                this.mediaParciales = this.mediaParciales / parcialesRealizados
+            }
+            this.parcialesRealizados = parcialesRealizados
+        }
+        evaluacionAlumno() {
+            return (((this.mediaParciales * this.porcentajeParciales) + (this.final * this.porcentajeFinal)) - this.penalizacon).toFixed(2)
+            // return this.notaEvaluacion
+        }
+        calcularPenalizacion() {
+            if (this.parcialesRealizados == 3) {
+                this.penalizacon = 0
+            }
+            if (this.parcialesRealizados == 2) {
+                this.penalizacon = 0.5
+            }
+            if (this.parcialesRealizados == 1) {
+                this.penalizacon = 1
+            }
+            if (this.parcialesRealizados == 0) {
+                this.penalizacon = 1.5
+            }
+        }
+    }
+    let notasAlumn1 = new NotaFinal('p1:4,6;P2:3,4;P3:6,7;F:9,2')
+    let notasAlumn2 = new NotaFinal('P1:10;P2:10;F:10')
+    let notasAlumn3 = new NotaFinal('P1:4.6;F:9.2')
+    let notasAlumn4 = new NotaFinal('F:10')
+    const nota1 = notasAlumn1.evaluacionAlumno();
+    const nota2 = notasAlumn2.evaluacionAlumno();
+    const nota3 = notasAlumn3.evaluacionAlumno();
+    const nota4 = notasAlumn4.evaluacionAlumno();
+
+
+    console.log(nota1, nota2, nota3, nota4)
+</script>

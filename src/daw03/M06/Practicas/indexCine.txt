@@ -1,0 +1,32 @@
+Un cine tiene sesiones diurnas y nocturnas.
+
+Sesiones matutinas 7, 9 nocturnas, sabado 20% y domingo 10%.
+
+Se considera que una sesión es nocturnas si es a partir de las 7 de la tarde.
+
+El cine aplica los siguientes descuentos a grupos:
+
+En grupos de más de 5 o más, un 10% sobre el total del precio de las entradas en sesiones nocturnas y un 15 en las diurnas;
+
+En grupos de más de 10 o más, un 15% sobre el total del precio de las entradas en sesiones nocturnas y un 20 en las diurnas;
+
+Si el día de la semana es miércoles aplica un 10% en todos los casos, pero además en los grupos de más de 5 personas se aplica un descuento acumulable del 2% en nocturnas y del 7% en diurnas, siendo, respectivamente, estos descuentos acumulables el 4% y el 8% si el grupo es de más de 10
+
+Las noches de los sábados no se aplica ningún descuento.
+
+
+El taquillero que ha de dar el precio lee un qr que trae el cliente.
+
+La lectura es un string como este:
+
+6/5/10/22/19/15, que corresponde a personas, día, mes, año, hora, minutos.
+
+¿Interesa siempre ir el día del espectador?
+
+Obtener los precios para los Qr:
+
+6/5/10/22/15/15
+
+14/5/10/22/19/15
+
+12/22/10/22/19/15
