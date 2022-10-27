@@ -1,0 +1,53 @@
+<script>
+    class Cine {
+        constructor(stringQR) {
+            this.stringQR = stringQR
+            this.personas = null
+            this.fechaYHoras = null
+            this.diaDeLaPelicula = null
+            this.hEntrada = null
+            this.date = null
+            this.grupoPersonas()
+            this.fechaQR()
+            this.horarioEntrada()
+            console.log(
+                "Personas:", this.personas,
+                "Date:", this.date)
+        }
+        grupoPersonas() {
+            this.personas = this.stringQR.split('/')[0]
+            return this.personas
+        }
+        fechaQR() {
+            this.fechaYHoras = this.stringQR.split('/')
+            return this.fechaYHoras.shift()
+        }
+        horarioEntrada() {
+            //insertar y/o extraer elementos  
+            let fecha = this.fechaYHoras.slice(0, 3)
+            let dia = fecha[0]
+            fecha[0] = fecha[2]
+            fecha[2] = dia
+            this.diaDeLaPelicula = fecha.toString()
+            this.diaDeLaPelicula = this.diaDeLaPelicula.replaceAll(',', '-')
+
+            let hora = this.fechaYHoras.slice(3, 5)
+            this.hEntrada = hora.toString()
+            this.hEntrada = this.hEntrada.replaceAll(',', ':')
+
+            this.date = this.diaDeLaPelicula + " " + this.hEntrada
+            const dias = [
+                'domingo',
+                'lunes',
+                'martes',
+                'miércoles',
+                'jueves',
+                'viernes',
+                'sábado',
+            ][new Date(fecha).getDay()]
+            return this.date
+        }
+
+    }
+    let entradaCine = new Cine("6/5/10/22/19/15")
+</script>
