@@ -14,7 +14,6 @@ Si el día de la semana es miércoles aplica un 10% en todos los casos, pero ade
 
 Las noches de los sábados no se aplica ningún descuento.
 
-
 El taquillero que ha de dar el precio lee un qr que trae el cliente.
 
 La lectura es un string como este:

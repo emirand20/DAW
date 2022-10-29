@@ -2,52 +2,88 @@
     class Cine {
         constructor(stringQR) {
             this.stringQR = stringQR
-            this.personas = null
-            this.fechaYHoras = null
-            this.diaDeLaPelicula = null
-            this.hEntrada = null
-            this.date = null
-            this.grupoPersonas()
-            this.fechaQR()
-            this.horarioEntrada()
+            this.personas = this.getPersonas()
+            this.fechaYHoras = this.getfechaHora()
+            this.diaEntrada = this.getDiaEntrada()
+            this.hEntrada = this.getHoraEntrada()
+            this.concat = this.getConcatenacion()
+            this.dia = this.getDia()
+            this.time = this.getHorario()
+            this.precioEntrada = this.getPrecio()
             console.log(
                 "Personas:", this.personas,
-                "Date:", this.date)
+                "Dia:", this.dia,
+                "Horario:", this.time,
+                "Precio:", this.precioEntrada)
         }
-        grupoPersonas() {
-            this.personas = this.stringQR.split('/')[0]
-            return this.personas
+        getPersonas() {
+            return this.personas = this.stringQR.split('/')[0]
         }
-        fechaQR() {
+        getfechaHora() {
             this.fechaYHoras = this.stringQR.split('/')
-            return this.fechaYHoras.shift()
+            return this.fechaYHoras.splice(1)
         }
-        horarioEntrada() {
-            //insertar y/o extraer elementos  
+        getDiaEntrada() {
+            //slice() insertar y/o extraer elementos  
             let fecha = this.fechaYHoras.slice(0, 3)
             let dia = fecha[0]
             fecha[0] = fecha[2]
             fecha[2] = dia
-            this.diaDeLaPelicula = fecha.toString()
-            this.diaDeLaPelicula = this.diaDeLaPelicula.replaceAll(',', '-')
-
+            this.diaEntrada = fecha.toString()
+            this.diaEntrada = '20' + this.diaEntrada
+            return this.diaEntrada = this.diaEntrada.replaceAll(',', '-')
+        }
+        getHoraEntrada() {
             let hora = this.fechaYHoras.slice(3, 5)
             this.hEntrada = hora.toString()
-            this.hEntrada = this.hEntrada.replaceAll(',', ':')
-
-            this.date = this.diaDeLaPelicula + " " + this.hEntrada
-            const dias = [
-                'domingo',
-                'lunes',
-                'martes',
-                'miércoles',
-                'jueves',
-                'viernes',
-                'sábado',
-            ][new Date(fecha).getDay()]
-            return this.date
+            return this.hEntrada = this.hEntrada.replaceAll(',', ':')
         }
+        getConcatenacion() {
+            return this.concat = this.diaEntrada.concat(' ', this.hEntrada)
+        }
+        getDia() {
+            this.dia = new Date(this.concat)
+            Date.nombreDia = ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'];
+            return this.dia = Date.nombreDia[this.dia.getDay()]
+        }
+        getHorario() {
+            this.time = new Date(this.concat)
+            return this.time = this.time.getHours()
+        }
+        getPrecio() {
+            let horarioMañana = 7
+            let horarioNocturno = 9
 
+            //horario sin descuentos calculanto el precio total
+            if (this.personas < 5 && this.time < 19) {
+                return this.precioEntrada = horarioMañana * this.personas
+            }
+            if (this.personas < 5 && this.time >= 19) {
+                return this.precioEntrada = horarioNocturno * this.personas
+            }
+
+            //descuentos de 5 o mas personas 
+            if (this.personas >= 5 && this.time < 19) {
+                this.precioEntrada = horarioMañana - 1.05
+                return this.precioEntrada *= this.personas
+            }
+            if (this.personas >= 5 && this.time >= 19) {
+                this.precioEntrada = horarioNocturno - 0.1
+                return this.precioEntrada *= this.personas
+            }
+
+            //descuento de 10 o mas personas
+            if (this.personas >= 10 && this.time < 19) {
+                this.precioEntrada = horarioMañana - 0.2
+                return this.precioEntrada *= this.personas
+            }
+            if (this.personas >= 10 && this.time >= 19) {
+                this.precioEntrada = horarioNocturno - 1.05
+                return this.precioEntrada *= this.personas
+            }
+        }
     }
-    let entradaCine = new Cine("6/5/10/22/19/15")
+    let entradaCine = new Cine("3/5/10/22/19/00")
+    let entradaCine2 = new Cine("8/7/10/22/12/15")
+    let entradaCine3 = new Cine("5/22/10/22/23/15")
 </script>
