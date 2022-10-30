@@ -13,7 +13,7 @@
             console.log(
                 "Personas:", this.personas,
                 "Dia:", this.dia,
-                "Horario:", this.time,
+                "Hora:", this.time,
                 "Precio:", this.precioEntrada)
         }
         getPersonas() {
@@ -56,34 +56,47 @@
 
             //horario sin descuentos calculanto el precio total
             if (this.personas < 5 && this.time < 19) {
-                return this.precioEntrada = horarioMañana * this.personas
+                //horario falla
+                if(this.dia != 'sábado'){
+                    this.precioEntrada = horarioMañana * this.personas
+                    if(this.dia = 'miércoles'){
+                        this.precioEntrada -=  0.7
+                    }
+                    return this.precioEntrada
+                }
+                if(this.dia = 'sábado'){
+                    return this.precioEntrada = horarioMañana * this.personas
+                }
             }
             if (this.personas < 5 && this.time >= 19) {
-                return this.precioEntrada = horarioNocturno * this.personas
+                this.precioEntrada = horarioNocturno * this.personas
+                return this.precioEntrada
             }
-
             //descuentos de 5 o mas personas 
-            if (this.personas >= 5 && this.time < 19) {
+            if (this.personas < 10 && this.personas >= 5 && this.time < 19) {
                 this.precioEntrada = horarioMañana - 1.05
-                return this.precioEntrada *= this.personas
+                this.precioEntrada *= this.personas
+                return this.precioEntrada
             }
-            if (this.personas >= 5 && this.time >= 19) {
-                this.precioEntrada = horarioNocturno - 0.1
-                return this.precioEntrada *= this.personas
+            if (this.personas < 10 && this.personas >= 5 && this.time >= 19) {
+                this.precioEntrada = horarioNocturno - 0.9
+                this.precioEntrada *= this.personas
+                return this.precioEntrada
             }
-
             //descuento de 10 o mas personas
             if (this.personas >= 10 && this.time < 19) {
-                this.precioEntrada = horarioMañana - 0.2
-                return this.precioEntrada *= this.personas
+                this.precioEntrada = horarioMañana - 1.4
+                this.precioEntrada *= this.personas
+                return this.precioEntrada
             }
             if (this.personas >= 10 && this.time >= 19) {
-                this.precioEntrada = horarioNocturno - 1.05
-                return this.precioEntrada *= this.personas
+                this.precioEntrada = horarioNocturno - 1.35
+                this.precioEntrada *= this.personas
+                return this.precioEntrada
             }
         }
     }
-    let entradaCine = new Cine("3/5/10/22/19/00")
-    let entradaCine2 = new Cine("8/7/10/22/12/15")
-    let entradaCine3 = new Cine("5/22/10/22/23/15")
+    let entradaCine = new Cine("3/3/10/22/11/00")
+    let entradaCine2 = new Cine("8/2/09/18/12/15")
+    let entradaCine3 = new Cine("10/4/11/22/11/15")
 </script>
