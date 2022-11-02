@@ -14,7 +14,7 @@
                 "Personas:", this.personas,
                 "Dia:", this.dia,
                 "Hora:", this.time,
-                "Precio:", this.precioEntrada)
+                "Precio:", this.precioEntrada, "euros.")
         }
         getPersonas() {
             return this.personas = this.stringQR.split('/')[0]
@@ -53,50 +53,69 @@
         getPrecio() {
             let horarioMañana = 7
             let horarioNocturno = 9
+            let sabado = 0.2
+            let domingo = 0.1
+            let miercoles = 0.1
+            
+            /*OPERADOR TERNARIO
+            expresión_condicional ? expresion1 : expresion2;*/
 
             //horario sin descuentos calculanto el precio total
+            //(this.personas < 5 && this.time < 19) ? horarioMañana * this.personas : horarioNocturno * this.personas;
             if (this.personas < 5 && this.time < 19) {
-                //horario falla
-                if(this.dia != 'sábado'){
-                    this.precioEntrada = horarioMañana * this.personas
-                    if(this.dia = 'miércoles'){
-                        this.precioEntrada -=  0.7
-                    }
-                    return this.precioEntrada
+                if(this.dia != 'sábado' && this.dia != 'domingo' && this.dia != 'miércoles'){
+                    return this.precioEntrada = horarioMañana * this.personas
                 }
                 if(this.dia = 'sábado'){
-                    return this.precioEntrada = horarioMañana * this.personas
+                    return this.precioEntrada = horarioMañana * this.personas + sabado
+                }
+                if(this.dia = 'domingo'){
+                    return this.precioEntrada = horarioMañana * this.personas + domingo
+                }
+                if(this.dia = 'miércoles'){
+                    return this.precioEntrada = horarioMañana * this.personas - miercoles
                 }
             }
             if (this.personas < 5 && this.time >= 19) {
-                this.precioEntrada = horarioNocturno * this.personas
-                return this.precioEntrada
+                if(this.dia != 'sábado'){
+                    return this.precioEntrada = horarioNocturno * this.personas 
+                }
+                return this.precioEntrada = horarioNocturno * this.personas + sabado
+
             }
             //descuentos de 5 o mas personas 
             if (this.personas < 10 && this.personas >= 5 && this.time < 19) {
-                this.precioEntrada = horarioMañana - 1.05
-                this.precioEntrada *= this.personas
-                return this.precioEntrada
+                if(this.dia != 'sábado'){
+                    this.precioEntrada = horarioMañana - 1.05
+                    return this.precioEntrada *= this.personas
+                }
+                return this.precioEntrada = (horarioMañana * this.personas) + sabado
             }
             if (this.personas < 10 && this.personas >= 5 && this.time >= 19) {
+                if(this.dia != 'sábado'){
                 this.precioEntrada = horarioNocturno - 0.9
-                this.precioEntrada *= this.personas
-                return this.precioEntrada
+                return this.precioEntrada *= this.personas
+                }
+                return this.precioEntrada = horarioNocturno * this.personas + sabado
             }
             //descuento de 10 o mas personas
             if (this.personas >= 10 && this.time < 19) {
-                this.precioEntrada = horarioMañana - 1.4
-                this.precioEntrada *= this.personas
-                return this.precioEntrada
+                if(this.dia != 'sábado'){
+                    this.precioEntrada = horarioMañana - 1.4
+                    return this.precioEntrada *= this.personas
+                }
+                return this.precioEntrada = horarioMañana * this.personas + sabado
             }
             if (this.personas >= 10 && this.time >= 19) {
-                this.precioEntrada = horarioNocturno - 1.35
-                this.precioEntrada *= this.personas
-                return this.precioEntrada
+                if(this.dia != 'sábado'){
+                    this.precioEntrada = horarioNocturno - 1.35
+                    return this.precioEntrada *= this.personas
+                }
+                return this.precioEntrada = horarioNocturno * this.personas + sabado
             }
         }
     }
-    let entradaCine = new Cine("3/3/10/22/11/00")
-    let entradaCine2 = new Cine("8/2/09/18/12/15")
-    let entradaCine3 = new Cine("10/4/11/22/11/15")
+    let entradaCine = new Cine("1/8/10/22/11/00")
+    let entradaCine2 = new Cine("5/8/09/18/12/15")
+    let entradaCine3 = new Cine("8/19/11/22/19/15")
 </script>
