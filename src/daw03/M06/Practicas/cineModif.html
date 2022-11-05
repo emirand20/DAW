@@ -1,0 +1,62 @@
+<script>
+    class Cine {
+        constructor(stringQR) {
+            this.precioSesionMatutina = 7
+            this.precioSesionNocturna = 9
+            this.stringQR = stringQR
+            this.personas = null
+            this.date = null
+            this.hours = null
+            this.descuento = 0
+            this.setPersonas()
+            this.setDate()
+            this.getDescuentos()
+            console.log(
+                "Personas:", this.personas,
+                "Dia:", this.date,
+                "Hora:", this.hours,
+                "Descuento del:",this.descuento
+            )
+        }
+        setPersonas() {
+            this.personas = this.stringQR.split('/')[0]
+        }
+        setDate() {
+            const aQr = this.stringQR.split('/')
+            let mes = aQr[2]
+            if (mes.length == 1) {
+                mes = '0' + mes
+            }
+            let dia = aQr[1]
+            if (dia.length == 1) {
+                dia = '0' + dia
+            }
+            const strDate = `20${aQr[3]}-${mes}-${dia} ${aQr[4]}:${aQr[5]}`
+
+            this.date = new Date(strDate)
+            this.hours = this.date.getHours()
+            Date.nombreDia = ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'];
+            this.date = Date.nombreDia[this.date.getDay()]
+        }
+        getDescuentos() {
+            if(this.personas <= 10 && this.personas >= 5 && this.hours < 19){
+                if(this.date != 'sábado'){
+                    (this.date != 'miércoles')? this.descuento = 1.05 : this.descuento = 1.15; 
+                }
+                this.descuento
+            }
+            if(this.personas <= 10 && this.personas >= 5 && this.hours >= 19){
+                (this.date != 'miércoles')? this.descuento = 0.9 : this.descuento = 1 ; 
+            }
+            if(this.personas >= 10 && this.hours < 19){
+                (this.date != 'miércoles')? this.descuento = 1.4 : this.descuento = 1.5; 
+            }
+            if(this.personas >= 10 && this.hours >= 19){
+                (this.date != 'miércoles')? this.descuento = 1.35 : this.descuento = 1.45; 
+            }
+        }
+    }
+    let entradaCine = new Cine("1/8/10/22/12/00")
+    let entradaCine2 = new Cine("5/12/9/18/12/15")
+    let entradaCine3 = new Cine("18/6/11/22/19/15")
+</script>
