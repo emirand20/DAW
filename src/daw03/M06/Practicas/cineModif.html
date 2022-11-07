@@ -1,30 +1,33 @@
 <script>
+    
     class Cine {
         constructor(stringQR) {
             this.precioSesionMatutina = 7
             this.precioSesionNocturna = 9
             this.stringQR = stringQR
             this.personas = null
-            this.date = null
-            this.hours = null
-            this.descuento = 0
-            this.incremento = 0
+            this.dia = null // 0->domingo ...
+            this.hora = null //hora del dia en formato 0-23
+      
+            this.precioUnitarioEntrada = null
+            this.precioTotal = null
             this.setPersonas()
-            this.setDate()
-            this.getDescuentos()
-            this.getIncremento()
+            this.setDiaHora()
+            this.setPrecioUnitarioEntrada()
+            this.setPrecioTotal()
+        
             console.log(
-                "Personas:", this.personas,
-                "Dia:", this.date,
-                "Hora:", this.hours,
-                "Descuento del:", this.descuento,
-                "Incremento del: ", this.incremento
-            )
+                "Personas:",this.personas, 
+                "Numeros de día (0-6):", this.dia, 
+                "Hora:" , this.hora, 
+                "Precio unitario:", this.precioUnitarioEntrada,
+                "Precio total:" , this.precioTotal)
+            
         }
         setPersonas() {
             this.personas = this.stringQR.split('/')[0]
         }
-        setDate() {
+        setDiaHora() {
             const aQr = this.stringQR.split('/')
             let mes = aQr[2]
             if (mes.length == 1) {
@@ -35,48 +38,60 @@
                 dia = '0' + dia
             }
             const strDate = `20${aQr[3]}-${mes}-${dia} ${aQr[4]}:${aQr[5]}`
+            
+            const date = new Date(strDate)
+            this.hora = date.getHours()
+            this.dia = date.getDay()
+        }
+        setPrecioUnitarioEntrada() {
+            if (this.hora < 19) {
+                this.precioUnitarioEntrada = this.precioSesionMatutina
+            } else {
+                this.precioUnitarioEntrada = this.precioSesionNocturna
+            }
+            if (this.dia == 6) {//sábado
+                this.precioUnitarioEntrada += this.precioUnitarioEntrada * 0.2
+            }
+            if (this.dia == 0) {//domingo
+                this.precioUnitarioEntrada += this.precioUnitarioEntrada * 0.1
+            }
+        }
+        setPrecioTotal() {
+            this.precioTotal = this.precioUnitarioEntrada * this.personas
+            if ( !(this.dia == 3 || this.dia == 6) ) {
+                if (this.personas > 4 && this.personas < 10 && this.hora < 19) {
+                    this.precioTotal -= this.precioTotal * 0.15
+                }
+                if (this.personas > 4 && this.personas < 10 && this.hora > 18) {
+                    this.precioTotal -= this.precioTotal * 0.1
+                }
+                if (this.personas > 9 && this.hora < 19) {
+                    this.precioTotal -= this.precioTotal * 0.2
+                }
+                if (this.personas > 9 && this.hora > 18) {
+                    this.precioTotal -= this.precioTotal * 0.15
+                }
+            }
+            if (this.dia == 3) {
+                this.precioTotal -= this.precioTotal*0.1
+                if (this.personas > 4 && this.personas < 10 && this.hora < 19) {
+                    this.precioTotal -= this.precioTotal * 0.07
+                }
+                if (this.personas > 4 && this.personas < 10 && this.hora > 18) {
+                    this.precioTotal -= this.precioTotal * 0.02
+                }
+                if (this.personas > 9 && this.hora < 19) {
+                    this.precioTotal -= this.precioTotal * 0.04
+                }
+                if (this.personas > 9 && this.hora > 18) {
+                    this.precioTotal -= this.precioTotal * 0.08
+                }
 
-            this.date = new Date(strDate)
-            this.hours = this.date.getHours()
-            Date.nombreDia = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
-            this.date = Date.nombreDia[this.date.getDay()]
-        }
-        getDescuentos() {
-            if (this.personas <= 10 && this.personas >= 5 && this.hours < 19) {
-                if (this.date != 'Sábado' && this.date != 'Domingo') {
-                    (this.date != 'Miércoles') ? this.descuento = 1.05 : this.descuento = 1.15;
-                }
-                this.descuento
-            }
-            if (this.personas <= 10 && this.personas >= 5 && this.hours >= 19) {
-                if (this.date != 'Sábado' && this.date != 'Domingo') {
-                    (this.date != 'Miércoles') ? this.descuento = 0.9 : this.descuento = 1;
-                }
-                this.descuento
-            }
-            if (this.personas >= 10 && this.hours < 19) {
-                if (this.date != 'Sábado' && this.date != 'Domingo') {
-                    (this.date != 'Miércoles') ? this.descuento = 1.4 : this.descuento = 1.5;
-                }
-                this.descuento
-            }
-            if (this.personas >= 10 && this.hours >= 19) {
-                if (this.date != 'Sábado' && this.date != 'Domingo') {
-                    (this.date != 'Miércoles') ? this.descuento = 1.35 : this.descuento = 1.45;
-                }
-                this.descuento
             }
         }
-        getIncremento() {
-            // (this.dia != 'sábado' || this.dia != 'domingo')? this.incremento : this.incremento = 0.2;
-            /*if (this.dia = 'Sábado') {
-                this.incremento = 0.1
-            } else if(this.dia == 'Domingo'){
-                this.incremento = 0.2
-            }*/
-        }
+
     }
-    let entradaCine = new Cine("8/8/10/22/12/00")
+    let entradaCine = new Cine("2/8/10/22/12/00")
     let entradaCine2 = new Cine("9/12/9/18/23/15")
-    let entradaCine3 = new Cine("18/21/11/22/19/15")
+    let entradaCine3 = new Cine("18/5/11/22/16/15")
 </script>
