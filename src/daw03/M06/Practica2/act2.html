@@ -13,23 +13,23 @@
     <h1>Act 1</h1>
     <div id="cuadrado" style="border: 2px black solid; height: 100px; width: 100px;"></div>
     <br>
-    <input id="input" type="text" placeholder="escribe un color">
-    <br>
-    <button id="button" onclick="color()">Cambia de color</button>
+    <input type="text" id="añadeColor" placeholder="escribe un color">
+    <button onclick="color()">Cambia de color</button>
     <br>
     <h1>Act 2</h1>
     <div id="llista">
-        <div id = "number">5</div>
-        <div id = "number">1</div>
-        <div id = "number">2</div>
-        <div id = "number">9</div>
-        <div id = "number">4</div>
+        <div id="number">5</div>
+        <div id="number">1</div>
+        <div id="number">2</div>
+        <div id="number">9</div>
+        <div id="number">4</div>
     </div>
-    <input id="input" type="num" placeholder="escribe un número">
-    <br>
-    <button id="div" onclick="childColor()">Cambiaw de color</button> 
-    <button id="div" onclick="reiniciar()">Reinicia</button>
-
+    <input type="number" id="valor" placeholder="escribe un número">
+        <button onclick="childColor()">Cambia de color</button>
+        <button onclick="reiniciar()">Reinicia</button><br>
+        <br>
+        <button onclick="minim()">Valor minimo</button>
+        <button onclick="maxim()">Valor máximo</button>
+        <p id="numMax"></p>
 </body>
-
 </html>
