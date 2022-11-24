@@ -35,9 +35,9 @@ function multiplicacion() {
 }
 
 // Ej 4
-function mitjanaImparells(){
+const numeros = [3, 5, 6, 4, 7, 1]
+function mitjanaImparells() {
     console.log('Ejercicio 4')
-    let numeros = [3, 5, 6, 4, 7, 1]
     let impares = []
     let sumImpares = 0
     let mediaImpares;
@@ -51,4 +51,18 @@ function mitjanaImparells(){
     }
     mediaImpares = sumImpares / impares.length
     console.log("La media es: " + mediaImpares)
+}
+//Ej 5
+function inverteix(){
+    console.log('Ejercicio 5')
+    //let invertidos = []
+    let num = numeros.length
+    for(let i = 0; i < num / 2; i++){
+        let temporal = numeros[i]
+        let indiceContrario = num - i - 1
+        numeros[i] = numeros[indiceContrario]
+        numeros[indiceContrario] = temporal
+    }
+    console.log(numeros)
+    
 }
