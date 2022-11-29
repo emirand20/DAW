@@ -1,0 +1,160 @@
+<html>
+
+<body style="background-color:wheat">
+    <button id="coloret" style="background-color:white" onclick="coloret('coloret')">coloret</button>
+    <button id="coloret2" style="background-color:white" onclick="coloret2()">coloret2</button>
+    <button id="multiplicacio" style="background-color:white" onclick="multiplicacio()">multiplicacio</button>
+    <div id="resultatMulti"></div>
+    <input id="inputMulti" type="number"></input>
+
+    <body>
+        <table style="width: 10%;" border="1">
+            <tbody>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <button type="button" onclick="paintAll()"> paintAll</button>
+        <button type="button" onclick="pintaQuadrant()"> pintaQuadrant</button>
+        <button type="button" onclick="pintaDiagonals()"> pintaDiagonals</button>
+    </body>
+
+</body>
+<script>
+
+    let rows = document.querySelector("tbody").children
+    let matrix = []
+    for (var i = 0; i < rows.length; i++) {
+        matrix.push(rows[i].children)
+    }
+    let comptador = 0;
+    function coloret2() {
+        if (comptador % 2 == 0) {
+            coloret("coloret2");
+        }
+        comptador++;
+    }
+
+    function multiplicacio() {
+        let n = document.getElementById("inputMulti").valueAsNumber;
+        let res = document.getElementById("resultatMulti");
+        res.textContent = factorial(n);
+
+    }
+    function factorial(n) {
+        let res = 1;
+        for (let i = n; i > 0; i--) {
+            res *= i;
+        }
+        return res;
+    }
+    function coloret(id) {
+        let e = document.getElementById(id);
+        if (e.style.backgroundColor == "white") {
+            e.style.backgroundColor = "red";
+            document.getElementsByTagName("body")[0].style.backgroundColor = "white";
+        } else {
+            e.style.backgroundColor = "white";
+            document.getElementsByTagName("body")[0].style.backgroundColor = "red";
+        }
+    }
+
+    function mitjanaImparells(l) {
+        let res = 0;
+        let numElements = 0;
+        for (let i = 0; i < l.length; i++) {
+            if (i % 2 == 1) {
+                res += l[i];
+                numElements++;
+            }
+        }
+
+        return res / numElements;
+    }
+
+    function invertir(l) {
+        let res = [];
+        for (let i = l.length - 1; i >= 0; i--) {
+            res.push(l[i]);
+        }
+        return res;
+    }
+
+    function paintAll() {
+        erase();
+        for (let i = 0; i < matrix.length; i++) { // afegir codi
+            for (let j = 0; j < matrix[i].length; j++) { // afegir codi
+                matrix[i][j].style.backgroundColor = "blue";
+            }
+        }
+    }
+
+    function erase() {
+        for (let i = 0; i < matrix.length; i++) { // afegir codi
+            for (let j = 0; j < matrix[i].length; j++) { // afegir codi
+                matrix[i][j].style.backgroundColor = "white";
+            }
+        }
+    }
+    function pintaQuadrant() {
+        erase();
+        for (let i = matrix.length - 1; i >= matrix.length / 2; i--) { // afegir codi
+            for (let j = 0; j < matrix[i].length / 2; j++) { // afegir codi
+                matrix[i][j].style.backgroundColor = "blue";
+            }
+        }
+    }
+
+    function pintaDiagonals() {
+        erase();
+        for (let i = 0; i < matrix.length; i++) { // afegir codi
+            for (let j = 0; j < matrix[i].length; j++) { // afegir codi
+                if (i == j || j == (matrix[i].length - i)) matrix[i][j].style.backgroundColor = "blue";
+            }
+        }
+    }
+
+</script>
+
+</html>
