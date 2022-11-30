@@ -14,7 +14,10 @@ class Curso {
     }
 }
 
-const cuersoJS = new Curso("Javascript", 1)
-const cuersoTS = new Curso("Typescript", 2)
-console.log(cuersoJS, cuersoTS)
+const cursoJS = new Curso("Javascript", 1)
+const cursoTS = new Curso("Typescript", 2)
+cursoJS.agregarLeccion("soy una leccion")
+console.log(cursoJS, cursoTS)
+cursoJS.eliminaUltimaLeccion()
+console.log(cursoJS)
 </script>

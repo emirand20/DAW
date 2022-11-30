@@ -1,0 +1,41 @@
+<script>
+    function Assignaturas(ref, nom, horas, professor) {
+        this.ref = ref
+        this.nom = nom
+        this.horas = horas
+        this.UF = []
+        this.professor = professor
+        this.alumnes = []
+    }
+
+    Assignaturas.prototype.addUF = function (UF) {
+        this.UF.push(UF)
+    }
+
+    /*Assignaturas.prototype.deleteUF = function () {
+        this.UF.pop()
+    }*/
+
+    Assignaturas.prototype.addAlum = function (alumnes) {
+        this.alumnes.push(alumnes)
+    }
+
+    Assignaturas.prototype.deleteAlum = function () {
+        this.alumnes.shift()
+    }
+
+    const assignatura = new Assignaturas("BBDD", "Base de Datos", 180, "Pep Parés")
+    assignatura.addUF("UF1")
+    assignatura.addUF("UF2")
+    assignatura.addUF("UF3")
+    assignatura.addUF("UF4")
+    assignatura.addAlum("alu1")
+    assignatura.addAlum("alu2")
+    assignatura.addAlum("alu3")
+    assignatura.addAlum("alu4")
+    assignatura.addAlum("alu5")
+    console.log(assignatura)
+    assignatura.deleteAlum()
+    console.log(assignatura)
+
+</script>
