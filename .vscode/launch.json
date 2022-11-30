@@ -6,6 +6,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Random",
+            "request": "launch",
+            "mainClass": "Random",
+            "projectName": "DAW_5b2e64a4"
+        },
+        {
+            "type": "java",
+            "name": "Launch Farmacia",
+            "request": "launch",
+            "mainClass": "Farmacia",
+            "projectName": "DAW_5b2e64a4"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ex02",
+            "request": "launch",
+            "mainClass": "Ex02",
+            "projectName": "DAW_5b2e64a4"
+        },
+        {
+            "type": "java",
+            "name": "Launch Suma",
+            "request": "launch",
+            "mainClass": "Suma",
+            "projectName": "DAW_5b2e64a4"
+        },
+        {
+            "type": "java",
             "name": "Launch Bucles",
             "request": "launch",
             "mainClass": "Bucles",

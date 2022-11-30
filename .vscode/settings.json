@@ -1,12 +1,11 @@
 {
     "java.project.sourcePaths": [
-        "src/snake",
         "src/daw02",
         "src/daw01/javaDesdecero",
         "src/daw01/exClase",
         "src/daw01/condicionales_II",
         "src/daw01/bucles",
-        "src/daw01/examenes/examenUF1a"
+        "src/daw01/condicionales"
     ],
     "liveServer.settings.port": 5501
 }

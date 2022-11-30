@@ -1,4 +1,3 @@
-package daw01.condicionales;
 
 import java.util.Scanner;
 

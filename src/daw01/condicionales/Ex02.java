@@ -1,7 +1,4 @@
-package daw01.condicionales;
-
 import java.util.Scanner;
-
 /**
  * 2) Demanar a l'usuari un valor entre 5 i 10
  * Si indica un valor més petit que 5 dir-li - "T'has quedat curt"
