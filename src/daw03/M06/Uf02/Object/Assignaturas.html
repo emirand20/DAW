@@ -34,8 +34,49 @@
     assignatura.addAlum("alu3")
     assignatura.addAlum("alu4")
     assignatura.addAlum("alu5")
-    console.log(assignatura)
+    //console.log(assignatura)
+    //2
     assignatura.deleteAlum()
     console.log(assignatura)
+    //3
+    console.log(Object.values(assignatura))
+    //4
+    function Library(author, title, readingStatus) {
+        this.author = author
+        this.title = title
+        this.readingStatus = readingStatus
+    }
+    const BillGates = new Library('Bill Gates', 'The Road Ahead', true)
+    const SteveJobs = new Library('Steve Jobs', 'Walter Isaacson', false)
+    const SuzanneCollins = new Library('Suzanne Collins', 'Mockingjay: The Final Book of The Hunger Games', false)
+    console.log(Object.values(BillGates), Object.values(SteveJobs), Object.values(SuzanneCollins))
+    //5
+    /*let radio = prompt('Dime el radio:')
+    let altura = prompt('Dime la altura:')
+    alert('El volumen del cilindro es: ' + (Math.PI + (radio * 2) * altura))*/
+    //6
+    function Circulo(radio) {
+        this.radio = radio
+    }
+    Circulo.prototype.perimetro = function (radio) {
+        return Math.PI * radio * 2
+    }
+    Circulo.prototype.area = function (radio) {
+        return Math.PI * radio ** radio
+    }
+    Circulo.prototype.color_contorn = function (contorn) {
+
+    }
+    Circulo.prototype.color_fons = function (fons) {
+
+    }
+    Circulo.prototype.gruix_contorn = function (gruix) {
+
+    }
+    let radioCirculo = prompt('Dime el radio del circulo')
+    const circulo = new Circulo(radioCirculo)
+    //circulo.perimetro(radioCirculo)
+    alert("El perimetro de un círculo de radio " + radioCirculo + " es " + circulo.perimetro(radioCirculo));
+    alert("El area de un círculo de radio " + radioCirculo + " es " + circulo.area(radioCirculo));
 
 </script>
