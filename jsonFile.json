@@ -1,0 +1,18 @@
+{
+    "name": "Joe",
+    "age": 25,
+    "phone": [
+        "555-666-7777",
+        "444-789-1234"
+    ],
+    "homeAddress": {
+        "street": "Sycamore Avenue",
+        "city": "Gilroy",
+        "zipcode": "95046"
+    },
+	"businessAddress": {
+        "street": "Bailey Avenue",
+        "City": "San Jose",
+        "zipcode": "95141"
+    }
+}
