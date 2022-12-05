@@ -20,11 +20,13 @@
         this.alumnes.push(alumnes)
     }
 
-    Assignaturas.prototype.deleteAlum = function () {
-        this.alumnes.shift()
-    }
+    /*Assignaturas.prototype.deleteAlum = function () {
+        //this.alumnes.shift()
+        delete Assignaturas.alumnes
+    }*/
 
     const assignatura = new Assignaturas("BBDD", "Base de Datos", 180, "Pep Parés")
+    const assignatura2 = new Assignaturas("JS", "JavaScript", 180, "Raul RUfo")
     assignatura.addUF("UF1")
     assignatura.addUF("UF2")
     assignatura.addUF("UF3")
@@ -36,8 +38,11 @@
     assignatura.addAlum("alu5")
     console.log(assignatura)
     //2
-    assignatura.deleteAlum()
-    console.log(assignatura)
+    assignatura2.addUF("UF2")
+    assignatura2.addAlum("alu1")
+    //assignatura2.deleteAlum()
+    delete assignatura2.alumnes
+    console.log(alumnes2)
     //3
     console.log(Object.values(assignatura))
     //4
