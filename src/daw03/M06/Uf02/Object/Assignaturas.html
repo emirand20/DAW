@@ -12,21 +12,12 @@
         this.UF.push(UF)
     }
 
-    /*Assignaturas.prototype.deleteUF = function () {
-        this.UF.pop()
-    }*/
-
     Assignaturas.prototype.addAlum = function (alumnes) {
         this.alumnes.push(alumnes)
     }
 
-    /*Assignaturas.prototype.deleteAlum = function () {
-        //this.alumnes.shift()
-        delete Assignaturas.alumnes
-    }*/
-
     const assignatura = new Assignaturas("BBDD", "Base de Datos", 180, "Pep Parés")
-    const assignatura2 = new Assignaturas("JS", "JavaScript", 180, "Raul RUfo")
+    const assignatura2 = new Assignaturas("JS", "JavaScript", 180, "Raul Rufo")
     assignatura.addUF("UF1")
     assignatura.addUF("UF2")
     assignatura.addUF("UF3")
@@ -36,15 +27,17 @@
     assignatura.addAlum("alu3")
     assignatura.addAlum("alu4")
     assignatura.addAlum("alu5")
-    console.log(assignatura)
+    console.log("Act 0", assignatura)
+    //1
+    console.log("Act 1", Object.keys(assignatura))
     //2
     assignatura2.addUF("UF2")
     assignatura2.addAlum("alu1")
-    //assignatura2.deleteAlum()
+    console.log("Act 2", assignatura2.alumnes)
     delete assignatura2.alumnes
-    console.log(alumnes2)
+    console.log(assignatura2)
     //3
-    console.log(Object.values(assignatura))
+    console.log("Act 3", Object.keys(assignatura).length)
     //4
     function Library(author, title, readingStatus) {
         this.author = author
@@ -54,13 +47,22 @@
     const BillGates = new Library('Bill Gates', 'The Road Ahead', true)
     const SteveJobs = new Library('Steve Jobs', 'Walter Isaacson', false)
     const SuzanneCollins = new Library('Suzanne Collins', 'Mockingjay: The Final Book of The Hunger Games', false)
-    console.log(Object.values(BillGates), Object.values(SteveJobs), Object.values(SuzanneCollins))
+    console.log("Act 4", Object.values(BillGates), Object.values(SteveJobs), Object.values(SuzanneCollins))
     //5
-    let radio = prompt('Dime el radio:')
-    let altura = prompt('Dime la altura:')
-    alert('El volumen del cilindro es: ' + (Math.PI + (radio * 2) * altura))
+    function Cilindro(radio, altura) {
+        this.radio = radio
+        this.altura = altura
+    }
+    Cilindro.prototype.volumen = function (r, h) {
+        let volumen = Math.PI * (r * 2) * h
+        return volumen
+    }
+    r = prompt('Dime el radio:')
+    h = prompt('Dime la altura:')
+    const cilindro = new Cilindro(r, h)
+    alert('El volumen del cilindro es: ' + cilindro.volumen(r, h))
     //6
-    function Circulo(radio) {
+    /*function Circulo(radio) {
         this.radio = radio
         this.color_contorn = []
         this.color_fons = []
@@ -110,5 +112,5 @@
     arrayBidimensional[1][0] = prop3
     arrayBidimensional[1][1] = prop4
 
-    alert("arrayBidimensional[0][0]: " + arrayBidimensional[0][0] + "\narrayBidimensional[0][1]: " + arrayBidimensional[0][1] + "\narrayBidimensional[1][0]: " + arrayBidimensional[1][0] + "\narrayBidimensional[1][1]: " + arrayBidimensional[1][1]);
+    alert("arrayBidimensional[0][0]: " + arrayBidimensional[0][0] + "\narrayBidimensional[0][1]: " + arrayBidimensional[0][1] + "\narrayBidimensional[1][0]: " + arrayBidimensional[1][0] + "\narrayBidimensional[1][1]: " + arrayBidimensional[1][1]);*/
 </script>
