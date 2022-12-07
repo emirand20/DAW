@@ -60,16 +60,16 @@
     r = prompt('Dime el radio:')
     h = prompt('Dime la altura:')
     const cilindro = new Cilindro(r, h)
-    alert('El volumen del cilindro es: ' + cilindro.volumen(r, h))
+    alert('*Act 5* El volumen del cilindro es: ' + cilindro.volumen(r, h))
     //6
-    /*function Circulo(radio) {
+    function Circulo(radio) {
         this.radio = radio
         this.color_contorn = []
         this.color_fons = []
         this.gruix_contorn = []
     }
-    Circulo.prototype.perimetro = function (radio) {
-        return Math.PI * radio * 2
+    Circulo.prototype.perimetro = function (r) {
+        return Math.PI * r * 2
     }
     Circulo.prototype.area = function (radio) {
         return Math.PI * radio ** radio
@@ -83,6 +83,9 @@
     Circulo.prototype.addGruix = function (gruix) {
         this.gruix_contorn.push(gruix)
     }
+    // Circulo.prototype.showAllMethods = function(){
+    //     getMethods = (obj) => Object.getOwnPropertyNames(obj).filter(item => typeof obj[item] === 'function')
+    // }
     let radioCirculo = prompt('Dime el radio del circulo')
     const circulo = new Circulo(radioCirculo)
     circulo.perimetro(radioCirculo)
@@ -92,10 +95,12 @@
     circulo.addFons("green")
     circulo.addGruix("2px")
     //7
-    Circulo.prototype.getMetodos = function (object) {
-        return Object.entries(object)
+    function getAllMethods(object) {
+        return Object.getOwnPropertyNames(object).filter(function (property) {
+            return typeof object[property] == 'function';
+        });
     }
-    alert("Los metos que tiene el objeto son: " + circulo.getMetodos(circulo))
+    alert(getAllMethods(Math));
     //8
     var arrayBidimensional = new Array(4);
 
@@ -112,5 +117,5 @@
     arrayBidimensional[1][0] = prop3
     arrayBidimensional[1][1] = prop4
 
-    alert("arrayBidimensional[0][0]: " + arrayBidimensional[0][0] + "\narrayBidimensional[0][1]: " + arrayBidimensional[0][1] + "\narrayBidimensional[1][0]: " + arrayBidimensional[1][0] + "\narrayBidimensional[1][1]: " + arrayBidimensional[1][1]);*/
+    alert("arrayBidimensional[0][0]: " + arrayBidimensional[0][0] + "\narrayBidimensional[0][1]: " + arrayBidimensional[0][1] + "\narrayBidimensional[1][0]: " + arrayBidimensional[1][0] + "\narrayBidimensional[1][1]: " + arrayBidimensional[1][1]);
 </script>
