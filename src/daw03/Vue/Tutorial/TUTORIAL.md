@@ -1,4 +1,6 @@
 # Vue 
+~~~
+
 <script>
 export default {
     data() {
@@ -20,7 +22,11 @@ export default {
     <p>Count is: {{ counter.count }}</p>
 </template>
 
-<!-- Hacer rojo un texto -->
+~~~
+
+~~~ 
+Creamos un texto en rojo 
+~~~
 <script>
 export default {
   data() {
@@ -41,4 +47,6 @@ export default {
 }
 </style>
 
-<!-- Incrementar un numero -->
+~~~
+Incrementamos un numero
+~~~
