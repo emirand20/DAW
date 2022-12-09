@@ -77,3 +77,42 @@ export default {
   <button>count is: {{ count }}</button>
 </template>
 ~~~
+
+# Enlaces de formulario
+
+Usando 'v-bind' y 'v-on' juntos, podemos crear enlaces bidireccionales en elementos de entrada de formulario:
+~~~
+<input :value="text" @input="onInput">
+~~~
+~~~
+methods: {
+  onInput(e) {
+    // a v-on handler receives the native DOM event
+    // as the argument.
+    this.text = e.target.value
+  }
+}
+~~~
+Para simplificar los enlaces bidireccionales, Vue proporciona una directiva, 'v-model' que es esencialmente un azúcar de sintaxis para lo anterior:
+~~~
+<input v-model="text">
+~~~
+'v-model' sincroniza automáticamente el '<input>' valor de con el estado enlazado, por lo que ya no necesitamos usar un controlador de eventos para eso.
+
+'v-model' no solo funciona con entradas de texto, sino también con otros tipos de entrada, como casillas de verificación, botones de opción y menús desplegables de selección. 
+~~~
+<script>
+export default {
+  data() {
+    return {
+      text: ''
+    }
+  }
+}
+</script>
+
+<template>
+  <input v-model="text" placeholder="Type here">
+  <p>{{ text }}</p>
+</template>
+~~~
