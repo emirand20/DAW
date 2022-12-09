@@ -146,8 +146,84 @@ export default {
 </script>
 
 <template>
-  <button @click="toggle">toggle</button>
+  <!-- <button @click="toggle">toggle</button> -->
   <h1 v-if="awesome">Vue is awesome!</h1>
   <h1 v-else>Oh no 😢</h1>
+</template>
+~~~
+
+# Representación de lista
+Podemos usar la 'v-for' directiva para representar una lista de elementos basada en un script:
+~~~
+ data() {
+    return {
+      newTodo: '',
+      todos: [
+        { id: id++, text: 'Learn HTML' },
+        { id: id++, text: 'Learn JavaScript' },
+        { id: id++, text: 'Learn Vue' }
+      ]
+    }
+<ul>
+  <li v-for="todo in todos" :key="todo.id">
+    {{ todo.text }}
+  </li>
+</ul>
+~~~
+Añadiremos, viusalizaremos y eliminaremos cada uno de los elementos de la fila.
+Hay dos formas de actualizar la lista:
+1. Llame a los métodos de mutación en la matriz de origen:
+~~~
+addTodo() {
+      this.todos.push({ id: id++, text: this.newTodo })
+      this.newTodo = ''
+    },
+~~~
+2. Remplace por una nueva matriz
+~~~
+removeTodo(todo) {
+      this.todos = this.todos.filter((t) => t !== todo)
+    }
+~~~
+De manera que visualizaremos un imput el cual añadiremos productos a nuestra lista, visualizaremos la lista con 'v-for' y eliminaremos con 'button'
+~~~
+<script>
+// give each todo a unique id
+let id = 0
+
+export default {
+  data() {
+    return {
+      newTodo: '',
+      todos: [
+        { id: id++, text: 'Learn HTML' },
+        { id: id++, text: 'Learn JavaScript' },
+        { id: id++, text: 'Learn Vue' }
+      ]
+    }
+  },
+  methods: {
+    addTodo() {
+      this.todos.push({ id: id++, text: this.newTodo })
+      this.newTodo = ''
+    },
+    removeTodo(todo) {
+      this.todos = this.todos.filter((t) => t !== todo)
+    }
+  }
+}
+</script>
+
+<template>
+  <form @submit.prevent="addTodo">
+    <input v-model="newTodo">
+    <button>Add Todo</button>    
+  </form>
+  <ul>
+    <li v-for="todo in todos" :key="todo.id">
+      {{ todo.text }}
+      <button @click="removeTodo(todo)">DELETE PRODUCT</button>
+    </li>
+  </ul>
 </template>
 ~~~
