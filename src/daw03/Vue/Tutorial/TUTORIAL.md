@@ -227,3 +227,7 @@ export default {
   </ul>
 </template>
 ~~~
+
+# Propiedad calculada
+Siguiendo con el ejemplo anterior, eliminaremos de forma visual aquellos elementos de la lista los que estan hechos como 'done'. Al tratarse como de una tarea pendiente y usando v-model para verificacion de cada casilla.
+Para ocultar todas las tareas ya realizadas, creando el boton 'hideCompleted' (ocultarCompletado),
