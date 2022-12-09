@@ -59,3 +59,21 @@ Podemos escuchar eventos DOM usando la v-ondirectiva:
 ~~~
 <button v-on:click="increment">{{ count }}</button>
 ~~~
+Dentro de un método, podemos acceder a la instancia del componente usando 'this'. La instancia del componente expone las propiedades de datos declaradas por data.
+Los controladores de eventos también pueden usar expresiones en línea y pueden simplificar tareas comunes con modificadores.
+~~~
+<script>
+export default {
+  data() {
+    return {
+      count: 0
+    }
+  }
+}
+</script>
+
+<template>
+  <!-- make this button work -->
+  <button>count is: {{ count }}</button>
+</template>
+~~~
