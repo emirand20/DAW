@@ -6,7 +6,7 @@ La característica principal de Vue es la representación declarativa : al usar 
 
 Sintaxis bigotes = {{ message }}
 
-No es necesariamente que entre 'bigotes' sea llamada la funcion, sino tambien podemos usar cualqueir expresion Js valida <h1>{{ message.split('').reverse().join('') }}</h1> 
+Tambien podemos usar cualqueir expresion Js valida dentro de bigotes.
 ~~~
 <script>
 export default {
@@ -22,6 +22,7 @@ export default {
 </script>
 
 <template>
+    <!-- {{ message.split('').reverse().join('') }} -->
     <h1>{{ message }}</h1>
     <p>Count is: {{ counter.count }}</p>
 </template>
