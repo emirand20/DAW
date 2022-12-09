@@ -102,20 +102,24 @@
     }
     alert(getAllMethods(Math));
     //8
-    var arrayBidimensional = new Array(4);
-
-    for (var i = 0; i < 4; i++) {
-        arrayBidimensional[i] = new Array(2);
+    /*function aBidimensional() {
+        this.arrayBidimensional = new Array(4);
+        for (var i = 0; i < 4; i++) {
+            this.arrayBidimensional[i] = new Array(2);
+        }
     }
+    aBidimensional.prototype.addArray = function (p1, p2, p3, p4) {
+        this.arrayBidimensional.push[0][0] = p1
+        this.arrayBidimensional.push[0][1] = p2
+        this.arrayBidimensional.push[1][0] = p3
+        this.arrayBidimensional.push[1][1] = p4
+    }
+    const array = new aBidimensional()
     let prop1 = prompt("añade el valor de prop1")
     let prop2 = prompt("añade el valor de prop2")
     let prop3 = prompt("añade el valor de prop4")
     let prop4 = prompt("añade el valor de prop5")
-
-    arrayBidimensional[0][0] = prop1
-    arrayBidimensional[0][1] = prop2
-    arrayBidimensional[1][0] = prop3
-    arrayBidimensional[1][1] = prop4
-
-    alert("arrayBidimensional[0][0]: " + arrayBidimensional[0][0] + "\narrayBidimensional[0][1]: " + arrayBidimensional[0][1] + "\narrayBidimensional[1][0]: " + arrayBidimensional[1][0] + "\narrayBidimensional[1][1]: " + arrayBidimensional[1][1]);
+    // return "arrayBidimensional[0][0]: " + arrayBidimensional[0][0] + "\narrayBidimensional[0][1]: " + arrayBidimensional[0][1] + "\narrayBidimensional[1][0]: " + arrayBidimensional[1][0] + "\narrayBidimensional[1][1]: " + arrayBidimensional[1][1]
+    array.addArray(prop1, prop2, prop3, prop4)
+    console.log(array)*/
 </script>
