@@ -116,3 +116,38 @@ export default {
   <p>{{ text }}</p>
 </template>
 ~~~
+
+# Condicionales
+
+Podemos usar la v-ifdirectiva para representar condicionalmente un elemento:
+~~~
+<h1 v-if="awesome">Vue is awesome!</h1>
+~~~
+Esto 'h1' se representará solo si el valor de 'awesome' es verdadero. Si 'awesome' cambia a un valor falso, se eliminará del DOM.
+También podemos usar 'v-else' y 'v-else-if' para denotar otras ramas de la condición:
+~~~
+<h1 v-if="awesome">Vue is awesome!</h1>
+<h1 v-else>Oh no 😢</h1>
+~~~
+~~~
+<script>
+export default {
+  data() {
+    return {
+      awesome: false
+    }
+  },
+  methods: {
+    toggle() {
+      this.awesome = !this.awesome
+    }
+  }
+}
+</script>
+
+<template>
+  <button @click="toggle">toggle</button>
+  <h1 v-if="awesome">Vue is awesome!</h1>
+  <h1 v-else>Oh no 😢</h1>
+</template>
+~~~
