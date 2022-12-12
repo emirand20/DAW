@@ -1,6 +1,7 @@
-# Vue
+# Vue 3 
+# Composition API
 ~~~
-<template lang="">
+<template>
   <div>
     
   </div>
@@ -15,8 +16,7 @@ export default {
 </style>
 ~~~
 # Representación declarativa
-
-La característica principal de Vue es la representación declarativa : al usar una sintaxis de plantilla que extiende HTML, podemos describir cómo debería verse el HTML en función del estado de JavaScript. Cuando cambia el estado, el HTML se actualiza automáticamente.
+La característica principal de Vue es la representación declarativa: al usar una sintaxis de plantilla que extiende HTML, podemos describir cómo debería verse el HTML en función del estado de JavaScript. Cuando cambia el estado, el HTML se actualiza automáticamente. Esto hace de una mayor fuidez.
 
 Sintaxis bigotes = {{ message }}
 
@@ -43,8 +43,14 @@ export default {
 ~~~
 
 # Creamos un texto en rojo 
-
-Una directiva es un atributo especial que comienza con el v-prefijo. Son parte de la sintaxis de la plantilla de Vue.
+Para vincular un atributo a un valor dinámico, usamos la 'v-bind' directiva:
+Una directiva es un atributo especial que comienza con el 'v-' prefijo. Son parte de la sintaxis de la plantilla de Vue.
+~~~
+<div v-bind:id="dynamicId"></div>
+~~~
+La parte después de los dos puntos (:id) es el "argumento" de la directiva. Aquí, el atributo del elemento 'id' se sincronizará con la dynamicIdpropiedad del estado del componente.
+Se abrebia a ':id=""'
+Si el atributo es id -> #, si el atributo es class -> .
 ~~~
 <template>
     <h1 :class="titleClass">Make me red</h1>
@@ -59,7 +65,6 @@ export default {
 }
 </script>
 
-
 <style>
 .title {
     color: red;
@@ -67,9 +72,8 @@ export default {
 </style>
 ~~~
 
-# Incrementamos un numero
-
-Podemos escuchar eventos DOM usando la v-ondirectiva:
+# Eventos
+Podemos escuchar eventos DOM usando la 'v-on' directiva:
 ~~~
 <button v-on:click="increment">{{ count }}</button>
 ~~~
@@ -77,8 +81,7 @@ Dentro de un método, podemos acceder a la instancia del componente usando 'this
 Los controladores de eventos también pueden usar expresiones en línea y pueden simplificar tareas comunes con modificadores.
 ~~~
 <template>
-  <!-- make this button work -->
-  <button>count is: {{ count }}</button>
+  <button @click="increment">count is: {{ count }}</button>
 </template>
 <script>
 export default {
@@ -86,14 +89,17 @@ export default {
     return {
       count: 0
     }
+  },
+  methods: {
+    increment() {
+      this.count++
+    }
   }
 }
 </script>
-
 ~~~
 
 # Enlaces de formulario
-
 Usando 'v-bind' y 'v-on' juntos, podemos crear enlaces bidireccionales en elementos de entrada de formulario:
 ~~~
 <input :value="text" @input="onInput">
