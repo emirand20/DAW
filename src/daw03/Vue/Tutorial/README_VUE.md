@@ -1,5 +1,4 @@
-# Vue 3 
-# Composition API
+# Vue 
 ~~~
 <template>
   <div>
