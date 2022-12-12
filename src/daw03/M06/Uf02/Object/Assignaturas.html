@@ -57,16 +57,16 @@
         let volumen = Math.PI * (r * 2) * h
         return volumen
     }
-    r = prompt('Dime el radio:')
-    h = prompt('Dime la altura:')
+    r = prompt('Act 5: Dime el radio:')
+    h = prompt('Act 5: Dime la altura:')
     const cilindro = new Cilindro(r, h)
-    alert('*Act 5* El volumen del cilindro es: ' + cilindro.volumen(r, h))
+    alert('Act 5: El volumen del cilindro es: ' + cilindro.volumen(r, h))
     //6
     function Circulo(radio) {
         this.radio = radio
-        this.color_contorn = []
-        this.color_fons = []
-        this.gruix_contorn = []
+        this.color_contorn = null
+        this.color_fons = null
+        this.gruix_contorn = null
     }
     Circulo.prototype.perimetro = function (r) {
         return Math.PI * r * 2
@@ -75,18 +75,16 @@
         return Math.PI * radio ** radio
     }
     Circulo.prototype.addContorn = function (contorn) {
-        this.color_contorn.push(contorn)
+        this.color_contorn = contorn
     }
     Circulo.prototype.addFons = function (fons) {
-        this.color_fons.push(fons)
+        this.color_fons = fons
     }
     Circulo.prototype.addGruix = function (gruix) {
-        this.gruix_contorn.push(gruix)
+        this.gruix_contorn = gruix
     }
-    // Circulo.prototype.showAllMethods = function(){
-    //     getMethods = (obj) => Object.getOwnPropertyNames(obj).filter(item => typeof obj[item] === 'function')
-    // }
-    let radioCirculo = prompt('Dime el radio del circulo')
+    
+    let radioCirculo = prompt('Act 6: Dime el radio del circulo')
     const circulo = new Circulo(radioCirculo)
     circulo.perimetro(radioCirculo)
     alert("El perimetro de un círculo de radio " + radioCirculo + " es " + circulo.perimetro(radioCirculo))
@@ -95,13 +93,15 @@
     circulo.addFons("green")
     circulo.addGruix("2px")
     //7
-    function getAllMethods(object) {
-        return Object.getOwnPropertyNames(object).filter(function (property) {
-            return typeof object[property] == 'function';
-        });
-    }
-    alert(getAllMethods(Math));
-    //8
+    const returnMethods = (obj = {}) => {
+    const members = Object.getOwnPropertyNames(obj);
+    const methods = members.filter(el => {
+      return typeof obj[el] === 'function';
+    })
+    return methods;
+    };
+    console.log("Act 7", returnMethods(Circulo.prototype));
+    //
     /*function aBidimensional() {
         this.arrayBidimensional = new Array(4);
         for (var i = 0; i < 4; i++) {
