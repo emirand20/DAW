@@ -1,5 +1,19 @@
-# Vue 
-
+# Vue
+~~~
+<template lang="">
+  <div>
+    
+  </div>
+</template>
+<script>
+export default {
+  
+}
+</script>
+<style>
+  
+</style>
+~~~
 # Representación declarativa
 
 La característica principal de Vue es la representación declarativa : al usar una sintaxis de plantilla que extiende HTML, podemos describir cómo debería verse el HTML en función del estado de JavaScript. Cuando cambia el estado, el HTML se actualiza automáticamente.
@@ -8,6 +22,11 @@ Sintaxis bigotes = {{ message }}
 
 Tambien podemos usar cualqueir expresion Js valida dentro de bigotes.
 ~~~
+<template>
+    <!-- {{ message.split('').reverse().join('') }} -->
+    <h1>{{ message }}</h1>
+    <p>Count is: {{ counter.count }}</p>
+</template>
 <script>
 export default {
     data() {
@@ -21,17 +40,15 @@ export default {
 }
 </script>
 
-<template>
-    <!-- {{ message.split('').reverse().join('') }} -->
-    <h1>{{ message }}</h1>
-    <p>Count is: {{ counter.count }}</p>
-</template>
 ~~~
 
 # Creamos un texto en rojo 
 
 Una directiva es un atributo especial que comienza con el v-prefijo. Son parte de la sintaxis de la plantilla de Vue.
 ~~~
+<template>
+    <h1 :class="titleClass">Make me red</h1>
+</template>
 <script>
 export default {
   data() {
@@ -42,9 +59,6 @@ export default {
 }
 </script>
 
-<template>
-    <h1 :class="titleClass">Make me red</h1>
-</template>
 
 <style>
 .title {
@@ -62,6 +76,10 @@ Podemos escuchar eventos DOM usando la v-ondirectiva:
 Dentro de un método, podemos acceder a la instancia del componente usando 'this'. La instancia del componente expone las propiedades de datos declaradas por data.
 Los controladores de eventos también pueden usar expresiones en línea y pueden simplificar tareas comunes con modificadores.
 ~~~
+<template>
+  <!-- make this button work -->
+  <button>count is: {{ count }}</button>
+</template>
 <script>
 export default {
   data() {
@@ -72,10 +90,6 @@ export default {
 }
 </script>
 
-<template>
-  <!-- make this button work -->
-  <button>count is: {{ count }}</button>
-</template>
 ~~~
 
 # Enlaces de formulario
@@ -101,6 +115,10 @@ Para simplificar los enlaces bidireccionales, Vue proporciona una directiva, 'v-
 
 'v-model' no solo funciona con entradas de texto, sino también con otros tipos de entrada, como casillas de verificación, botones de opción y menús desplegables de selección. 
 ~~~
+<template>
+  <input v-model="text" placeholder="Type here">
+  <p>{{ text }}</p>
+</template>
 <script>
 export default {
   data() {
@@ -111,10 +129,6 @@ export default {
 }
 </script>
 
-<template>
-  <input v-model="text" placeholder="Type here">
-  <p>{{ text }}</p>
-</template>
 ~~~
 
 # Condicionales
@@ -130,6 +144,11 @@ También podemos usar 'v-else' y 'v-else-if' para denotar otras ramas de la cond
 <h1 v-else>Oh no 😢</h1>
 ~~~
 ~~~
+<template>
+  <!-- <button @click="toggle">toggle</button> -->
+  <h1 v-if="awesome">Vue is awesome!</h1>
+  <h1 v-else>Oh no 😢</h1>
+</template>
 <script>
 export default {
   data() {
@@ -145,11 +164,6 @@ export default {
 }
 </script>
 
-<template>
-  <!-- <button @click="toggle">toggle</button> -->
-  <h1 v-if="awesome">Vue is awesome!</h1>
-  <h1 v-else>Oh no 😢</h1>
-</template>
 ~~~
 
 # Representación de lista
@@ -187,6 +201,18 @@ removeTodo(todo) {
 ~~~
 De manera que visualizaremos un imput el cual añadiremos productos a nuestra lista, visualizaremos la lista con 'v-for' y eliminaremos con 'button'
 ~~~
+<template>
+  <form @submit.prevent="addTodo">
+    <input v-model="newTodo">
+    <button>Add Todo</button>    
+  </form>
+  <ul>
+    <li v-for="todo in todos" :key="todo.id">
+      {{ todo.text }}
+      <button @click="removeTodo(todo)">DELETE PRODUCT</button>
+    </li>
+  </ul>
+</template>
 <script>
 // give each todo a unique id
 let id = 0
@@ -214,20 +240,73 @@ export default {
 }
 </script>
 
-<template>
-  <form @submit.prevent="addTodo">
-    <input v-model="newTodo">
-    <button>Add Todo</button>    
-  </form>
-  <ul>
-    <li v-for="todo in todos" :key="todo.id">
-      {{ todo.text }}
-      <button @click="removeTodo(todo)">DELETE PRODUCT</button>
-    </li>
-  </ul>
-</template>
 ~~~
 
 # Propiedad calculada
 Siguiendo con el ejemplo anterior, eliminaremos de forma visual aquellos elementos de la lista los que estan hechos como 'done'. Al tratarse como de una tarea pendiente y usando v-model para verificacion de cada casilla.
 Para ocultar todas las tareas ya realizadas, creando el boton 'hideCompleted' (ocultarCompletado)
+~~~
+<li v-for="todo in todos">
+  <input type="checkbox" v-model="todo.done">
+  ...
+</li>
+~~~
+La lectural del fichero 
+~~~
+<template>
+  <form @submit.prevent="addTodo">
+    <input v-model="newTodo">
+    <button>Add Todo</button>
+  </form>
+  <ul>
+    <li v-for="todo in filteredTodos" :key="todo.id">
+      <input type="checkbox" v-model="todo.done">
+      <span :class="{ done: todo.done }">{{ todo.text }}</span>
+      <button @click="removeTodo(todo)">X</button>
+    </li>
+  </ul>
+  <button @click="hideCompleted = !hideCompleted">
+    {{ hideCompleted ? 'Show all' : 'Hide completed' }}
+  </button>
+</template>
+<script>
+let id = 0
+
+export default {
+  data() {
+    return {
+      newTodo: '',
+      hideCompleted: false,
+      todos: [
+        { id: id++, text: 'Learn HTML', done: true },
+        { id: id++, text: 'Learn JavaScript', done: true },
+        { id: id++, text: 'Learn Vue', done: false }
+      ]
+    }
+  },
+  computed: {
+    filteredTodos() {
+      return this.hideCompleted
+        ? this.todos.filter((t) => !t.done)
+        : this.todos
+    }
+  },
+  methods: {
+    addTodo() {
+      this.todos.push({ id: id++, text: this.newTodo, done: false })
+      this.newTodo = ''
+    },
+    removeTodo(todo) {
+      this.todos = this.todos.filter((t) => t !== todo)
+    }
+  }
+}
+</script>
+
+
+<style>
+.done {
+  text-decoration: line-through;
+}
+</style>
+~~~
