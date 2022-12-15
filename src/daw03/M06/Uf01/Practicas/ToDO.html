@@ -10,7 +10,7 @@
     <div>
       <h1>To Do List</h1>
       <input type="text" id="input" placeholder="Agrega elementos a la lista" />
-      <button onclick="añadirLista()">Agrega a la lista</button
+      <button onclick="añadirInput()">Agrega a la lista</button
     </div>
     
     <ul id="lista">
@@ -19,38 +19,41 @@
     </ul>
   </body>
   <script>
-    // Añadir elemento segun el input
-    function añadirLista() {
-        //creamos un elemento de la lista ADD
-      let li = document.createElement("li")
-      let inputTexto = document.getElementById("input").value //conectamos el input
-      let texto = document.createTextNode(inputTexto) //es cadena que contiene los datos que se colocarán en el nodo de texto 'input'.
-      li.appendChild(texto) //introducimos este texto en LI
-      document.getElementById("lista").appendChild(li)
-        //eliminar elemento de la lista
-      let button = document.createElement("button")
-      let x = document.createTextNode("x")
-      button.className = "ocultar"
-      button.appendChild(x)
-      li.appendChild(button)
-    }
-    //añadimos una 'x' a cada elemento de li
-    let lista = document.getElementsByTagName("li")
-        for (let i = 0; i < lista.length; i++) {
-            let button = document.createElement("button")
-            let txt = document.createTextNode("x")
-            button.className = "ocultar"
-            button.appendChild(txt)
-            lista[i].appendChild(button)
-        }
-    //cuando le demos onclick a 'x' se ha de ocultar DELETE
-    //let ocultar = document.getElementsByClassName("ocultar")
-    let ocultar = document.getElementsByClassName("ocultar").style.display = 'none'
-    for(let i = 0; i > ocultar.length; i++){
-        ocultar[i].onclick = function(){
-            let div = this.parentElement;
-            div.style.display = "none";
-        }
-        }
+  // Añadir elemento segun el input
+	function añadirInput() {
+		//creamos un elemento de la lista ADD
+		let li = document.createElement("li")
+		let inputTexto = document.getElementById("input").value //conectamos el input
+		let texto = document.createTextNode(inputTexto) //se pasaran aquellos datos dentro del input y colocarán en el nodo de texto
+		li.appendChild(texto) //introducimos este texto en del input
+		document.getElementById("lista").appendChild(li)
+		let button = document.createElement("button")
+		let x = document.createTextNode("x")
+		button.appendChild(x)
+		li.appendChild(button)
+		button.addEventListener('click', function() { //funcion anonima
+			li.style.display = "none"
+		})
+	}
+//añadimos una 'x' a cada elemento de li
+let lista = document.getElementsByTagName("li")
+for (let i = 0; i < lista.length; i++) {
+	let button = document.createElement("button")
+	let txt = document.createTextNode("x")
+	button.appendChild(txt)
+	lista[i].appendChild(button)
+	button.addEventListener('click', function() { //funcion anonima
+		li.style.display = "none"
+	})
+}
+//cuando le demos onclick a 'x' se ha de ocultar DELETE
+//let ocultar = document.getElementsByClassName("ocultar")
+let ocultar = document.getElementsByClassName("ocultar")
+for (let i = 0; i > ocultar.length; i++) {
+	ocultar[i].onclick = function() {
+		let div = this.parentElement;
+		div.style.display = "none";
+	}
+} 
   </script>
 </html>
