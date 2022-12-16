@@ -1,8 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puntuación más alta</title>
+</head>
+<body>
+    <h1 style="text-align:center">High Score Board</h1>
+    <p style="text-align:center">Add players:
+    <input type="text" id="input" placeholder="Name player"/>
+    </p>
+    <p style="text-align:center">Add score:
+    <input type="text" id="input" placeholder="Score"/>
+    </p>
+    <div style="text-align:center"><button onclick="createScoreBoard()" id="myDynamicTable">Create table</button>
+    <table id="tabla">
+        <tr>
+            <td>
+                
+            </td>
+        </tr>
+    </table>
+    </div>
+</body>
+</html>
 <script>
-    function Jugadores(id, valores){
-        this.id = id
-        this.valores = valores
+    function createScoreBoard(){
+       //creamos un elemento de la lista ADD
+		let li = document.createElement("tr")
+		let inputTexto = document.getElementById("input").value //conectamos el input
+		let texto = document.createTextNode(inputTexto) //se pasaran aquellos datos dentro del input y colocarán en el nodo de texto
+		li.appendChild(texto) //introducimos este texto en del input
+		document.getElementById("tabla").appendChild(li)
     }
-    const Raul = new Jugadores('Raul', '0')
-    
 </script>
