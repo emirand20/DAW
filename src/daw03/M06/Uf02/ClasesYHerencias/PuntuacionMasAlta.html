@@ -1,37 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Puntuación más alta</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Puntuación más alta</title>
 </head>
+<style>
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  td,
+  th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+</style>
+
 <body>
-    <h1 style="text-align:center">High Score Board</h1>
-    <p style="text-align:center">Add players:
-    <input type="text" id="input" placeholder="Name player"/>
-    </p>
-    <p style="text-align:center">Add score:
-    <input type="text" id="input" placeholder="Score"/>
-    </p>
-    <div style="text-align:center"><button onclick="createScoreBoard()" id="myDynamicTable">Create table</button>
-    <table id="tabla">
-        <tr>
-            <td>
-                
-            </td>
-        </tr>
-    </table>
-    </div>
+  <h1 style="text-align:center">High Score Board</h1>
+  <p style="text-align:center">Add players:
+    <input type="text" id="inputName" placeholder="Name player" />
+  </p>
+  <p style="text-align:center">Add score:
+    <input type="text" id="inputScore" placeholder="Score" />
+  </p>
+  <div style="text-align:center"><button onclick="createScoreBoard()" id="myDynamicTable">Create table</button></div>
+<table id="tablaName">
+    <tr id="trPlayers">
+      <th></th>
+      <th></th>
+    </tr>
+    <tr id="trScore">
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+    </tr>
+    </tr>
+  </table>
+
 </body>
+
 </html>
 <script>
-    function createScoreBoard(){
-       //creamos un elemento de la lista ADD
-		let li = document.createElement("tr")
-		let inputTexto = document.getElementById("input").value //conectamos el input
-		let texto = document.createTextNode(inputTexto) //se pasaran aquellos datos dentro del input y colocarán en el nodo de texto
-		li.appendChild(texto) //introducimos este texto en del input
-		document.getElementById("tabla").appendChild(li)
+  /*function createScoreBoard() {
+    //creamos un elemento de la lista ADD
+    let td = document.createElement("td")
+    let inputName = document.getElementById("inputName").value //conectamos el input
+    let texto = document.createTextNode(inputName) //se pasaran aquellos datos dentro del input y colocarán en el nodo de texto
+    td.appendChild(texto) //introducimos este texto en del input
+    document.getElementById("tablaName").appendChild(td)
+
+    let tr = document.createElement("tr")
+    let inputScore = document.getElementById("inputScore")
+  }*/
+  let mountains = [
+    { name: "Monte Falco", height: 1658, place: "Parco Foreste Casentinesi" },
+    { name: "Monte Falterona", height: 1654, place: "Parco Foreste Casentinesi" },
+    { name: "Poggio Scali", height: 1520, place: "Parco Foreste Casentinesi" }, 
+    { name: "Pratomagno", height: 1592, place: "Parco Foreste Casentinesi" },
+    { name: "Monte Amiata", height: 1738, place: "Siena" }
+  ];
+
+  function generateTableHead(table, data) {
+    let thead = table.createTHead();
+    let row = thead.insertRow();
+    for (let key of data) {
+      let th = document.createElement("th");
+      let text = document.createTextNode(key);
+      th.appendChild(text);
+      row.appendChild(th);
     }
+  }
+  
+  function generateTable(table, data) {
+    for (let element of data) {
+      let row = table.insertRow();
+      for (key in element) {
+        let cell = row.insertCell();
+        let text = document.createTextNode(element[key]);
+        cell.appendChild(text);
+      }
+    }
+  }
+  
+  let table = document.querySelector("table");
+  let data = Object.keys(mountains[0]);
+  generateTableHead(table, data);
+  generateTable(table, mountains);
 </script>
