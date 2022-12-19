@@ -9,34 +9,16 @@
 </head>
 
 <body>
-  <h1 style="text-align:center"">To Do List</h1>
-    <input type=" text" id="input" placeholder="Agrega elementos a la lista" />
+  <h1 style="text-align:center">To Do List</h1>
+  <input type=" text" id="input" placeholder="Agrega elementos a la lista" />
   <button onclick="añadirInput()">Agrega a la lista</button>
-  <button onclick="editarLI()">Edita la lista</button>
+  <button onclick="editList()" id="foo">Edita la lista</button>
   <button onclick="verTodosElementosLI()">Ver todos los elemetos</button>
 
   <ul id="lista">
-    <div>
-      <input type="checkbox">
-      Manzanas
-    </div>
-    <div>
-      <input type="checkbox">
-      Zanahorias
-    </div>
-    <div>
-      <input type="checkbox">
-      Pimientos
-    </div>
-    <div>
-      <input type="checkbox">
-      Tomates
-    </div>
-    <div>
-      <input type="checkbox">
-      <span>Col</span>
-    </div>
+    
   </ul>
+  
 </body>
 <script>
   //crearemos un div que tenga un input checkbox y fuera del imput
@@ -46,23 +28,29 @@
     let checkbox = document.createElement("input")
     checkbox.setAttribute("type", "checkbox")
     
+
     let añadirTarea = document.getElementById("input").value //conectamos el input 
+    let nuevaTarea = document.createTextNode(añadirTarea)
     let span = document.createElement("span")
-    
+    span.appendChild(nuevaTarea)
+    console.log(span.strike())
+
     if (añadirTarea === '') {
       alert("Añade una tarea");
     } else {
       div.appendChild(checkbox)
-      document.getElementById("lista").appendChild(div)
-      span.appendChild = añadirTarea //introducimos este texto dentro de span
+      document.getElementById("lista").appendChild(div).appendChild(span)
     }
-    
+
+
   }
 
   //una vez dado click deshabilitar la tarea
-  function editarLI() {
+  function editList() {
+    document.getElementById("foo").disabled = true    
     //añadimos una 'x' a cada div
     let lista = document.getElementsByTagName("div")
+    
     //ocultar elemeto
     for (let i = 0; i < lista.length; i++) {
       let button = document.createElement("button")
@@ -73,7 +61,6 @@
         lista[i].style.display = "none"
       })
     }
-
     //tachar el texto cada vez que se haga check
     //crear el 'boton check', tachar el texto pasado por el input
   }
