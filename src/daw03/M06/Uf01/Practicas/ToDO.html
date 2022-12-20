@@ -8,67 +8,16 @@
   <title>To Do</title>
 </head>
 
-<body>
+<body style="text-align:center">
+
   <h1 style="text-align:center">To Do List</h1>
-  <input type=" text" id="input" placeholder="Agrega elementos a la lista" />
+  <input type="text" id="input" placeholder="Agrega elementos a la lista" />
   <button onclick="añadirInput()">Agrega a la lista</button>
   <button onclick="editList()" id="foo">Edita la lista</button>
   <button onclick="verTodosElementosLI()">Ver todos los elemetos</button>
 
-  <ul id="lista">
-    
-  </ul>
-  
+  <ul id="lista"></ul>
 </body>
-<script>
-  //crearemos un div que tenga un input checkbox y fuera del imput
-  function añadirInput() {
-    const div = document.createElement("div")
-
-    let checkbox = document.createElement("input")
-    checkbox.setAttribute("type", "checkbox")
-    
-
-    let añadirTarea = document.getElementById("input").value //conectamos el input 
-    let nuevaTarea = document.createTextNode(añadirTarea)
-    let span = document.createElement("span")
-    span.appendChild(nuevaTarea)
-    console.log(span.strike())
-
-    if (añadirTarea === '') {
-      alert("Añade una tarea");
-    } else {
-      div.appendChild(checkbox)
-      document.getElementById("lista").appendChild(div).appendChild(span)
-    }
-
-
-  }
-
-  //una vez dado click deshabilitar la tarea
-  function editList() {
-    document.getElementById("foo").disabled = true    
-    //añadimos una 'x' a cada div
-    let lista = document.getElementsByTagName("div")
-    
-    //ocultar elemeto
-    for (let i = 0; i < lista.length; i++) {
-      let button = document.createElement("button")
-      let txt = document.createTextNode("x")
-      button.appendChild(txt)
-      lista[i].appendChild(button)
-      button.addEventListener('click', function () { //funcion anonima
-        lista[i].style.display = "none"
-      })
-    }
-    //tachar el texto cada vez que se haga check
-    //crear el 'boton check', tachar el texto pasado por el input
-  }
-
-  function verTodosElementosLI() {
-    //ha de retornar un la lista de los elementos originsles y añadidos
-  }
-
-</script>
-
+<script src="main.js"></script>
+<script src="style.css"></script>
 </html>
