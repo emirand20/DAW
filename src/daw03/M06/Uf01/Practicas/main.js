@@ -17,6 +17,11 @@ function añadirInput() {
     let button = document.createElement("button")
     let txt = document.createTextNode("x")
     button.appendChild(txt)
+    button.id = "button"
+
+    button.addEventListener('click', function () { //funcion anonima
+        div.style.display = "none"
+    })
 
     if (añadirTarea === '') {
         alert("Añade una tarea");
@@ -27,7 +32,12 @@ function añadirInput() {
     document.getElementById("input").value = ''
 }
 
+// function editList() {
+//     document.getElementById("foo").disabled = true
+//     //
+// }
 function updateItem() {
+    //ERROR MUESTRA TACHA EL PRIMER ID
     for (let i = 0; i < lista.length; i++) {
         let checkbox = document.getElementById("myCheck")
 
@@ -39,19 +49,6 @@ function updateItem() {
     }
 }
 
-function editList() {
-    document.getElementById("foo").disabled = true
-
-    // for (let i = 0; i < lista.length; i++) {
-    //     let button = document.createElement("button")
-    //     let txt = document.createTextNode("x")
-    //     button.appendChild(txt)
-    //     lista[i].appendChild(button)
-    //     button.addEventListener('click', function () { //funcion anonima
-    //         lista[i].style.display = "none"
-    //     })
-    // }
-}
 
 function verTodosElementosLI() {
     //ha de retornar un la lista de los elementos originsles y añadidos
