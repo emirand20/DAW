@@ -2,11 +2,15 @@ const lista = document.getElementsByTagName("div")
 //crearemos un div que tenga un input checkbox y fuera del imput
 function añadirInput() {
     let div = document.createElement("div")
-    div.id = "TareaPorHacer"
 
     let checkbox = document.createElement("input")
-    checkbox.id = "myCheck" 
     checkbox.setAttribute("type", "checkbox")
+
+    checkbox.addEventListener('change', function (){
+        let parent = checkbox.parentElement
+        let child = parent.lastChild
+        child.style.textDecoration = "line-through"
+    })
 
     let añadirTarea = document.getElementById("input").value //conectamos el input 
     let nuevaTarea = document.createTextNode(añadirTarea)
@@ -14,20 +18,19 @@ function añadirInput() {
     let span = document.createElement("span")
     span.appendChild(nuevaTarea)
 
-    let button = document.createElement("button")
+    /*let button = document.createElement("button")
     let txt = document.createTextNode("x")
     button.appendChild(txt)
-    button.id = "button"
 
     button.addEventListener('click', function () { //funcion anonima
         div.style.display = "none"
-    })
+    })*/
 
     if (añadirTarea === '') {
         alert("Añade una tarea");
     } else {
         div.appendChild(checkbox)
-        document.getElementById("lista").appendChild(div).appendChild(span).appendChild(button)
+        document.getElementById("lista").appendChild(div).appendChild(span)
     }
     document.getElementById("input").value = ''
 }
