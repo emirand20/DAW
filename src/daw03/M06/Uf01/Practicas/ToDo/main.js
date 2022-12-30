@@ -10,6 +10,8 @@ function añadirInput() {
         let parent = checkbox.parentElement
         let child = parent.lastChild
         child.style.textDecoration = "line-through"
+        
+        child.style.textDecoration = "none"
     })
 
     let añadirTarea = document.getElementById("input").value //conectamos el input 
