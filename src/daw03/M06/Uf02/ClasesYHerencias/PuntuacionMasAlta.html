@@ -8,8 +8,9 @@
   <title>Puntuación más alta</title>
   <script src="main.js"></script>
   <style>
-    table, th, td {
+    table .th .td {
       border:1px solid black;
+      width: 100%;
     }
   </style>
 </head>
@@ -24,7 +25,7 @@
   </p>
   <div style="text-align:center"><button onclick="createScoreBoard()" id="myDynamicTable">Create table</button></div>
   <br>
-    <table style="width:100%" id="tablaName">
+    <table id="tablaName">
       <tr>
         <th>Players</th>
         <th>Score</th>
