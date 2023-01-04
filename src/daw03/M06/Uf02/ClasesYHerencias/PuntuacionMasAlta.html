@@ -8,27 +8,28 @@
   <title>Puntuación más alta</title>
   <script src="main.js"></script>
   <style>
-    table .th .td {
+    table, th {
       border:1px solid black;
-      width: 100%;
+      width:50%;
     }
   </style>
 </head>
 
 <body>
-  <h1 style="text-align:center">High Score Board</h1>
-  <p style="text-align:center">Add players:
+  <h1>High Score Board</h1>
+  <p>Add players:
     <input type="text" id="inputName" placeholder="Name player" />
+    <button onclick="createPlayer()">Add player</button>
   </p>
-  <p style="text-align:center">Add score:
+  <p>Add score:
     <input type="text" id="inputScore" placeholder="Score" />
+    <button onclick="createScore()">Add score</button>
   </p>
-  <div style="text-align:center"><button onclick="createScoreBoard()" id="myDynamicTable">Create table</button></div>
   <br>
     <table id="tablaName">
       <tr>
-        <th>Players</th>
-        <th>Score</th>
+        <th id="players">Players</th>
+        <th id="score">Score</th>
       </tr>
       </tr>
   </table>

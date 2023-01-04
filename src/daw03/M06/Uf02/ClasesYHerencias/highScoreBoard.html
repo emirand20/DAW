@@ -1,0 +1,48 @@
+<script>
+    function createScoreBoard(player, scorePlayer) {
+        this.player = [];
+        this.scorePlayer = [];
+    }
+    createScoreBoard.prototype.addPlayer = function (player, scorePlayer) {
+        this.player.push(player)
+        this.scorePlayer.push(scorePlayer)
+    }
+    createScoreBoard.prototype.removePlayer = function (obj, score) {
+        this.player.shift(score)
+
+    }
+    const jugador1 = new createScoreBoard()
+    const jugador2 = new createScoreBoard()
+    const jugador3 = new createScoreBoard()
+    const jugador4 = new createScoreBoard()
+    const jugador5 = new createScoreBoard()
+    const jugador6 = new createScoreBoard()
+
+    jugador1.addPlayer('Dave Thomas', 0)
+    jugador1.addPlayer('Dave', 1)
+    jugador2.addPlayer('José Valim', 486373)
+    jugador3.addPlayer('Raul Rufo', 2000)
+    jugador4.addPlayer('Javi', 500000)
+    jugador5.addPlayer('Matias', 100000)
+    jugador6.addPlayer('Paula', 485373)
+
+    console.log("Los jugadores actuales son: \n",
+        jugador1.player[1], "con", jugador1.scorePlayer[1], "puntos,\n",
+        jugador2.player[0], "con", jugador2.scorePlayer[0], "puntos,\n",
+        jugador3.player[0], "con", jugador3.scorePlayer[0], "puntos,\n",
+        jugador4.player[0], "con", jugador4.scorePlayer[0], "puntos,\n",
+        jugador5.player[0], "con", jugador5.scorePlayer[0], "puntos,\n",
+        jugador6.player[0], "con", jugador6.scorePlayer[0], "puntos.",
+    )
+
+    jugador2.removePlayer(jugador2.player[0], jugador2.scorePlayer[0])
+
+    console.log("Los jugadores actuales son: \n",
+        jugador1.player[0], "con", jugador1.scorePlayer[0], "puntos,\n",
+        jugador2.player[0], "con", jugador2.scorePlayer[0], "puntos,\n",
+        jugador3.player[0], "con", jugador3.scorePlayer[0], "puntos,\n",
+        jugador4.player[0], "con", jugador4.scorePlayer[0], "puntos,\n",
+        jugador5.player[0], "con", jugador5.scorePlayer[0], "puntos,\n",
+        jugador6.player[0], "con", jugador6.scorePlayer[0], "puntos.",)
+
+</script>
