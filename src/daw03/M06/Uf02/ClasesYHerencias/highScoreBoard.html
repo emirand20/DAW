@@ -7,8 +7,9 @@
         this.player.push(player)
         this.score.push(score)
     }
-    createScoreBoard.prototype.removePlayer = function (obj, score) {
-        this.player.shift(score)
+    createScoreBoard.prototype.removePlayer = function (player, score) {
+        this.player.shift(player)
+        this.score.shift(score)
 
     }
     createScoreBoard.prototype.updateScore = function (obj, player, scorePlayer) {
@@ -40,7 +41,7 @@
 
     jugador2.removePlayer(jugador2.player[0], jugador2.score[0])
 
-    console.log("Los jugadores actuales son: \n",
+    console.log("Los jugadores eliminados apareceran como undefined: \n",
         jugador1.player[0], "con", jugador1.score[0], "puntos,\n",
         jugador2.player[0], "con", jugador2.score[0], "puntos,\n",
         jugador3.player[0], "con", jugador3.score[0], "puntos,\n",
