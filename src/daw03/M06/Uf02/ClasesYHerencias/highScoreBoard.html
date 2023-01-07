@@ -12,8 +12,18 @@
         this.score.shift(score)
 
     }
-    createScoreBoard.prototype.updateScore = function (obj, player, scorePlayer) {
-
+    createScoreBoard.prototype.updateScore = function (score, newScore) {
+        //updateScore({ 'Freyja Ćirić': 12771008 }, 'Freyja Ćirić', 73);
+        let updateScore = score + newScore
+        return this.score.push(updateScore)
+    }
+    createScoreBoard.prototype.applyMondayBonus = function (score) {
+        let mondayScore = score + 100
+        return this.score.push(mondayScore)
+    }
+    createScoreBoard.prototype.normalize = function (score) {
+        let normalize = 2 * score + 10;
+        return this.score.push(normalize)
     }
     const jugador1 = new createScoreBoard()
     const jugador2 = new createScoreBoard()
@@ -26,9 +36,9 @@
     jugador1.addPlayer('Dave', 1)
     jugador2.addPlayer('José Valim', 486373)
     jugador3.addPlayer('Raul Rufo', 2000)
-    jugador4.addPlayer('Javi', 500000)
-    jugador5.addPlayer('Matias', 100000)
-    jugador6.addPlayer('Paula', 485373)
+    jugador4.addPlayer('Javi', 500)
+    jugador5.addPlayer('Matias', 100)
+    jugador6.addPlayer('Paula', 485)
 
     console.log("Los jugadores actuales son: \n",
         jugador1.player[1], "con", jugador1.score[1], "puntos,\n",
@@ -44,11 +54,23 @@
     console.log("Los jugadores eliminados apareceran como undefined: \n",
         jugador1.player[0], "con", jugador1.score[0], "puntos,\n",
         jugador2.player[0], "con", jugador2.score[0], "puntos,\n",
-        jugador3.player[0], "con", jugador3.score[0], "puntos,\n",
-        jugador4.player[0], "con", jugador4.score[0], "puntos,\n",
-        jugador5.player[0], "con", jugador5.score[0], "puntos,\n",
-        jugador6.player[0], "con", jugador6.score[0], "puntos."
     )
 
-    jugador3.updateScore()
+    jugador3.updateScore(jugador3.score[0], 34)
+    console.log(
+        "Jugador acutualizado: ", jugador3.player[0], " con ", jugador3.score[1], "puntos"
+    )
+    jugador4.applyMondayBonus(jugador4.score[0])
+    jugador5.applyMondayBonus(jugador5.score[0])
+    jugador6.applyMondayBonus(jugador6.score[0])
+    console.log(
+        "Por ser lunes el jugador", jugador4.player[0], "tiene una bonificacion de:", jugador4.score[1], "\n",
+        "Por ser lunes el jugador", jugador5.player[0], "tiene una bonificacion de:", jugador5.score[1], "\n",
+        "Por ser lunes el jugador", jugador6.player[0], "tiene una bonificacion de:", jugador6.score[1], "\n",
+    )
+
+    jugador5.normalize(jugador5.score[1])
+    console.log(
+        "Puntiacion normalizada de ", jugador5.player[0], " es de:", jugador5.score[2]  
+    )
 </script>
