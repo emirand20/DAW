@@ -1,0 +1,29 @@
+<script>
+    function Humedad(percentatge, grados) {
+        this.percentatge = percentatge
+        this.grados = grados
+    }
+    Humedad.prototype.checkHumidityLevel = function (percentatge) {
+        try {
+            if (percentatge > 70) {
+                throw "no es el idoneo"
+            }
+        }
+        catch (err) {
+            alert("El porcentaje no es el idoneo")
+        }
+    }
+    Humedad.prototype.reportOverheating = function (stateMachine, grados) {
+        try{
+            if(grados > 500) throw "Es preocupante el sobrecalentamiento"
+            if(stateMachine == true) throw "El sensor esta roto"
+        }
+        catch(err){
+            
+        }
+    }
+    const contr = new Humedad()
+    contr.checkHumidityLevel(69)
+    contr.reportOverheating(60)
+    console.log(contr.percentatge, contr.grados)
+</script>
