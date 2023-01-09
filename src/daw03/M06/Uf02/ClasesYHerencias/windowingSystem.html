@@ -1,0 +1,49 @@
+<script>
+    function Size(width, height) {
+        this.width = width
+        this.height = height
+    }
+    Size.prototype.resize = function (newWidth, newHeight) {
+        this.width = newWidth
+        this.height = newHeight
+    }
+    const size = new Size(1080, 764);
+    console.log(size.width, size.height)
+    // => 1080
+    // => 764
+    size.resize(1920, 1080)
+    console.log(size.width, size.height)
+    // => 1920
+    // => 1080
+
+    function Position(x, y) {
+        this.x = x
+        this.y = y
+    }
+    Position.prototype.move = function (newX, newY) {
+        this.x = newX
+        this.y = newY
+    }
+    const point = new Position(0, 0);
+    console.log(point.x, point.y)
+    // => 0
+    // => 0
+    point.move(100, 200);
+    console.log(point.x, point.y)
+    // => 100
+    // => 200
+    const sizeWin = new Size(800, 600);
+    function ProgramWindow(screenSize, size, position) {
+        this.screenSize = sizeWin
+        this.size = size
+        this.position = Position
+    }
+    ProgramWindow.prototype.resize = function(sizeWidth, sizeHeight){
+        sizeWin.resize(sizeWidth, sizeHeight)
+    }
+    const win = new ProgramWindow()
+    console.log(win.screenSize.width, win.screenSize.height)
+    win.resize(900, 700)
+    console.log(win.screenSize.width, win.screenSize.height)
+
+</script>
