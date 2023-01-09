@@ -9,12 +9,10 @@
     }
     const size = new Size(1080, 764);
     console.log(size.width, size.height)
-    // => 1080
-    // => 764
+    // 1080, 764
     size.resize(1920, 1080)
     console.log(size.width, size.height)
-    // => 1920
-    // => 1080
+    // 1920, 1080
 
     function Position(x, y) {
         this.x = x
@@ -26,24 +24,37 @@
     }
     const point = new Position(0, 0);
     console.log(point.x, point.y)
-    // => 0
-    // => 0
+    // 0, 0
     point.move(100, 200);
     console.log(point.x, point.y)
-    // => 100
-    // => 200
-    const sizeWin = new Size(800, 600);
+    // 100, 200
+
+    const newSize = new Size();
+    const newPos = new Position();
     function ProgramWindow(screenSize, size, position) {
-        this.screenSize = sizeWin
-        this.size = size
-        this.position = Position
+        this.screenSize = newSize
+        this.size = newSize
+        this.position = newPos
     }
-    ProgramWindow.prototype.resize = function(sizeWidth, sizeHeight){
-        sizeWin.resize(sizeWidth, sizeHeight)
+    ProgramWindow.prototype.resize = function (objWidth, objHeight) {
+        newSize.resize(objWidth, objHeight)
     }
+    ProgramWindow.prototype.move = function (posX, posY){
+        newPos.move(posX, posY) 
+    }
+    ProgramWindow.prototype.changeWindow = function (objWidth, objHeight, posX, posY){
+
+    }
+
     const win = new ProgramWindow()
     console.log(win.screenSize.width, win.screenSize.height)
     win.resize(900, 700)
     console.log(win.screenSize.width, win.screenSize.height)
-
+    
+    const program = new ProgramWindow();
+    program.resize(600, 400);
+    console.log(program.size.width, program.size.height)
+    // 600, 400
+    program.move(50, 100);
+    console.log(program.position.x, program.position.y)
 </script>
