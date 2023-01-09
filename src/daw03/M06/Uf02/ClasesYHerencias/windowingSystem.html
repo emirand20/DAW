@@ -43,7 +43,8 @@
         newPos.move(posX, posY) 
     }
     ProgramWindow.prototype.changeWindow = function (objWidth, objHeight, posX, posY){
-
+        newSize.resize(objWidth, objHeight)
+        newPos.move(posX, posY) 
     }
 
     const win = new ProgramWindow()
