@@ -1,23 +1,19 @@
-const { doc } = require("prettier")
-
 const lista = document.getElementsByTagName('div')
 
 //crearemos un div que tenga un input checkbox y fuera del imput
 function añadirInput() {
     let div = document.createElement('div')
-
+    div.setAttribute('id', 'elemento')
+    
     let checkbox = document.createElement('input')
     checkbox.setAttribute('type', 'checkbox')
-
+    
     checkbox.addEventListener('change', function (event) {
         let parent = checkbox.parentElement
         let child = parent.lastChild
-        let child1 = parent.lastChild
-
+        
         if (event.currentTarget.checked) {
             child.style.textDecoration = 'line-through'
-            // let supr = document.createElement('input')
-            // supr.setAttribute('type', 'checkbox')
         } else {
             child.style.textDecoration = 'none'
         }
@@ -25,7 +21,6 @@ function añadirInput() {
 
     let añadirTarea = document.getElementById('input').value //conectamos el input 
     let nuevaTarea = document.createTextNode(añadirTarea)
-
     let span = document.createElement('span')
     span.appendChild(nuevaTarea)
 
@@ -38,6 +33,28 @@ function añadirInput() {
     document.getElementById('input').value = ''
 }
 
+function editarList() {
+    document.getElementById("elimina").disabled = true
+
+    for (let i = 0; i < lista.length; i++) {
+        let button = document.createElement("button")
+        let txt = document.createTextNode("\u00D7")
+        button.appendChild(txt)
+        lista[i].appendChild(button)
+        button.addEventListener('click', function () { //funcion anonima
+            lista[i].style.display = "none"
+        })
+    }
+}
 function verTodosElementosLI() {
-    //ha de retornar un la lista de los elementos originsles y añadidos
+    let elementosLista = document.getElementById('elemento')
+    // let ul = document.getElementsByTagName('UL')
+    for(let i = 0; i < lista.length; i++){
+        if(elementosLista.hasAttribute("style")){
+
+            elementosLista.removeAttribute("style")
+        }
+        
+    }
+    return elementosLista
 }
