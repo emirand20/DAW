@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+<style>
+  .hidden {
+    display: none;
+  }
+</style>
 
 <head>
   <meta charset="UTF-8" />
@@ -13,10 +18,12 @@
   <h1 style="text-align:center">To Do List</h1>
   <input type="text" id="input" placeholder="Agrega elementos a la lista" />
   <button onclick="añadirInput()">Agrega a la lista</button>
-  <button onclick="editarList()" id="elimina">Borra cualquier elemento</button>
+  <button onclick="editarList()" id="elimina" class="is-hidden">Borra cualquier elemento</button>
   <button onclick="verTodosElementosLI()">Ver todos los elemetos</button>
 
   <ul id="lista"></ul>
 </body>
+
 <script src="main.js"></script>
+
 </html>
