@@ -72,18 +72,12 @@ function editarList() {
 }
 
 function verTodosElementosLI() {
-    let div = document.getElementsByTagName('div')
-    let clas = document.getElementsByClassName('eliminarTarea')
-    console.log(clas)
-    
-    
-    for(let i = 0; i < div.length; i++){
-        console.log(div[i].classList.contains("eliminarTarea"));
-        console.log(div[i])
-        if (div.item(i).classList.contains('eliminarTarea')) {
-            console.log('foo')
-        } else {
-            div.item(i).classList.remove('eliminarTarea')
+    let elementoLista = document.getElementsByTagName('div')
+
+    for (let i = 0; i < elementoLista.length; i++) {
+        if(elementoLista[i].classList.contains('eliminaTarea')){
+            elementoLista[i].classList.remove('eliminaTarea')
         }
+        
     }
 }
