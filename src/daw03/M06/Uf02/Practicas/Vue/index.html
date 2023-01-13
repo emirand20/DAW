@@ -1,0 +1,35 @@
+<html>
+
+<head>
+    <link rel="stylesheet">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        {{ message }}
+    </div>
+
+    <div id="app-2">
+        <span v-bind:title="message">
+            Mueva el mouse sobre mí durante unos segundos
+            para ver mi título enlazado dinámicamente.
+        </span>
+    </div>
+
+    <div id="app-3">
+        <span v-if="seen">Ahora me ves</span>
+    </div>
+    
+    <div id="app-4">
+        <ol>
+            <li v-for="todo in todos">
+                {{ todo.text }}
+            </li>
+        </ol>
+    </div>
+</body>
+<script src="index.js"></script>
+
+</html>
