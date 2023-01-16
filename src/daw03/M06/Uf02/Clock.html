@@ -1,0 +1,43 @@
+<html>
+<style>
+    #time {
+        height: 100px;
+        font-family: 'Verdana', sans-serif;
+        text-align: center;
+        font-size: 100px;
+        padding: 30px;
+    }
+    #chronometer {
+        font-family: 'Verdana', sans-serif;
+        text-align: center;
+    }
+    #timer {
+        font-family: 'Verdana', sans-serif;
+        text-align: center;
+    }
+</style>
+
+<head>
+    <title>Clock</title>
+</head>
+
+<body>
+    <div>
+        <h2 id="time"></h2>
+    </div>
+    <div id="chronometer">
+        <h1>Cronometro</h1>
+        <h2 data-chronometer>00:00:00</h2>
+        <button id="play">play</button>
+        <button id="pause">pause</button>
+        <button id="reset">reset</button> <br>
+    </div>
+    <div id="timer">
+    <h1>Temporizador</h1>
+    <p id="temporizador"></p>
+    <button id="bottonTimer" onclick="timer()">play</button>
+    </div>
+</body>
+<script src="clock.js"></script>
+
+</html>
