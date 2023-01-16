@@ -33,5 +33,34 @@ var app4 = new Vue({
     }
 })
 
-app4.todos.push({text: 'New item'},
-                {text: 'Other item'})
+app4.todos.push({ text: 'New item' },
+    { text: 'Other item' }
+)
+
+var app5 = new Vue({
+    el: '#app-5',
+    data: {
+        message: 'Hola Vue.js!'
+    },
+    methods: {
+        reverseMessage: function () {
+            this.message = this.message.split('').reverse().join('')
+        }
+    }
+})
+
+var app6 = new Vue({
+    el: '#app-6',
+    data: {
+        message: 'Hola Vue!'
+    }
+})
+
+// Define un nuevo componente llamado todo-item
+Vue.component('todo-item', {
+    // El componente todo-item ahora acepta una
+    // "propiedad", que es como un atributo personalizado.
+    // Esta propiedad es llamada todo.
+    props: ['todo'],
+    template: '<li>Esta es una tarea.</li>'
+})
