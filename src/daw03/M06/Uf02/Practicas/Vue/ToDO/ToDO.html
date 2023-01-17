@@ -1,18 +1,23 @@
 <html>
 <style>
-    body{
-        text-align:center
+    body {
+        text-align: center
     }
 </style>
+
 <head>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 
 <body>
     <h1 id="app">{{ header }}</h1>
-    <input v-model="newItem" type="text" placeholder="Agrega elementos a la lista"> {{ newItem }}
+    <input v-model="newItem" type="text" placeholder="Agrega elementos a la lista">
+    <button v-on:click="añadirInput">Agrega a la lista</button>
+    <div id="aplicacion">
+    <button v-on:click="contador = contador - 1">El contador vale:{{contador}}</button>
+    </div>
 </body>
-
 <script src="ToDO.js"></script>
+
 
 </html>
