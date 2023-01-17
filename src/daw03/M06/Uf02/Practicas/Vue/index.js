@@ -56,11 +56,30 @@ var app6 = new Vue({
     }
 })
 
-// Define un nuevo componente llamado todo-item
+
 Vue.component('todo-item', {
-    // El componente todo-item ahora acepta una
-    // "propiedad", que es como un atributo personalizado.
-    // Esta propiedad es llamada todo.
     props: ['todo'],
-    template: '<li>Esta es una tarea.</li>'
+    template: '<li>{{ todo.text }}</li>'
+})
+
+var app7 = new Vue({
+    el: '#app-7',
+    data: {
+        groceryList: [
+            { id: 0, text: 'Vegetales' },
+            { id: 1, text: 'Queso' },
+            { id: 2, text: 'Cualquier otra cosa que se supone que los humanos coman' }
+        ]
+    }
+})
+
+var obj = {
+    foo: 'bar'
+}
+
+Object.freeze(obj)
+
+new Vue({
+    el: '#app-8',
+    data: obj
 })

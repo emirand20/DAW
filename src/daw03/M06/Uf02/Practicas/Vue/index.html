@@ -5,7 +5,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 
-<body>
+<body style="text-align:justify;">
     <div id="app">
         {{ message }}
     </div>
@@ -25,7 +25,7 @@
         <ol>
             <li v-for="todo in todos">
                 {{ todo.text }}
-            </li>   
+            </li>
         </ol>
     </div>
 
@@ -39,10 +39,23 @@
         <input v-model="message">
     </div>
 
-    <ol>
-        <!-- Crea una instancia del componente todo-item -->
-        <todo-item></todo-item>
-      </ol>
+    <div id="app-7">
+        <ol>
+            <!--
+            Ahora proporcionamos a cada todo-item con el objeto todo
+            que representa, para que su contenido pueda ser dinámico.
+            También necesitamos proporcionar a cada componente con una "clave",
+            que vamos a explicar más adelante.
+          -->
+            <todo-item v-for="item in groceryList" v-bind:todo="item" v-bind:key="item.id">
+            </todo-item>
+        </ol>
+    </div>
+    <div id="app-8">
+        <p>{{ foo }}</p>
+        <!-- esto ya no actualizará `foo`! -->
+        <button v-on:click="foo = 'baz'">Cámbialo</button>
+      </div>
 </body>
 <script src="index.js"></script>
 
