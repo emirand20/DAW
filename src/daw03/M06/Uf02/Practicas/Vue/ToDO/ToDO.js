@@ -1,5 +1,5 @@
 let list = new Vue({
-    el: '#list', //esto es la conceccion con el ids  
+    el: '#list', //conecta con el id del html
     data: {
         title: 'To Do',
         items: [

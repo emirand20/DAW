@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link rel="stylesheet" href="ToDo.css" />
@@ -15,12 +16,14 @@
 
         <ul>
             <li v-for="(item, index) in items">
-                <button v-on:click="deleteItem(index)">X</button> {{ item.text }}
+                <input type="checkbox" id="checkbox" v-model="checked" />
+                <label>{{ item.text }}</label>
+                <button v-on:click="deleteItem(index)">X</button>
             </li>
         </ul>
     </div>
+    <script src="ToDO.js"></script>
 </body>
-<script src="ToDO.js"></script>
 
 
 </html>
