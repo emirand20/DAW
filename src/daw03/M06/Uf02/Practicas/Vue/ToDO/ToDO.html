@@ -10,6 +10,7 @@
     <div id="list">
         <header>{{ title }}</header>
         <div>
+            <p>{{ message }}</p>
             <input id="itemForm" v-on:keypress.enter="addItem" placeholder="Agrega elementos a la lista">
             <button v-on:click="addItem">Agrega a la lista</button>
         </div>

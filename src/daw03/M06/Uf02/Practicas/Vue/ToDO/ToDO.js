@@ -2,6 +2,7 @@ let list = new Vue({
     el: '#list', //conecta con el id del html
     data: {
         title: 'To Do',
+        message: 'Crea una lista de tareas',
         items: [
             { text: "Peras" }
         ]
