@@ -1,0 +1,29 @@
+body {
+    padding: 2em;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+#list {
+    border: 2px solid Gray;
+    border-radius: 10px;
+}
+
+#list header {
+    display: block;
+    border-radius: 8px 8px 0 0;
+    background: #434C5E;
+    padding: 10px;
+    color: white;
+    font-size: 1.5em;
+}
+
+#list div {
+    padding: 1em;
+}
+
+#list ul {
+    list-style: none;
+    margin: 0;
+    padding: 0 1em 1em;
+}

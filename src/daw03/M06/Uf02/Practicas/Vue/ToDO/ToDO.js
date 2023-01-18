@@ -1,21 +1,24 @@
-let app = new Vue({
-    el: '#app', //esto es la conceccion con el ids  
+let list = new Vue({
+    el: '#list', //esto es la conceccion con el ids  
     data: {
-        header: 'To Do'
+        title: 'To Do',
+        items: [
+            { text: "Peras" }
+        ]
     },
-})
+    methods: {
+        addItem: function () {
+            var input = document.getElementById("itemForm");
 
-let añadirInput = new Vue({
-    data: {
-        añadirInput: {
-            click: () => ("Has hecho click")
-
+            if (input.value !== "") {
+                this.items.push({
+                    text: input.value
+                });
+                input.value = "";
+            }
+        },
+        deleteItem: function (index) {
+            this.items.splice(index, 1);
         }
     }
 })
-var app2 = new Vue({
-    el: '#aplicacion',
-    data:{ 
-      contador: 100
-    }      
-  })

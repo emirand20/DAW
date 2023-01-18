@@ -1,20 +1,23 @@
+<!DOCTYPE html>
 <html>
-<style>
-    body {
-        text-align: center
-    }
-</style>
-
 <head>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="ToDo.css" />
 </head>
 
 <body>
-    <h1 id="app">{{ header }}</h1>
-    <input v-model="newItem" type="text" placeholder="Agrega elementos a la lista">
-    <button v-on:click="añadirInput">Agrega a la lista</button>
-    <div id="aplicacion">
-    <button v-on:click="contador = contador - 1">El contador vale:{{contador}}</button>
+    <div id="list">
+        <header>{{ title }}</header>
+        <div>
+            <input id="itemForm" v-on:keypress.enter="addItem" placeholder="Agrega elementos a la lista">
+            <button v-on:click="addItem">Agrega a la lista</button>
+        </div>
+
+        <ul>
+            <li v-for="(item, index) in items">
+                <button v-on:click="deleteItem(index)">X</button> {{ item.text }}
+            </li>
+        </ul>
     </div>
 </body>
 <script src="ToDO.js"></script>

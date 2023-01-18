@@ -83,3 +83,10 @@ new Vue({
     el: '#app-8',
     data: obj
 })
+
+var app2 = new Vue({
+    el: '#aplicacion',
+    data:{ 
+      contador: 0
+    }      
+    })

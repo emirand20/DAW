@@ -35,8 +35,8 @@
     </div>
 
     <div id="app-6">
-        <p>{{ message }}</p>
         <input v-model="message">
+        <p>{{ message }}</p>
     </div>
 
     <div id="app-7">
@@ -56,6 +56,9 @@
         <!-- esto ya no actualizará `foo`! -->
         <button v-on:click="foo = 'baz'">Cámbialo</button>
       </div>
+       <div id="aplicacion">
+        <button v-on:click="contador = contador + 1">El contador vale:{{contador}}</button>
+    </div>
 </body>
 <script src="index.js"></script>
 
