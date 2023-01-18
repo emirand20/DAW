@@ -16,8 +16,9 @@
 
         <ul>
             <li v-for="(item, index) in items">
-                <input type="checkbox" id="checkbox" v-model="checked" />
-                <label>{{ item.text }}</label>
+                <vs-checkbox v-model="options">
+                    {{ item.text }}
+                </vs-checkbox>
                 <button v-on:click="deleteItem(index)">X</button>
             </li>
         </ul>
