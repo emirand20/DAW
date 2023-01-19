@@ -3,14 +3,13 @@ let list = new Vue({
     data: {
         title: 'To Do',
         message: 'Crea una lista de tareas',
-        items: [
-            { text: "Peras" }
-        ]
+        checked: false,
+        items: []
     },
     methods: {
         addItem: function () {
-            var input = document.getElementById("itemForm");
-
+            let input = document.getElementById("itemForm");
+            
             if (input.value !== "") {
                 this.items.push({
                     text: input.value
@@ -19,7 +18,10 @@ let list = new Vue({
             }
         },
         deleteItem: function (index) {
-            this.items.splice(index, 1);
+            this.items.splice(index, 1); //agrega y/o elimina elementos de la matriz.
+        },
+        controlCheckbox: function (){
+            
         }
     }
 })

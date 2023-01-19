@@ -15,11 +15,10 @@
             <button v-on:click="addItem">Agrega a la lista</button>
         </div>
 
-        <ul>
+        <ul id="tareas">
             <li v-for="(item, index) in items">
-                <vs-checkbox v-model="options">
-                    {{ item.text }}
-                </vs-checkbox>
+                <input type="checkbox" id="checkbox">
+                <span class="">{{ item.text }}</span>
                 <button v-on:click="deleteItem(index)">X</button>
             </li>
         </ul>

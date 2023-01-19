@@ -5,25 +5,28 @@ body {
 }
 
 #list {
-    border: 2px solid Gray;
+    /* border: 2px solid Gray; */
     border-radius: 10px;
 }
+ul span.strikeout {
+    text-decoration: line-through;
+  }
 
-#list header {
+ #list header {
     display: block;
     border-radius: 8px 8px 0 0;
     background: #434C5E;
     padding: 10px;
-    color: white;
+     color: white; 
     font-size: 1.5em;
-}
+} 
 
-#list div {
+/* #list div {
     padding: 1em;
-}
+}*/
 
 #list ul {
     list-style: none;
-    margin: 0;
+    margin: 1;
     padding: 0 1em 1em;
 }
