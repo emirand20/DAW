@@ -16,10 +16,12 @@
         </div>
 
         <ul id="tareas">
-            <li v-for="(item, index) in items">
-                <input type="checkbox" id="checkbox">
-                <span class="">{{ item.text }}</span>
-                <button v-on:click="deleteItem(index)">X</button>
+            <li v-for="(item, index) in items" :id="index">
+                <input type="checkbox" :id="index" v-model="checked[index]">
+                <span :class="checked[index] ? 'strikeout' : null">{{ item.text }}</span>
+                <!-- <pre>{{ checked[index] }}</pre> 
+                "remove[index]? 'eliminaTarea' : null"-->
+                <button  v-on:click="deleteItem(index)">X</button>
             </li>
         </ul>
     </div>
