@@ -21,6 +21,7 @@
             <li v-for="(item, index) in items">
                 <input type="checkbox">{{ item.checked }}
                 <span>{{ item.text }}</span>
+                <button type="checkbox" v-on:click="moverPapelera(index)">X</button>
                 <!-- <button v-on:click="borrarItem">x</button> -->
                 <!-- <input type="checkbox" :id="index" v-model="checked[index]">
                     <button  v-on:click="deleteItem(index)">X</button> -->

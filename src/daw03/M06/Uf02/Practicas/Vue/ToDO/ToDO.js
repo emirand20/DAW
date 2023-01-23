@@ -20,8 +20,12 @@ let list = new Vue({
                 deleted: false
             })
         },
-        moverPapelera(index) {
-            this.items.splice(index, 1); //agrega y/o elimina elementos de la matriz.
+        moverPapelera() {
+            this.items.forEach(items => {
+                
+            });
+            this.deleted = false
+            //this.items.splice(index, 1); //agrega y/o elimina elementos de la matriz.
         }
     }
 })
