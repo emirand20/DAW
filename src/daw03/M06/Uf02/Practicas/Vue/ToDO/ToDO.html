@@ -7,23 +7,26 @@
 </head>
 
 <body>
-    <div id="list">
+    <div id="app">
         <header>{{ title }}</header>
         <div>
             <p>{{ message }}</p>
-            <input id="itemForm" v-on:keypress.enter="addItem" placeholder="Agrega elementos a la lista">
+            <input v-model="nueva" v-on:keypress.enter="addItem" placeholder="Agrega elementos a la lista">
             <button v-on:click="addItem">Agrega a la lista</button>
+            <button v-on:click="añadirAPapelera">Añade un elemento a la papelera</button>
+
         </div>
 
-        <ul id="tareas">
-            <li v-for="(item, index) in items" :id="index">
-                <input type="checkbox" :id="index" v-model="checked[index]">
-                <span :class="checked[index] ? 'strikeout' : null">{{ item.text }}</span>
-                <!-- <pre>{{ checked[index] }}</pre> 
-                "remove[index]? 'eliminaTarea' : null"-->
-                <button  v-on:click="deleteItem(index)">X</button>
-            </li>
-        </ul>
+        <ul>
+            <li v-for="(item, index) in items">
+                <input type="checkbox">{{ item.checked }}
+                <span>{{ item.text }}</span>
+                <!-- <button v-on:click="borrarItem">x</button> -->
+                <!-- <input type="checkbox" :id="index" v-model="checked[index]">
+                    <button  v-on:click="deleteItem(index)">X</button> -->
+                </li>
+            </ul>
+            <pre>{{ items }}</pre>  
     </div>
     <script src="ToDO.js"></script>
 </body>
