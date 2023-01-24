@@ -6,26 +6,38 @@ let list = new Vue({
         nueva: null,
         items: [
             {
-                text: 'Tomates',   
-                checkbox: false,
+                text: 'Tomates',
+                checked: false,
+                deleted: false
+            },
+            {
+                text: 'Judias',
+                checked: false,
+                deleted: false
+            },
+            {
+                text: 'Manzanas',
+                checked: false,
                 deleted: false
             }
         ]
     },
     methods: {
-        addItem() { 
+        addItem() {
             this.items.push({
                 text: this.nueva,
-                checkbox: false,
+                checked: false,
                 deleted: false
             })
         },
-        moverPapelera() {
-            this.items.forEach(items => {
-                
+        removeItem(){
+            items.deleted ? 'moverPapelera' : null
+            // this.items.splice(index, 1); //agrega y/o elimina elementos de la matriz.
+        },
+        muestraElementosPapelera() {
+            this.items.forEach(element => {
+
             });
-            this.deleted = false
-            //this.items.splice(index, 1); //agrega y/o elimina elementos de la matriz.
         }
     }
 })
