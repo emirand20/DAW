@@ -24,20 +24,26 @@ let list = new Vue({
     },
     methods: {
         addItem() {
-            this.items.push({
+            
+            if(!this.nueva){
+                alert('añade tarea')  
+            }else{
+                this.items.push({
                 text: this.nueva,
                 checked: false,
                 deleted: false
-            })
+                })
+            }
         },
-        removeItem(){
-            items.deleted ? 'moverPapelera' : null
-            // this.items.splice(index, 1); //agrega y/o elimina elementos de la matriz.
+        hideItem(item) {
+            item.deleted = true
         },
         muestraElementosPapelera() {
             this.items.forEach(element => {
-
-            });
+                if (element.deleted == true) {
+                    element.deleted = false
+                }
+            })
         }
     }
 })

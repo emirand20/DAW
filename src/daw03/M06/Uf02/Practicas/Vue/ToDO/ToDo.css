@@ -5,7 +5,7 @@ body {
 }
 
 #app {
-    /* border: 2px solid Gray; */
+    border: 2px solid Gray;
     border-radius: 10px;
 }
 ul span.strikeout {
@@ -21,15 +21,12 @@ ul span.strikeout {
     font-size: 1.5em;
 }
 
-/* #list div {
+#app div {
     padding: 1em;
-}*/
+}
 
 #app ul {
     list-style: none;
     margin: 1;
     padding: 0 1em 1em;
-}
-ul li.moverPapelera {
-    display: none;
 }
