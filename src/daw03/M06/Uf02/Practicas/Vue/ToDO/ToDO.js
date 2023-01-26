@@ -26,7 +26,7 @@ let list = new Vue({
         addItem() {
             
             if(!this.nueva){
-                alert('añade tarea')  
+                alert('añade tarea')
             }else{
                 this.items.push({
                 text: this.nueva,
