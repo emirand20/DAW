@@ -24,14 +24,14 @@ let list = new Vue({
     },
     methods: {
         addItem() {
-            
-            if(!this.nueva){
-                alert('añade tarea')  
-            }else{
+
+            if (!this.nueva) {
+                alert('añade tarea')
+            } else {
                 this.items.push({
-                text: this.nueva,
-                checked: false,
-                deleted: false
+                    text: this.nueva,
+                    checked: false,
+                    deleted: false
                 })
             }
         },
