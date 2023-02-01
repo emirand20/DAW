@@ -1,0 +1,25 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dibujando canvas</title>
+</head>
+
+<body>
+    <h1>Nuestro Lienzo</h1>
+    <canvas id="canvas" width="320" height="160" style="border: 1px solid #000000"></canvas>
+</body>
+<script>
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+    ctx.fillStyle = "blue";
+    ctx.fillRect(20, 20, 100, 50);
+
+    const stk = document.getElementById('canvas').getContext('2d')
+    stk.strokeStyle = 'red'
+    stk.strokeRect(135, 20,50,50)
+    stk.lineWidth = 5
+    stk.strokeRect
+</script>
+
+</html>
