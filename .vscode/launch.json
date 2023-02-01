@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "m03.uf4.snake.Main",
+            "projectName": "DAW-1_52b91680"
+        },
+        {
+            "type": "java",
             "name": "Launch Random",
             "request": "launch",
             "mainClass": "Random",

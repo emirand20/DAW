@@ -1,4 +1,4 @@
-public class Movil extends AparellElectronic{
+/*public class Movil extends AparellElectronic{
     
     private String sisOperatiu;
     private String harware;
@@ -7,4 +7,4 @@ public class Movil extends AparellElectronic{
  
 
     
-}
+}*/
