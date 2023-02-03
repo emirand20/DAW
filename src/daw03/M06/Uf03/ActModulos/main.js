@@ -1,13 +1,27 @@
-import { create, createReportList } from './modules/square';
-import { name, draw, reportArea, reportPerimeter } from './modules/circle.js';
-import randomSquare from './modules/circle.js';
+var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
 
-let myCanvas = create('myCanvas', document.body, 480, 320);
-let reportList = createReportList(myCanvas.id);
+var arcWidth = 10;
+var radius = 8 * arcWidth;
 
-let square1 = draw(myCanvas.ctx, 50, 50, 100, 'blue');
-reportArea(square1.length, reportList);
-reportPerimeter(square1.length, reportList);
+var omkadering = document.getElementById("canvas");
+var context = omkadering.getContext("2d");
+omkadering.width = (radius + (colors.length-0.5) * arcWidth) * 9;
+omkadering.height = (radius + (colors.length-1) * arcWidth);
 
-// Use the default
-let square2 = randomSquare(myCanvas.ctx);
+var drawArc = function( color ){
+  context.beginPath();
+  context.arc(
+    omkadering.width/2,
+    omkadering.height + arcWidth/2,
+    radius,
+    Math.PI,
+    2*Math.PI
+  );
+  context.lineWidth = arcWidth;
+  context.strokeStyle = color;
+  context.stroke();
+  context.closePath();
+  radius += arcWidth;
+};
+
+colors.reverse().forEach( drawArc );
