@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Arcoiris</title>
+
+<body>
+    <canvas id="canvas"></canvas>
+</body>
+<script>
+    
+    let colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+
+    let arcWidth = 10;
+    let radius = 8 * arcWidth;
+
+    let omkadering = document.getElementById("canvas");
+    let context = omkadering.getContext("2d");
+    omkadering.width = (radius + (colors.length - 0.5) * arcWidth) * 9;
+    omkadering.height = (radius + (colors.length - 1) * arcWidth);
+
+    let drawArc = function (color) {
+        context.beginPath();
+        context.arc(
+            omkadering.width / 2,
+            omkadering.height + arcWidth / 2,
+            radius,
+            Math.PI,
+            2 * Math.PI
+        );
+        context.lineWidth = arcWidth;
+        context.strokeStyle = color;
+        context.stroke();
+        context.closePath();
+        radius += arcWidth;
+    };
+
+    colors.reverse().forEach(drawArc);
+</script>
+</head>
+
+</html>

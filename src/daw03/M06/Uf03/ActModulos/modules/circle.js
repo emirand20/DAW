@@ -29,6 +29,7 @@ function randomCirlce(ctx) {
       color: color
     };
   }
+
 function reportArea(length, listId) {
     let listItem = document.createElement('li');
     listItem.textContent = `${name} area is ${length * length}px squared.`

@@ -1,0 +1,22 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Circulo</title>
+
+<body>
+    <canvas id="canvas"></canvas>
+</body>
+<script>
+    let grey = ['#e9ecef', '#dee2e6', '#ced4da', '#adb5bd', '#6c757d', '#495057', '#343a40', '#212529', '#4c5c68', '#7f7f7f']
+
+    const canvas = document.querySelector('canvas');
+    const ctx = canvas.getContext('2d');
+    ctx.beginPath();
+    ctx.arc(100, 75, 50, 0, 2 * Math.PI);
+    
+    ctx.stroke();
+</script>
+</head>
+
+</html>
