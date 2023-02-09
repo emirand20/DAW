@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body onload="startGame()">
+
+    <script>
+        // Variables para el tamaño de la celda y el tamaño de la serpiente
+        var cellSize = 10;
+        var snakeLength = 5;
+
+        // Variables para la posición de la serpiente y la comida
+        var snake = [];
+        var foodX;
+        var foodY;
+
+        // Variables para la dirección y la velocidad de la serpiente
+        var direction = "right";
+        var speed = 100;
+
+        // Inicializa el juego
+        function startGame() {
+            // Crea el canvas
+            var canvas = document.createElement("canvas");
+            canvas.width = 400;
+            canvas.height = 400;
+            document.body.appendChild(canvas);
+
+            // Obtiene el contexto de dibujo
+            var ctx = canvas.getContext("2d");
+
+            // Inicializa la serpiente en el centro del canvas
+            for (var i = snakeLength - 1; i >= 0; i--) {
+                snake.push({ x: i, y: 0 });
+            }
+
+            // Genera la comida en una posición aleatoria
+            foodX = Math.floor(Math.random() * (canvas.width / cellSize)) * cellSize;
+            foodY = Math.floor(Math.random() * (canvas.height / cellSize)) * cellSize;
+
+            // Dibuja el juego en cada frame
+            setInterval(function () {
+                // Actualiza la posición de la serpiente
+                var nextX = snake[0].x;
+                var nextY = snake[0].y;
+                if (direction == "right") {
+                    nextX++;
+                } else if (direction == "left") {
+                    nextX--;
+                } else if (direction == "up") {
+                    nextY--;
+                } else if (direction == "down") {
+                    nextY++;
+                }
+
+                // Verifica si la serpiente se choca contra el borde
+                if (nextX == -1 || nextX == canvas.width / cellSize ||
+                    nextY == -1 || nextY == canvas.height / cellSize ||
+                    checkCollision(nextX, nextY, snake)) {
+                    // Reinicia el juego si hay una colisión
+                    snake = [];
+                    snakeLength = 5;
+                    direction = "right";
+                    speed = 100;
+                    for (var i = snakeLength - 1; i >= 0; i--) {
+                        snake.push({ x: i, y: 0 });
+                    }
+                } else {
+                    // Agrega una nueva celda a la serpiente si come la comida
+                    if (nextX == foodX / cellSize && nextY == foodY / cellSize) {
+                        snakeLength++;
+                        foodY = Math.floor(Math.random() * (canvas.height / cellSize)) * cellSize;
+                    } else {
+                        // Elimina la cola de la serpiente si no come la comida
+                        snake.pop();
+                    }
+
+                    // Agrega una nueva celda en la dirección actual a la serpiente
+                    var newHead = { x: nextX, y: nextY };
+                    snake.unshift(newHead);
+
+                    // Aumenta la velocidad cada vez que la serpiente crece
+                    speed -= 5;
+                }
+
+                // Dibuja el fondo del canvas
+                ctx.fillStyle = "white";
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                // Dibuja la comida
+                ctx.fillStyle = "red";
+                ctx.fillRect(foodX, foodY, cellSize, cellSize);
+
+                // Dibuja la serpiente
+                for (var i = 0; i < snake.length; i++) {
+                    var cell = snake[i];
+                    ctx.fillStyle = "green";
+                    ctx.fillRect(cell.x * cellSize, cell.y * cellSize, cellSize, cellSize);
+                }
+            }, speed);
+        }
+
+        // Verifica si hay una colisión entre la serpiente y una celda determinada
+        function checkCollision(x, y, array) {
+            for (var i = 0; i < array.length; i++) {
+                if (array[i].x == x && array[i].y == y)
+                    return true;
+            }
+            return false;
+        }
+
+        // Cambia la dirección de la serpiente cuando se presiona una tecla
+        document.onkeydown = function (event) {
+            var key = event.keyCode;
+            if (key == 37 && direction != "right") {
+                direction = "left";
+            } else if (key == 38 && direction != "down") {
+                direction = "up";
+            } else if (key == 39 && direction != "left") {
+                direction = "right";
+            } else if (key == 40 && direction != "up") {
+                direction = "down";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
