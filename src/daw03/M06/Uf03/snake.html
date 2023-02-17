@@ -14,12 +14,14 @@
     <script>
         // Variables para el tamaño de la celda y el tamaño de la serpiente
         var cellSize = 10;
-        var snakeLength = 5;
+        var snakeLength = 1;
 
         // Variables para la posición de la serpiente y la comida
         var snake = [];
-        var foodX;
-        var foodY;
+        let food
+        //var foodX;
+        //var foodY;
+
 
         // Variables para la dirección y la velocidad de la serpiente
         var direction = "right";
@@ -87,7 +89,7 @@
                     snake.unshift(newHead);
 
                     // Aumenta la velocidad cada vez que la serpiente crece
-                    speed -= 5;
+                    speed -= 50;
                 }
 
                 // Dibuja el fondo del canvas
