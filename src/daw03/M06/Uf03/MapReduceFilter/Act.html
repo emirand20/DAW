@@ -5,16 +5,56 @@
     a.forEach(element => {
         b.push(Math.sqrt(element))
     })
-    console.log('El array es:', a , 'La raiz cuadrada de los elementos',b)
+    console.log('El array es:', a.toString(), 'La raiz cuadrada de los elementos', b.toString())
 
     //2. Una funció que retorni la suma dels elements positius d'un array.
     let c = [-1, -3, 4, 6, -7, 2, -65, 353, -543, 3, -5445]
-    let d
+    let d = []
+    let suma
 
     c.forEach(item => {
-        if(item < 0){
-            item  
+        if (item > 0) {
+            d.push(item)
         }
     })
-    console.log(d)
+    suma = d.reduce((total, num) => total + num, 0)
+    console.log('El array es el siguiente:', c.toString(), 'y la suma de los elementos positivos es:', suma.toString())
+
+    //3. Una funció que calculi el factorial d'un número. (proveu què fa Array.from(Array(10).keys())
+
+    function factorial(num) {
+        if (num === 0) {
+            return 1;
+        } else {
+            return num * factorial(num - 1);
+        }
+    }
+
+    console.log(factorial(5));
+
+    //4. Una funció que et retorni la mida de cada array en un array d'arrays
+    function obtenerLongitudes(arr) {
+        return arr.map(function (elem) {
+            return elem.length;
+        });
+    }
+
+    let arr = [[1, 2], [3, 4, 5], [6, 7, 8, 9]];
+    let longitudes = obtenerLongitudes(arr);
+
+    console.log(longitudes); // [2, 3, 4]
+    
+    /*
+    5.  Donat el següent array, volem que ens retorni els noms dels treballadors del deparatament IT que cobren menys de 60000
+    const employees = [
+    { name: "John", salary: 50000, department: "IT" },
+    { name: "Jane", salary: 60000, department: "HR" },
+    { name: "Bob", salary: 55000, department: "IT" },
+    { name: "Sophie", salary: 75000, department: "HR" },
+    { name: "Mike", salary: 65000, department: "IT" },
+    { name: "Emily", salary: 80000, department: "HR" },
+    { name: "David", salary: 70000, department: "IT" },
+    ];
+    */
+
 </script>
