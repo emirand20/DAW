@@ -44,8 +44,8 @@
 
     console.log(longitudes); // [2, 3, 4]
     
-    /*
-    5.  Donat el següent array, volem que ens retorni els noms dels treballadors del deparatament IT que cobren menys de 60000
+    
+    //5.  Donat el següent array, volem que ens retorni els noms dels treballadors del deparatament IT que cobren menys de 60000
     const employees = [
     { name: "John", salary: 50000, department: "IT" },
     { name: "Jane", salary: 60000, department: "HR" },
@@ -55,6 +55,6 @@
     { name: "Emily", salary: 80000, department: "HR" },
     { name: "David", salary: 70000, department: "IT" },
     ];
-    */
-
+    const filteredEmployees = employees.filter(employee => employee.department === "IT" && employee.salary > 60000);
+    console.log(filteredEmployees)
 </script>
