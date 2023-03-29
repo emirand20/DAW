@@ -19,11 +19,13 @@
     </form>
 
     <div id="resultado"></div>
+    <div id='imagen '></div>
 </body>
 
 <script>
     function searchPokemon(){
         const pokemonName = document.getElementById("pokemon-name").value;
+        const api = 'https://pokeapi.co/api/v2/pokemon/' + pokemonName
 
         var xhr = new XMLHttpRequest();
         
@@ -33,7 +35,7 @@
                 document.getElementById("resultado").textContent = JSON.parse(this.responseText);
             }
         });
-        xhr.open("GET", "https://pokeapi.co/api/v2/pokemon/${pokemonName}/");
+        xhr.open("GET", api);
         xhr.send(null);
     }
 </script>
