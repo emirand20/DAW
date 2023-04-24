@@ -13,49 +13,19 @@
 <body>
     <div class="container text-center w-15 mt-4">
         <h1>
-            Find your pokemón
+            Encuentra tu pokémon
         </h1>
         <form>
-            <input class="form-control" type="text" placeholder="pokemon name" required>
-            <button type="subtim" class="mt-2 btn btn-primary" onclick="searchPokemon()">seacrh</button>
+            <input class="form-control" type="text" placeholder="nombre de pokémon" required>
+            <button type="submit" class="mt-2 btn btn-primary">search</button>
         </form>
-        <div class="pokemon-continer mt-4"></div>
+        <div class="pokemon-container mt-4"></div>
     </div>
     <div id="resultado"></div>
-    <div id='imagen '></div>
+    <div id='imagen'></div>
+
+    <script src="../Visualitzador de pokémons/index.js"></script>
+
 </body>
-
-<script>
-    const input = document.querySelector("input")
-    const button = document.querySelector('button')
-    const pokemonContainer = document.querySelector('.pokemon-continer')
-
-    button.addEventListener('click', (e) => {
-        e.preventDefault()
-        searchPokemon(input.value);
-    })
-    function searchPokemon(pokemon) {
-        fetch('GET https://pokeapi.co/api/v2/pokemon/${pokemon}/')
-            .then((res) => res.json())
-            .then((data) => {
-                crearPokemon(data)
-            })
-    }
-
-    searchPokemon()
-
-    function createPokemon(pokemon) {
-        const img = document.createElement('img')
-        img.scr = pokemon.sprites.front_default
-        const h3 = document.createelement('h3')
-        h3.textContent = pokemon.name
-
-        div.appendChild(img)
-        div.appendChild(h3)
-
-        pokemonContainer.appendChild(div)
-    }
-
-</script>
 
 </html>
