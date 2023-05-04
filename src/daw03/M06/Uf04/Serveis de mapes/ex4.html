@@ -1,0 +1,66 @@
+<html>
+<script src="https://www.openlayers.org/api/OpenLayers.js"></script>
+
+<body>
+    <nav>
+        <input type="text" placeholder="Nombre" id="name">
+        <input type="number" placeholder="Longitud" id="long">
+        <input type="number" placeholder="Latitud" id="lati">
+        <button onclick="createCoordinates()">Search</button>
+    </nav>
+    <div id="mapdiv" style="width:90%; height:90%"></div>
+    <script>
+        let lat = 2.1743558
+        let lon = 41.4036299
+        const zoom = 17;
+        let popUp = "<div><h3>Sagrada Familia</h3> <table><tr><td>Horario:</td><td>Lunes a domingo, 9:00-18:00</td></tr><tr><td>Dirección:</td><td>Carrer de Mallorca, 401, 08013 Barcelona</td></tr><tr><td>Teléfono:</td><td>+34 932 07 30 31</td></tr></table></div>";
+
+        map = new OpenLayers.Map("mapdiv");
+        map.addLayer(new OpenLayers.Layer.OSM());
+
+        const lonLat = new OpenLayers.LonLat(lat, lon).transform(
+            new OpenLayers.Projection("EPSG:4326"),
+            map.getProjectionObject()
+        );
+
+        const markers = new OpenLayers.Layer.Markers("Markers");
+        map.addLayer(markers);
+
+        const marker = new OpenLayers.Marker(lonLat);
+        markers.addMarker(marker);
+
+        marker.events.register("mousedown", marker, function () {
+            let coordenadas = new OpenLayers.LonLat(2.1743558, 41.4036299).transform(
+                    new OpenLayers.Projection("EPSG:4326"),
+                    map.getProjectionObject()
+                );
+            let popup = new OpenLayers.Popup("popup", coordenadas, new OpenLayers.Size(200, 100), popUp, true);
+            map.addPopup(popup);
+        });
+
+        function createCoordinates() {
+            let name = document.getElementById("name").value;
+            let long = document.getElementById("long").value;
+            let lati = document.getElementById("lati").value;
+
+            let coordenadas = new OpenLayers.LonLat(long, lati).transform(
+                new OpenLayers.Projection("EPSG:4326"),
+                map.getProjectionObject()
+            );
+
+            let marker = new OpenLayers.Marker(coordenadas);
+            markers.addMarker(marker);
+
+            marker.events.register("mousedown", marker, (function (coords) {
+                // Crear una ventana emergente para mostrar información
+                let popup = new OpenLayers.Popup("popup", coords, new OpenLayers.Size(200, 100), name, true);
+                // Mostrar la ventana emergente en el mapa
+                map.addPopup(popup);
+
+            }).bind(this, coordenadas));
+        }
+        map.setCenter(lonLat, zoom);
+    </script>
+</body>
+
+</html>

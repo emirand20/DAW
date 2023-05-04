@@ -1,0 +1,38 @@
+<html>
+
+<body>
+    <div id="mapdiv"></div>
+    <script src="https://www.openlayers.org/api/OpenLayers.js"></script>
+    <script>
+        
+        map = new OpenLayers.Map("mapdiv");
+        map.addLayer(new OpenLayers.Layer.OSM());
+        
+        const lonLat = new OpenLayers.LonLat(2.1743558, 41.4036299).transform(
+            new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+            map.getProjectionObject() // to Spherical Mercator Projection
+        );
+
+        const zoom = 17;
+        const markers = new OpenLayers.Layer.Markers("Markers");
+        map.addLayer(markers);
+
+        markers.addMarker(new OpenLayers.Marker(lonLat));
+
+        map.setCenter(lonLat, zoom);
+
+        map.events.register("mousedown", map, function (e) {
+            let popup = new OpenLayers.Popup("infoPopup",
+                map.getLonLatFromPixel(e.xy),
+                null,
+                "<div style='font-size:0.8em'>" +
+                "Latitud: " + map.getLonLatFromPixel(e.xy).lat.toFixed(6) + "<br>" +
+                "Longitud: " + map.getLonLatFromPixel(e.xy).lon.toFixed(6) +
+                "</div>",
+                true);
+            map.addPopup(popup);
+        });
+    </script>
+</body>
+
+</html>

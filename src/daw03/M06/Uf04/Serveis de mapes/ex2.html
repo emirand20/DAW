@@ -1,0 +1,25 @@
+<html>
+  <body>
+    <div id="mapdiv" style="width:90%; height:90%"></div>
+    <script src="https://www.openlayers.org/api/OpenLayers.js"></script>
+    <script>
+      let lat = 2.1743558
+      let lon = 41.4036299
+      const zoom = 17;
+
+      map = new OpenLayers.Map("mapdiv");
+      map.addLayer(new OpenLayers.Layer.OSM());
+
+      const lonLat = new OpenLayers.LonLat(lat, lon).transform(
+        new OpenLayers.Projection("EPSG:4326"),
+        map.getProjectionObject()
+      );
+      
+      const markers = new OpenLayers.Layer.Markers("Markers");
+      map.addLayer(markers);
+
+      markers.addMarker(new OpenLayers.Marker(lonLat));
+      map.setCenter (lonLat, zoom);
+    </script>
+  </body>
+</html>
