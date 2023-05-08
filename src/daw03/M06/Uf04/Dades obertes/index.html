@@ -1,0 +1,127 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos abiertos</title>
+
+    <style type="text/css">
+        html,
+        body,
+        #map {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            position: fixed;
+            top: 0;
+            z-index: 999999;
+            width: 100%;
+        }
+
+        nav>input,
+        button {
+            margin: 10px;
+            height: 30px;
+            width: 200px;
+            font-size: 15px;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        nav>button {
+            margin-top: 13px;
+            transition: all .5s;
+        }
+
+        nav>button:hover {
+            transform: scale(1.05);
+            background-color: rgb(1, 128, 255);
+        }
+    </style>
+
+<body>
+    <nav>
+        <input type="text" placeholder="Nombre" id="name">
+        <input type="number" placeholder="Longitud" id="long">
+        <input type="number" placeholder="Latitud" id="lati">
+        <button onclick="createCoordinates()">search</button>
+    </nav>
+    <div id="map"></div>
+    <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
+    <script>
+        const xhr = new XMLHttpRequest();
+        let lat = 2.1650942456210793
+        let lon = 41.39252206400659
+
+        xhr.addEventListener("readystatechange", function () {
+            if (this.status === 200 && this.readyState === 4) {
+                let reg = JSON.parse(this.responseText);
+
+                console.log(reg);
+
+                for (element of reg) {
+                    createCoordinates(element.Nom_Equipament, element.Latitud, element.Longitud)
+                }
+            }
+        });
+        xhr.open("GET", "https://dades.eicub.net/api/1/cinemes-inventari");
+        xhr.send();
+
+        map = new OpenLayers.Map("map");
+        map.addLayer(new OpenLayers.Layer.OSM());
+
+
+        let lonLat = new OpenLayers.LonLat(lat, lon)
+            .transform(
+                new OpenLayers.Projection("EPSG:4326"),
+                map.getProjectionObject()
+            );
+
+        let zoom = 12;
+
+        let markers = new OpenLayers.Layer.Markers("Markers");
+        map.addLayer(markers);
+        let marker = new OpenLayers.Marker(lonLat);
+        markers.addMarker(marker);
+
+        marker.events.register("mousedown", marker, function () {
+
+            let coordenadas = new OpenLayers.LonLat(lat, lon)
+                .transform(
+                    new OpenLayers.Projection("EPSG:4326"),
+                    map.getProjectionObject()
+                );
+
+            let popup = new OpenLayers.Popup("popup", coordenadas, new OpenLayers.Size(200, 100), "Barcelona", true);
+            map.addPopup(popup);
+
+        });
+
+        function createCoordinates(name, lati, long) {
+
+            let coordenadas = new OpenLayers.LonLat(long, lati).transform(new OpenLayers.Projection("EPSG:4326"),
+                map.getProjectionObject()
+            );
+
+            let marker = new OpenLayers.Marker(coordenadas);
+            markers.addMarker(marker);
+
+            marker.events.register("mousedown", marker, (function (coords) {
+
+                let popup = new OpenLayers.Popup("popup", coords, new OpenLayers.Size(200, 100), name, true);
+                map.addPopup(popup);
+
+            }).bind(this, coordenadas));
+        }
+        map.setCenter(lonLat, zoom);
+    </script>
+</body>
+
+</html>
