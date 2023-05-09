@@ -59,6 +59,7 @@
         const xhr = new XMLHttpRequest();
         let lat = 2.1650942456210793
         let lon = 41.39252206400659
+        let zoom = 15;
 
         xhr.addEventListener("readystatechange", function () {
             if (this.status === 200 && this.readyState === 4) {
@@ -71,7 +72,7 @@
                 }
             }
         });
-        xhr.open("GET", "https://dades.eicub.net/api/1/cinemes-inventari");
+        xhr.open("GET", "https://dades.eicub.net/api/1/biblioteques-inventari");
         xhr.send();
 
         map = new OpenLayers.Map("map");
@@ -84,7 +85,6 @@
                 map.getProjectionObject()
             );
 
-        let zoom = 12;
 
         let markers = new OpenLayers.Layer.Markers("Markers");
         map.addLayer(markers);
