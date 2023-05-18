@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #181f38;
+  font-family: 'Poppins', monospace;
+  color: white;
+  font-size: 14px;
+  font-weight: 200;
+  letter-spacing: 1px;
+}
+
+h1 {
+  font-size: 3em;
+  font-weight: 100;
+}
+
+canvas {
+  width: 100%;
+}
