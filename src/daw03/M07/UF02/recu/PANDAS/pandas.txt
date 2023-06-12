@@ -1,0 +1,44 @@
+1. De la següent ndarray, de nom a, es vol canviar la segona fila per [2, 3, 45, 7,0]
+    
+    array([[23, 2, 3, 4, 5],
+        [6, 7, 8, 9, 10]
+        [11, 12, 13, 14, 15]])
+    
+    correcta -> a[1] = [2,3,45,7,0]
+
+2. De la següent imatge, com s'accediria a les caselles marcades en vermell?
+
+    correcta -> b[1, 3:5]
+
+3. Segons la imatge, quina és l'array que s'hi està representant?
+
+    null
+
+4. Per crear una versió del codi al PC es fa:
+
+    correcta -> Posicionat a la sub branca, git add, git commit
+
+5. Segons la imatge, amb quin mètode, de matplotlib, es pot aconseguir dibuixar el punt màxim?
+
+    correcta -> annotate()
+
+6. Segons la imatge, què s'ha de posar dintre de plt.plot() per mostrar la figura?
+
+    correcta -> plt.plot(x, y, linestyle='dashed') 
+
+7. Per retornar les primeres 7 files d'un DataFrame es pot fer servir:
+
+    correcta -> head(7)
+
+8. Amb el mètode index de DataFrame:
+
+    correcta -> Es pot modificar els noms dels index
+
+9. Amb quin mètode de DataFrame es pot seleccionar una fila i una columna?
+
+    correcta -> loc()
+
+10. Diferència entre Series i DataFrame
+
+    correcta -> Una Series és un objecte que conté valors i una matriu associada d'etiquetes de dades denominada index, mentre que un 
+    DataFrame és una col·lecció de Seires

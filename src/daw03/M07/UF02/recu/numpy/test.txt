@@ -1,0 +1,69 @@
+import numpy as np
+
+1. Segons la imatge, per saber el tipus de la ndarray s'utilitza
+
+    g = np.array(range(12), dtype='int32')
+
+    correcta -> g.dtype
+
+2. Segons la imatge, l'ndarray serà la següent:
+
+    a = np.arange(12).reshape(5,3)
+
+    correcta -> ninguna de les anteriors és correcte
+
+3. Segons la imatge, si vull redimensionar l'array, quina seria la correcte?
+
+    b = np.arange(25)
+
+    correcta -> b.reshape(5,5)
+
+
+4. Segons la imatge, a quins eixos correspon cada casella?
+
+    CUBO
+
+    correcta -> 1 (eix0), 2 (eix1), 3 (eix2)
+
+5. Segons la imatge, com sol·lucionaries el següent error?
+
+    np.arange(1,16).reshape(4.6)
+
+    correcta -> np.arange(1,16).reshape(4,4)
+
+6. De la següent ndarray, de nom a, es vol aconseguir que surti per pantalla, els números (3,7,10 i 13). 
+(Cal utilitzar l'accés a múltiples elements d'una ndarray)
+
+    array([[23, 2, 3, 4, 5],
+        [6, 7, 8, 9, 10]
+        [11, 12, 13, 14, 15]])
+
+    correcta -> a[[0,1,1,2],[2,1,4,2]]
+
+7. De la següent ndarray, de nom a, es vol canviar la segona fila per [2, 3, 45, 7]
+
+    array([[23, 2, 3, 4, 5],
+        [6, 7, 8, 9, 10]
+        [11, 12, 13, 14, 15]])
+
+    correcta -> a[1] = [2,3,45,7,0]
+
+8. De la següent ndarray, de nom a, es vol mostrar per pantalla la segona columna completa.
+
+    array([[23, 2, 3, 4, 5],
+        [6, 7, 8, 9, 10]
+        [11, 12, 13, 14, 15]])
+    
+    correcta -> a[:, 1]
+
+9. De la següent imatge, com s'accediria a les caselles marcades en vermell?
+
+    correcta -> b[1,3:5]
+
+10. De la següent imatge, com s'accediria a les caselles marcades en verd?
+
+    correcta -> b[1:4:2,::2]
+    
+    En este caso, la expresión a[1:4:2, ::2] utiliza la indexación por rebanadas (slicing) en dos dimensiones. La parte 1:4:2 indica que 
+    seleccionamos las filas desde la posición 1 hasta la posición 4 (sin incluir) con un salto de 2. Esto selecciona las filas 1 y 3.
+    La parte ::2 se refiere a las columnas y selecciona todas las columnas con un salto de 2. Esto selecciona las columnas 0, 2 y 4.
